@@ -27,6 +27,21 @@ The goal is to develop repeatable technical skills: configure a system, validate
 
 The tools in the last row are part of broader coursework. Their inclusion here does **not** imply every tool has been used inside each virtual machine.
 
+## High-level lab layout
+
+The diagram captures the **documented host and three guests**. A host-only network has been created for the lab, but the per-VM enabled-adapter inventory has not yet been published. The dotted line shows a configuration item to verify, **not** proof that every VM has only host-only connectivity.
+
+```mermaid
+flowchart TB
+    HOST["HP EliteBook 840 G8 / Windows 11 Pro"] --> VB["Oracle VirtualBox"]
+    VB --> W10["Windows 10 VM"]
+    VB --> W11["Windows 11 VM"]
+    VB --> KALI["Kali Linux VM"]
+    VB -.-> HN["Host-only network / guest adapters to validate"]
+```
+
+See the [network validation worksheet](docs/lab-network-validation.md) for the pending adapter inventory, guest addressing checks, and connectivity-test evidence.
+
 ## Work completed so far
 
 ### 1. Create and boot virtual machines
@@ -60,7 +75,7 @@ My Clark College coursework has included Wireshark traffic capture and filters, 
 
 Screenshots and lab notes should be uploaded only after checking for private information, account identifiers, passwords, IP addresses that should remain private, personal filenames, and any coursework materials that are not mine to republish.
 
-Planned evidence:
+Planned evidence (use the [network validation worksheet](docs/lab-network-validation.md) to capture actual results before claiming verification):
 
 - [ ] VirtualBox overview showing the three guest machines
 - [ ] Each VM successfully booted (with account details cropped)
@@ -89,6 +104,7 @@ These are **foundational, guided hands-on skills** developed during coursework. 
 ## Change log
 
 - **October 2026:** Created and configured the initial Windows 10, Windows 11, and Kali Linux virtualized lab, established host-only networking, and worked through initial boot, resource, and file-access troubleshooting.
+- **October 18, 2026 (documentation):** Added a high-level diagram and a validation worksheet; guest adapter inventory and connectivity evidence remain pending.
 
 ---
 
