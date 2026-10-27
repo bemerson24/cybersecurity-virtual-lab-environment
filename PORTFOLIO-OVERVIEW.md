@@ -7,6 +7,10 @@ Cybersecurity BAS student at Clark College developing foundational, hands-on ski
 - **Professional profile:** [LinkedIn](https://www.linkedin.com/in/brianemersonpdx/)
 - **GitHub profile:** [bemerson24](https://github.com/bemerson24)
 
+## Cybersecurity community and professional development
+
+I have been accepted as a member of the **Clark College Cyber Club** while pursuing the Cybersecurity BAS at Clark College. The club's stated focus includes cybersecurity awareness, technical skill development, professional growth, collaboration, and hands-on learning. This records membership only; specific workshops, competitions, or other activities will be added as I participate in them.
+
 ## Featured projects
 
 ### 1. [Cybersecurity Virtual Lab Environment](https://github.com/bemerson24/cybersecurity-virtual-lab-environment)
