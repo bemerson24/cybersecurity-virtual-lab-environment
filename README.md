@@ -110,6 +110,10 @@ The following are separate project concepts and **are not yet represented as com
 - **Portable Raspberry Pi cybersecurity lab:** planning and hardware inventory for a physical, segmented lab; implementation and validation are still pending.
 - **Console revival and physical-media inventory:** planned documentation of the existing modded Wii, PS4 setup/revival, original fat PS3 revival, accessories, game inventory, and troubleshooting. This will remain separate from the cybersecurity coursework lab.
 
+## Career-aligned security operations roadmap
+
+The [Security Operations Analyst Learning Roadmap](docs/security-operations-analyst-roadmap.md) maps the current networking and Security+ foundation to planned Windows event-log investigation, PowerShell, Microsoft Sentinel/KQL, Defender and identity investigations, phishing triage, incident-response runbooks, and supervised real-world experience. The roadmap distinguishes current study, planned lab work, and professional experience; planned work is not presented as completed.
+
 ## Change log
 
 - **October 2026:** Created and configured the initial Windows 10, Windows 11, and Kali Linux virtualized lab, established host-only networking, and worked through initial boot, resource, and file-access troubleshooting.
