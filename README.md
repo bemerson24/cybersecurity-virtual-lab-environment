@@ -11,7 +11,7 @@ I am building and maintaining a virtual cybersecurity lab on a Windows 11 laptop
 
 The goal is to develop repeatable technical skills: configure a system, validate that it works, inspect network behavior, document the outcome, and troubleshoot problems without disrupting the primary Windows environment.
 
-> **Scope:** This repository documents the virtualized coursework lab only. My separate Ubuntu WSL 2 baseline assessment, Windows host security configuration, permanent home Pi-hole infrastructure, and planned portable Raspberry Pi capstone are distinct projects.
+> **Scope:** This repository documents the virtualized coursework lab only. My separate Ubuntu WSL 2 baseline assessment, home Pi-hole infrastructure, OctoPi retrospective, and planned portable Raspberry Pi capstone are distinct projects.
 
 ## Environment
 
@@ -97,14 +97,24 @@ These are **foundational, guided hands-on skills** developed during coursework. 
 3. Document one Wireshark capture from the lab, explaining the filter and protocol observations.
 4. Keep a concise change log as the lab expands.
 
-## Related portfolio project
+## Related portfolio projects
 
-- [Linux Security Baseline Assessment — Ubuntu WSL 2](https://github.com/bemerson24/ubuntu-wsl2-security-baseline): separate, self-directed Linux diagnostics project.
+- [Linux Security Baseline Assessment — Ubuntu WSL 2](https://github.com/bemerson24/ubuntu-wsl2-security-baseline) — separate, self-directed Linux diagnostics project.
+- [Raspberry Pi Pi-hole](https://github.com/bemerson24/raspberry-pi-pihole) — DNS filtering and a preliminary, documented smart-TV DNS investigation.
+- [Raspberry Pi 400 — OctoPi 3D Printer Management](https://github.com/bemerson24/raspberry-pi-octopi) — retrospective documentation of a 2020–2024 printer-management setup.
+
+## Planned portfolio work
+
+The following are separate project concepts and **are not yet represented as completed projects**:
+
+- **Portable Raspberry Pi cybersecurity lab:** planning and hardware inventory for a physical, segmented lab; implementation and validation are still pending.
+- **Console revival and physical-media inventory:** planned documentation of the existing modded Wii, PS4 setup/revival, original fat PS3 revival, accessories, game inventory, and troubleshooting. This will remain separate from the cybersecurity coursework lab.
 
 ## Change log
 
 - **October 2026:** Created and configured the initial Windows 10, Windows 11, and Kali Linux virtualized lab, established host-only networking, and worked through initial boot, resource, and file-access troubleshooting.
 - **October 18, 2026 (documentation):** Added a high-level diagram and a validation worksheet; guest adapter inventory and connectivity evidence remain pending.
+- **October 26, 2026 (portfolio navigation):** Added cross-links to related existing projects and identified separate planned projects without presenting planned work as completed.
 
 ---
 
