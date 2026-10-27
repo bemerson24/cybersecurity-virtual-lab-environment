@@ -1,8 +1,8 @@
 # Brian Emerson — Cybersecurity Learning Portfolio
 
-Cybersecurity BAS student at Clark College building foundational, hands-on skills in Linux, virtualization, networking, DNS, and security troubleshooting. My previous work in public utilities and municipal government involved business systems, revenue recovery, process improvement, and operational problem-solving. I am bringing that experience into a technical career transition.
+Cybersecurity BAS student at Clark College developing foundational, hands-on skills in Linux, Windows, virtualization, networking, DNS, and security troubleshooting. My previous work in public utilities and municipal government involved operational systems, utility billing and revenue recovery, exception resolution, documentation, and process improvement. I’m bringing that operations mindset into technical work: verify what happened, preserve useful evidence, communicate clearly, and improve the process.
 
-**Career focus:** entry-level security operations, IT/security support, and infrastructure-focused cybersecurity roles where careful investigation, clear documentation, and repeatable troubleshooting matter.
+**Career focus:** entry-level IT/security support, security operations, and infrastructure-support roles where careful investigation, reliable operations, and clear documentation matter.
 
 - **Professional profile:** [LinkedIn](https://www.linkedin.com/in/brianemersonpdx/)
 - **GitHub profile:** [bemerson24](https://github.com/bemerson24)
@@ -10,37 +10,50 @@ Cybersecurity BAS student at Clark College building foundational, hands-on skill
 ## Featured projects
 
 ### 1. [Cybersecurity Virtual Lab Environment](https://github.com/bemerson24/cybersecurity-virtual-lab-environment)
-An in-progress VirtualBox lab with Windows 10, Windows 11, and Kali Linux guests. Current work covers VM setup, troubleshooting, and host-only networking. Per-VM adapter inventory and documented connectivity validation remain in progress.
+**Status: In progress.** A VirtualBox lab with Windows 10, Windows 11, and Kali Linux guests. Current work covers VM setup, troubleshooting, and host-only networking. The per-VM adapter inventory and documented connectivity validation are still pending.
 
-**Focus:** virtualization, Windows/Linux environments, networking fundamentals, technical documentation.
+**Focus:** virtualization, Windows/Linux environments, networking fundamentals, and technical documentation.
 
 ### 2. [Linux Security Baseline Assessment — Ubuntu on WSL 2](https://github.com/bemerson24/ubuntu-wsl2-security-baseline)
-A guided, introductory assessment documenting Linux account privileges, file permissions, processes, listening sockets, system logs, DNS resolution, and HTTPS connectivity. The README includes screenshots and distinguishes observed results from unresolved warnings.
+**Status: Introductory assessment documented.** A guided exercise covering account privileges, file permissions, processes, listening sockets, system logs, DNS resolution, and HTTPS connectivity. The README includes screenshots and distinguishes observed results from unresolved warnings.
 
-**Focus:** Linux administration, permissions, systemd, log review, DNS/HTTPS diagnostics.
+**Focus:** Linux administration, permissions, systemd, log review, and DNS/HTTPS diagnostics.
 
 ### 3. [Raspberry Pi — Pi-hole Project](https://github.com/bemerson24/raspberry-pi-pihole)
-A Raspberry Pi 400 DNS-filtering project with a preliminary smart-TV DNS investigation. The case study records observations and limitations without claiming that one test proves all network traffic was blocked.
+**Status: Ongoing.** A Raspberry Pi 400 DNS-filtering project with a preliminary smart-TV DNS investigation. The case study records observations and limitations without treating one test as proof that all network traffic was blocked.
 
-**Focus:** DNS concepts, home-network troubleshooting, evidence-based investigation.
+**Focus:** DNS concepts, home-network troubleshooting, and evidence-based investigation.
 
 ### 4. [Raspberry Pi 400 — OctoPi 3D Printer Management](https://github.com/bemerson24/raspberry-pi-octopi)
-A retrospective account of a 2020–2024 Raspberry Pi 400 setup used to manage a Creality CR-10S and Snapmaker A350, including print management, camera monitoring, and hardware/software integration.
+**Status: Retrospective project (2020–2024).** Documentation of a Raspberry Pi 400 setup used to manage a Creality CR-10S and Snapmaker A350, including print management, camera monitoring, and hardware/software integration.
 
-**Focus:** Raspberry Pi, system setup, hardware/software integration, practical troubleshooting.
+**Focus:** Raspberry Pi, system setup, hardware/software integration, and practical troubleshooting.
+
+## Transferable operations experience
+
+My prior work in public utilities and municipal government provides relevant context for technical operations:
+
+- Working with business systems and account/billing workflows.
+- Investigating exceptions and resolving operational problems.
+- Documenting procedures, findings, and follow-up actions.
+- Supporting process improvement and coordination across operational needs.
+
+These are transferable strengths, not a claim of prior professional cybersecurity or security-operations employment.
 
 ## Current learning priorities
 
-- Strengthen networking and Linux fundamentals.
-- Prepare for CompTIA Security+.
+- Prepare for **CompTIA Security+** as my first certification priority.
+- Strengthen networking and Linux fundamentals, then build toward further networking certification study.
 - Complete and document repeatable virtual-lab network tests.
-- Add carefully scoped Windows logging, PowerShell, and security-operations exercises as they are completed.
-- Keep evidence, test outcomes, and limitations clear in every project.
+- Add focused Windows logging, PowerShell, and security-operations exercises as they are completed.
+- Publish evidence, actual outcomes, and limitations for each exercise.
 
-## How I approach technical work
+## How to review this portfolio
 
-I aim to document what was actually configured, what was tested, what the evidence showed, and what remains unknown. These are learning projects and foundational guided exercises—not claims of professional cybersecurity employment, comprehensive audits, or production incident-response experience.
+Each project describes its scope, work performed, findings, and limitations. The virtual lab is still in progress; the Ubuntu assessment is a guided introductory exercise; the Pi-hole investigation is preliminary; and the OctoPi repository is retrospective documentation. These projects have separate scopes and should not be treated as one audited environment.
+
+My aim is to make it clear **what I configured, what I tested, what the evidence showed, and what remains unknown**. I distinguish coursework, guided exercises, independent practice, planned work, and professional experience. I do not present these projects as comprehensive security audits, production incident response, or professional cybersecurity employment.
 
 ---
 
-*This overview summarizes separate projects with different scopes and dates. Planned work is identified as planned; it is not presented as completed.*
+*Planned work is identified as planned; it is not presented as completed.*
