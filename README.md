@@ -114,11 +114,16 @@ The following are separate project concepts and **are not yet represented as com
 
 The [Security Operations Analyst Learning Roadmap](docs/security-operations-analyst-roadmap.md) maps the current networking and Security+ foundation to planned Windows event-log investigation, PowerShell, Microsoft Sentinel/KQL, Defender and identity investigations, phishing triage, incident-response runbooks, and supervised real-world experience. The roadmap distinguishes current study, planned lab work, and professional experience; planned work is not presented as completed.
 
+## Professional profile
+
+Connect with me on [LinkedIn](https://www.linkedin.com/in/brianemersonpdx/) for my professional background, education, and career development.
+
 ## Change log
 
 - **October 2026:** Created and configured the initial Windows 10, Windows 11, and Kali Linux virtualized lab, established host-only networking, and worked through initial boot, resource, and file-access troubleshooting.
 - **October 18, 2026 (documentation):** Added a high-level diagram and a validation worksheet; guest adapter inventory and connectivity evidence remain pending.
 - **October 26, 2026 (portfolio navigation):** Added cross-links to related existing projects and identified separate planned projects without presenting planned work as completed.
+- **October 26, 2026 (profile navigation):** Added a link to my LinkedIn profile.
 
 ---
 
