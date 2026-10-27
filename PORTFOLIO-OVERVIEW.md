@@ -1,6 +1,6 @@
 # Brian Emerson — Cybersecurity Learning Portfolio
 
-Cybersecurity BAS student at Clark College developing foundational, hands-on skills in Linux, Windows, virtualization, networking, DNS, and security troubleshooting. My previous work in public utilities and municipal government involved operational systems, utility billing and revenue recovery, exception resolution, documentation, and process improvement. I’m bringing that operations mindset into technical work: verify what happened, preserve useful evidence, communicate clearly, and improve the process.
+Cybersecurity BAS student at Clark College developing foundational, hands-on skills in Linux, Windows, virtualization, networking, DNS, and security troubleshooting. My professional background spans commercial software client support, public utilities, and municipal government, including operational systems, utility billing and revenue recovery, exception resolution, documentation, and process improvement. I bring that operations mindset into technical work: verify what happened, preserve useful evidence, communicate clearly, and improve the process.
 
 **Career focus:** entry-level IT/security support, security operations, and infrastructure-support roles where careful investigation, reliable operations, and clear documentation matter.
 
@@ -29,16 +29,24 @@ Cybersecurity BAS student at Clark College developing foundational, hands-on ski
 
 **Focus:** Raspberry Pi, system setup, hardware/software integration, and practical troubleshooting.
 
-## Transferable operations experience
+## Transferable professional experience
 
-My prior work in public utilities and municipal government provides relevant context for technical operations:
+### Commercial software client support
+
+At Columbia Ultimate, I joined in **February 2016** as an **Associate Client Support Specialist (Tier 1)** and advanced to **Client Support Specialist (Tier 2)** in **August 2016**. This was direct experience in a commercial software-company environment and an early step in my professional technical-support background.
+
+The title progression is included to reflect the responsibility growth I reported. Specific tools, support workflows, metrics, and detailed duties should be described separately only where I can verify them.
+
+### Public utilities and municipal operations
+
+My work in public utilities and municipal government provides additional context for reliable technical operations:
 
 - Working with business systems and account/billing workflows.
 - Investigating exceptions and resolving operational problems.
 - Documenting procedures, findings, and follow-up actions.
 - Supporting process improvement and coordination across operational needs.
 
-These are transferable strengths, not a claim of prior professional cybersecurity or security-operations employment.
+These experiences provide transferable strengths and relevant context for a technical career transition; they are not presented as prior professional cybersecurity or security-operations employment.
 
 ## Current learning priorities
 
