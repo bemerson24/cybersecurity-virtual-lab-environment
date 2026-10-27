@@ -43,14 +43,11 @@ This role gave me direct commercial software-support experience and a clear prog
 
 ### Public utilities and municipal operations
 
-My work in public utilities and municipal government provides additional context for reliable technical operations:
+At Clark Public Utilities, I progressed through **Customer Service Representative (CSR)**, **CSR II**, and **Senior CSR / Supervisor** roles. This progression reflects increasing responsibility in utility operations, customer/account workflows, problem resolution, and team support.
 
-- Working with business systems and account/billing workflows.
-- Investigating exceptions and resolving operational problems.
-- Documenting procedures, findings, and follow-up actions.
-- Supporting process improvement and coordination across operational needs.
+My public-utility and municipal experience also included business systems, utility billing, revenue recovery, investigating exceptions, documenting procedures and findings, and improving operational processes.
 
-These experiences provide transferable strengths and relevant context for a technical career transition; they are not presented as prior professional cybersecurity or security-operations employment.
+These experiences provide transferable strengths for technical operations—systematic troubleshooting, careful records, communication, process discipline, and increasing responsibility. They are not presented as prior professional cybersecurity or security-operations employment.
 
 ## Current learning priorities
 
