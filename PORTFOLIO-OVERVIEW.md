@@ -33,9 +33,9 @@ Cybersecurity BAS student at Clark College developing foundational, hands-on ski
 
 ### Commercial software client support
 
-At Columbia Ultimate, I joined in **February 2016** as an **Associate Client Support Specialist (Tier 1)** and advanced to **Client Support Specialist (Tier 2)** in **August 2016**. This was direct experience in a commercial software-company environment and an early step in my professional technical-support background.
+At Columbia Ultimate, I worked from **February 2016 through April 2017**. I joined as an **Associate Client Support Specialist (Tier 1)** in February 2016 and advanced to **Client Support Specialist (Tier 2)** in **August 2016**. This was direct experience in a commercial software-company environment and an early step in my professional technical-support background.
 
-The title progression is included to reflect the responsibility growth I reported. Specific tools, support workflows, metrics, and detailed duties should be described separately only where I can verify them.
+The title progression reflects the move from Tier 1 to Tier 2 support within about six months. Specific tools, support workflows, metrics, and detailed duties should be described separately only where I can verify them.
 
 ### Public utilities and municipal operations
 
