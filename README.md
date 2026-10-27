@@ -5,6 +5,8 @@
 **Project status:** In progress · **Started:** October 2026  
 **Context:** Clark College Cybersecurity BAS coursework and related hands-on practice
 
+**Portfolio overview:** [Read the recruiter-friendly portfolio summary](PORTFOLIO-OVERVIEW.md).
+
 ## Overview
 
 I am building and maintaining a virtual cybersecurity lab on a Windows 11 laptop using Oracle VirtualBox. The lab includes Windows 10, Windows 11, and Kali Linux virtual machines and supports controlled practice with operating systems, networking, troubleshooting, and cybersecurity fundamentals.
