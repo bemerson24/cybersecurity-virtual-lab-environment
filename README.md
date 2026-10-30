@@ -7,6 +7,8 @@
 
 **Portfolio overview:** [Read the recruiter-friendly portfolio summary](PORTFOLIO-OVERVIEW.md).
 
+**Project index:** [Published work, open investigations and project backlog](docs/project-index.md) — includes the October 29 DNS/VPN case study, recent lab ideas and capstone milestones.
+
 ## Overview
 
 I am building and maintaining a virtual cybersecurity lab on a Windows 11 laptop using Oracle VirtualBox. The lab includes Windows 10, Windows 11, and Kali Linux virtual machines and supports controlled practice with operating systems, networking, troubleshooting, and cybersecurity fundamentals.
