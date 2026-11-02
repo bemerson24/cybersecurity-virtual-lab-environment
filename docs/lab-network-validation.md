@@ -1,6 +1,6 @@
 # Virtual Lab — Network Validation Worksheet
 
-**Environment:** Windows 11 Pro host / Oracle VirtualBox / Windows 10, Windows 11, and Kali Linux guests
+**Environment:** Windows 11 Pro host / Oracle VirtualBox / Windows 10 and Kali Linux guests
 **Status:** Planned validation worksheet. No new network tests are claimed in this document.
 
 ## Goal
@@ -14,10 +14,9 @@ Use the VirtualBox GUI to record each guest's **Settings → Network** informati
 | Guest | Enabled adapters and modes | Host-only network name | IP address (private notes only) | Verified date |
 |---|---|---|---|---|
 | Windows 10 | To verify | To verify | Not published | Pending |
-| Windows 11 | To verify | To verify | Not published | Pending |
 | Kali Linux | To verify | To verify | Not published | Pending |
 
-If NAT or bridged adapters exist, document them and **do not** describe the environment as completely isolated. Confirm that Windows 10 and Windows 11 guests are on the intended host-only network before testing communication between guests.
+If NAT or bridged adapters exist, document them and **do not** describe the environment as completely isolated. Confirm that Windows 10 and Kali Linux guests are on the intended host-only network before testing communication between guests.
 
 ## 2. Collect guest addressing evidence
 
