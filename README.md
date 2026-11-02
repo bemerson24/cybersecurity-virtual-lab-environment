@@ -11,7 +11,7 @@
 
 ## Overview
 
-This virtual cybersecurity lab runs on a Windows 11 laptop using Oracle VirtualBox. The lab includes Windows 10, Windows 11 and Kali Linux virtual machines and supports controlled practice with operating systems, networking, troubleshooting and cybersecurity fundamentals.
+This virtual cybersecurity lab runs on a Windows 11 laptop using Oracle VirtualBox. The lab includes Windows 10 and Kali Linux virtual machines and supports controlled practice with operating systems, networking, troubleshooting and cybersecurity fundamentals.
 
 The goal is to develop repeatable technical skills: configure a system, validate that it works, inspect network behavior, document the outcome and troubleshoot problems without disrupting the primary Windows environment.
 
@@ -24,7 +24,6 @@ The goal is to develop repeatable technical skills: configure a system, validate
 | Host | HP EliteBook 840 G8 running Windows 11 Pro |
 | Hypervisor | Oracle VirtualBox |
 | Guest VM | Windows 10 |
-| Guest VM | Windows 11 |
 | Guest VM | Kali Linux |
 | Lab networking | VirtualBox host-only networking used for isolated lab connectivity |
 | Related coursework tools | Wireshark, PowerShell, Linux terminal, Python/Thonny |
@@ -33,13 +32,12 @@ The tools in the last row are used across related coursework; usage varies by ex
 
 ## High-level lab layout
 
-The diagram captures the **documented host and three guests**. A host-only network has been created for the lab, but the per-VM enabled-adapter inventory has not yet been published. The dotted line shows a configuration item to verify, **not** proof that every VM has only host-only connectivity.
+The diagram captures the **documented host and two guests**. A host-only network has been created for the lab, but the per-VM enabled-adapter inventory has not yet been published. The dotted line shows a configuration item to verify, **not** proof that every VM has only host-only connectivity.
 
 ```mermaid
 flowchart TB
     HOST["HP EliteBook 840 G8 / Windows 11 Pro"] --> VB["Oracle VirtualBox"]
     VB --> W10["Windows 10 VM"]
-    VB --> W11["Windows 11 VM"]
     VB --> KALI["Kali Linux VM"]
     VB -.-> HN["Host-only network / guest adapters to validate"]
 ```
@@ -50,7 +48,7 @@ See the [network validation worksheet](docs/lab-network-validation.md) for the p
 
 ### 1. Create and boot virtual machines
 
-- Installed and configured Windows 10, Windows 11 and Kali Linux virtual machines in Oracle VirtualBox.
+- Installed and configured Windows 10 and Kali Linux virtual machines in Oracle VirtualBox.
 - Booted and shut down the Windows 10 VM successfully after troubleshooting the setup.
 - Verified Kali Linux could boot after the Windows account and file-permission changes.
 - Adjusted allocated resources when the virtual machines were running slowly.
@@ -81,7 +79,7 @@ Published evidence must exclude credentials and private identifiers. Coursework 
 
 Planned evidence (use the [network validation worksheet](docs/lab-network-validation.md) to capture actual results before claiming verification):
 
-- [ ] VirtualBox overview showing the three guest machines
+- [ ] VirtualBox overview showing the two guest machines
 - [ ] Each VM successfully booted (with account details cropped)
 - [ ] VirtualBox host-only adapter configuration
 - [ ] Guest IP configuration and a documented connectivity test
@@ -90,7 +88,7 @@ Planned evidence (use the [network validation worksheet](docs/lab-network-valida
 
 ## Skills demonstrated so far
 
-**Virtualization · Oracle VirtualBox · Windows 10/11 VM configuration · Kali Linux VM setup · Host-only networking · Basic network diagnostics · Technical troubleshooting · Documentation**
+**Virtualization · Oracle VirtualBox · Windows 10 VM configuration · Kali Linux VM setup · Host-only networking · Basic network diagnostics · Technical troubleshooting · Documentation**
 
 These skills come from guided coursework and hands-on troubleshooting. Each exercise will include its test results and remaining questions.
 
@@ -124,7 +122,7 @@ The [Security Operations Analyst Learning Roadmap](docs/security-operations-anal
 
 ## Change log
 
-- **October 2026:** Created and configured the initial Windows 10, Windows 11 and Kali Linux virtualized lab, established host-only networking and worked through initial boot, resource and file-access troubleshooting.
+- **October 2026:** Created and configured the initial Windows 10 and Kali Linux virtualized lab, established host-only networking and worked through initial boot, resource and file-access troubleshooting.
 - **October 18, 2026 (documentation):** Added a high-level diagram and a validation worksheet; guest adapter inventory and connectivity evidence remain pending.
 - **October 26, 2026 (portfolio navigation):** Added cross-links to related existing projects and identified separate planned projects without presenting planned work as completed.
 - **October 26, 2026 (profile navigation):** Added a LinkedIn profile link.
