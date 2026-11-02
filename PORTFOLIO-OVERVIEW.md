@@ -1,8 +1,8 @@
 # Brian Emerson — Cybersecurity Learning Portfolio
 
-Cybersecurity BAS student at Clark College developing foundational, hands-on skills in Linux, Windows, virtualization, networking, DNS, and security troubleshooting. My professional background spans commercial software client support, public utilities, and municipal government, including operational systems, utility billing and revenue recovery, exception resolution, documentation, and process improvement. I bring that operations mindset into technical work: verify what happened, preserve useful evidence, communicate clearly, and improve the process.
+Cybersecurity BAS student at Clark College developing foundational, hands-on skills in Linux, Windows, virtualization, networking, DNS and security troubleshooting. Professional experience spans commercial software client support, public utilities and municipal government, including operational systems, utility billing and revenue recovery, exception resolution, documentation and process improvement. The technical work follows the same approach: verify what happened, preserve useful evidence, communicate findings and improve the process.
 
-**Career focus:** entry-level IT/security support, security operations, and infrastructure-support roles where careful investigation, reliable operations, and clear documentation matter.
+**Career focus:** entry-level IT/security support, security operations and infrastructure-support roles where careful investigation, reliable operations and clear documentation matter.
 
 - **Professional profile:** [LinkedIn](https://www.linkedin.com/in/brianemersonpdx/)
 - **GitHub profile:** [bemerson24](https://github.com/bemerson24)
@@ -11,11 +11,11 @@ Cybersecurity BAS student at Clark College developing foundational, hands-on ski
 
 ## Cybersecurity community and professional development
 
-I am a member of the **Clark College Cyber Club** while pursuing the Cybersecurity BAS at Clark College. The club focuses on cybersecurity awareness, technical skill development, collaboration, and hands-on learning. I will document specific activities and projects as I take part in them.
+**Clark College Cyber Club member** and current Cybersecurity BAS student. Specific club activities and project contributions will be documented as completed.
 
 ## How the projects connect to security operations
 
-The projects are separate environments, but they build a common investigation workflow: **establish a baseline → observe system or network behavior → test a hypothesis → document findings and limitations**. My goal is to build toward junior security operations work.
+The projects are separate environments, but they build a common investigation workflow: **establish a baseline → observe system or network behavior → test a hypothesis → document findings and limitations**. This progression supports preparation for junior security operations work.
 
 | Security-operations foundation | Current evidence | Boundary or next step |
 |---|---|---|
@@ -29,53 +29,53 @@ For a detailed inventory of completed work, open questions and possible capstone
 ## Featured projects
 
 ### 1. [Cybersecurity Virtual Lab Environment](https://github.com/bemerson24/cybersecurity-virtual-lab-environment)
-**Status: In progress.** A VirtualBox lab with Windows 10, Windows 11, and Kali Linux guests. Current work covers VM setup, troubleshooting, and host-only networking. The per-VM adapter inventory and documented connectivity validation are still pending.
+**Status: In progress.** A VirtualBox lab with Windows 10, Windows 11 and Kali Linux guests. Current work covers VM setup, troubleshooting and host-only networking. The per-VM adapter inventory and documented connectivity validation are still pending.
 
-**Focus:** virtualization, Windows/Linux environments, networking fundamentals, and technical documentation.
+**Focus:** virtualization, Windows/Linux environments, networking fundamentals and technical documentation.
 
 ### 2. [Linux Security Baseline Assessment — Ubuntu on WSL 2](https://github.com/bemerson24/ubuntu-wsl2-security-baseline)
-**Status: Introductory assessment documented.** A guided exercise covering account privileges, file permissions, processes, listening sockets, system logs, DNS resolution, and HTTPS connectivity. The README includes screenshots and distinguishes observed results from unresolved warnings.
+**Status: Introductory assessment documented.** A guided exercise covering account privileges, file permissions, processes, listening sockets, system logs, DNS resolution and HTTPS connectivity. The README includes screenshots and distinguishes observed results from unresolved warnings.
 
-**Focus:** Linux administration, permissions, systemd, log review, and DNS/HTTPS diagnostics.
+**Focus:** Linux administration, permissions, systemd, log review and DNS/HTTPS diagnostics.
 
 ### 3. [Raspberry Pi — Pi-hole Project](https://github.com/bemerson24/raspberry-pi-pihole)
 **Status: Ongoing.** A Raspberry Pi 400 DNS-filtering project with smart-TV traffic observations, laptop DNS/VPN troubleshooting and HTTPS certificate trust setup. The case studies document test results and remaining questions.
 
-**Focus:** DNS concepts, home-network troubleshooting, and evidence-based investigation.
+**Focus:** DNS concepts, home-network troubleshooting and evidence-based investigation.
 
 ### 4. [Raspberry Pi 400 — OctoPi 3D Printer Management](https://github.com/bemerson24/raspberry-pi-octopi)
-**Status: Retrospective project (2020–2024).** Documentation of a Raspberry Pi 400 setup used to manage a Creality CR-10S and Snapmaker A350, including print management, camera monitoring, and hardware/software integration.
+**Status: Retrospective project (2020–2024).** Documentation of a Raspberry Pi 400 setup used to manage a Creality CR-10S and Snapmaker A350, including print management, camera monitoring and hardware/software integration.
 
-**Focus:** Raspberry Pi, system setup, hardware/software integration, and practical troubleshooting.
+**Focus:** Raspberry Pi, system setup, hardware/software integration and practical troubleshooting.
 
 ## Transferable professional experience
 
 ### Commercial software client support
 
-At Columbia Ultimate, I worked from **February 2016 through April 2017**. I joined as an **Associate Client Support Specialist (Tier 1)** in February 2016 and advanced to **Client Support Specialist (Tier 2)** in **August 2016**.
+**Columbia Ultimate · February 2016–April 2017**
 
-I supported **CUBS (Columbia Ultimate Business System)**, the company's debt-collection and reporting software. My work included troubleshooting client-reported software problems, investigating and reproducing issues, working with database-related questions, helping clients configure applications, and escalating technical issues when needed.
+Advanced from **Associate Client Support Specialist (Tier 1)** to **Client Support Specialist (Tier 2)** in **August 2016**.
 
-I also provided remote support for legacy mainframe workflows, including attempts to configure dot-matrix printers. I documented what I tested and escalated unresolved issues.
+Supported **CUBS (Columbia Ultimate Business System)**, the company's debt-collection and reporting software. Responsibilities included troubleshooting reported software problems, reproducing issues, investigating database-related questions, assisting with application configuration and escalating unresolved issues.
 
-This role gave me direct commercial software-support experience and a clear progression from Tier 1 to Tier 2 within about six months.
+Provided remote support for legacy mainframe workflows, including dot-matrix printer configuration attempts. Documented tests and escalated unresolved issues.
 
 ### Public utilities and municipal operations
 
-At Clark Public Utilities, I progressed through **Customer Service Representative (CSR)**, **CSR II**, and **Senior CSR / Supervisor** roles. This progression reflects increasing responsibility in utility operations, customer/account workflows, problem resolution, and team support.
+Progressed through **Customer Service Representative (CSR)**, **CSR II** and **Senior CSR / Supervisor** roles at Clark Public Utilities. This progression reflects increasing responsibility in utility operations, customer/account workflows, problem resolution and team support.
 
-My public-utility and municipal experience also included business systems, utility billing, revenue recovery, investigating exceptions, documenting procedures and findings, and improving operational processes.
+Public-utility and municipal responsibilities also included business systems, utility billing, revenue recovery, investigating exceptions, documenting procedures and findings and improving operational processes.
 
-That work developed my troubleshooting, recordkeeping, communication and process-improvement skills.
+That experience developed troubleshooting, recordkeeping, communication and process-improvement skills.
 
 ## Current learning priorities
 
-- Prepare for **CompTIA Security+** as my first certification priority.
+- Prepare for **CompTIA Security+** as the current certification priority.
 - Strengthen networking and Linux fundamentals, then build toward further networking certification study.
 - Complete and document repeatable virtual-lab network tests.
-- Add focused Windows logging, PowerShell, and security-operations exercises as they are completed.
-- Publish evidence, actual outcomes, and limitations for each exercise.
+- Add focused Windows logging, PowerShell and security-operations exercises as they are completed.
+- Publish evidence, actual outcomes and limitations for each exercise.
 
 ## Documentation approach
 
-I record what I configured, what I tested, what happened and what still needs work. Each project identifies whether it is coursework, guided practice, an independent project or a retrospective account.
+Documentation records the configuration, test procedure, observed results and remaining questions. Each project identifies whether it is coursework, guided practice, an independent project or a retrospective account.
