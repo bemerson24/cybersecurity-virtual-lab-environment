@@ -29,7 +29,7 @@ For a detailed inventory of completed work, open questions and possible capstone
 ## Featured projects
 
 ### 1. [Cybersecurity Virtual Lab Environment](https://github.com/bemerson24/cybersecurity-virtual-lab-environment)
-**Status: In progress.** A VirtualBox lab with Windows 10, Windows 11 and Kali Linux guests. Current work covers VM setup, troubleshooting and host-only networking. The per-VM adapter inventory and documented connectivity validation are still pending.
+**Status: In progress.** A VirtualBox lab with Windows 10 and Kali Linux guests. Current work covers VM setup, troubleshooting and host-only networking. The per-VM adapter inventory and documented connectivity validation are still pending.
 
 **Focus:** virtualization, Windows/Linux environments, networking fundamentals and technical documentation.
 
