@@ -20,7 +20,7 @@ A working index of published projects, open investigations and ideas worth keepi
 
 | ID | Project or update | Current status | Next step |
 |---|---|---|---|
-| P01 | [VirtualBox cybersecurity lab](../README.md) | Windows 10, Windows 11 and Kali setup documented; validation evidence pending | Complete the [network validation worksheet](lab-network-validation.md), including enabled adapters and connectivity results |
+| P01 | [VirtualBox cybersecurity lab](../README.md) | Windows 10 and Kali setup documented; validation evidence pending | Complete the [network validation worksheet](lab-network-validation.md), including enabled adapters and connectivity results |
 | P02 | [Ubuntu WSL 2 security baseline](https://github.com/bemerson24/ubuntu-wsl2-security-baseline) | Introductory assessment published with commands and five screenshots | Capture a repeatable baseline report; investigate unresolved warnings before claiming a cause |
 | P03 | [Pi-hole DNS filtering](https://github.com/bemerson24/raspberry-pi-pihole) | Deployed; ongoing documentation | Record versions and sanitized configuration/evidence |
 | P04 | [Smart-TV DNS investigation](https://github.com/bemerson24/raspberry-pi-pihole/blob/main/case-studies/smart-tv-dns-investigation-2026-10-15.md) | Published October 15 investigation and October 22–23 follow-up; attribution and measurement questions remain | Verify target device identity privately and collect matched per-client observations |
