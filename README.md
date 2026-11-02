@@ -5,9 +5,9 @@
 **Project status:** In progress · **Started:** October 2026  
 **Context:** Clark College Cybersecurity BAS coursework and related hands-on practice
 
-**Portfolio overview:** [Read the recruiter-friendly portfolio summary](PORTFOLIO-OVERVIEW.md).
+**Portfolio overview:** [View the portfolio overview](PORTFOLIO-OVERVIEW.md).
 
-**Project index:** [Published work, open investigations and project backlog](docs/project-index.md) — includes the October 29 DNS/VPN case study, recent lab ideas and capstone milestones.
+**Project index:** [Published work, open investigations and project backlog](docs/project-index.md) — case studies, open questions and planned lab work.
 
 ## Overview
 
@@ -29,7 +29,7 @@ The goal is to develop repeatable technical skills: configure a system, validate
 | Lab networking | VirtualBox host-only networking used for isolated lab connectivity |
 | Related coursework tools | Wireshark, PowerShell, Linux terminal, Python/Thonny |
 
-The tools in the last row are part of broader coursework. Their inclusion here does **not** imply every tool has been used inside each virtual machine.
+The tools in the last row are used across my coursework; usage varies by exercise.
 
 ## High-level lab layout
 
@@ -61,7 +61,7 @@ See the [network validation worksheet](docs/lab-network-validation.md) for the p
 - Examined guest IP configuration and submitted screenshots as coursework evidence.
 - Studied network addressing and traffic inspection in associated networking assignments.
 
-**Boundary:** Host-only networking reduces direct external connectivity, but actual guest adapter settings and any additional NAT/bridged adapters should be rechecked before running potentially risky exercises. This README does not claim the complete environment has been penetration-tested or formally audited.
+**Network validation pending:** I still need to record every guest's enabled adapters and test connectivity. Additional NAT or bridged adapters would change the isolation boundary.
 
 ### 3. Troubleshoot permissions and access
 
@@ -69,7 +69,7 @@ See the [network validation worksheet](docs/lab-network-validation.md) for the p
 - Corrected access permissions for the Windows 10 VM files when moving between Windows accounts; the recorded file-permission operation reported 16 files processed without failures.
 - Confirmed the Kali Linux VM launched under the standard Windows account.
 
-Host endpoint-hardening details belong in a separate project rather than being presented here as virtual lab accomplishments.
+These account and file-permission changes were made on the Windows host.
 
 ## Related learning activities
 
@@ -86,13 +86,13 @@ Planned evidence (use the [network validation worksheet](docs/lab-network-valida
 - [ ] VirtualBox host-only adapter configuration
 - [ ] Guest IP configuration and a documented connectivity test
 - [ ] A troubleshooting note with the symptom, change, and verification result
-- [ ] A simple topology diagram showing only the virtual lab
+- [x] A high-level diagram of the host and virtual machines
 
 ## Skills demonstrated so far
 
 **Virtualization · Oracle VirtualBox · Windows 10/11 VM configuration · Kali Linux VM setup · Host-only networking · Basic network diagnostics · Technical troubleshooting · Documentation**
 
-These are **foundational, guided hands-on skills** developed during coursework. Future entries will distinguish lab observations from independently verified results.
+These skills come from guided coursework and hands-on troubleshooting. Each exercise will include its test results and remaining questions.
 
 ## Next improvements
 
@@ -129,6 +129,3 @@ Connect with me on [LinkedIn](https://www.linkedin.com/in/brianemersonpdx/) for 
 - **October 26, 2026 (portfolio navigation):** Added cross-links to related existing projects and identified separate planned projects without presenting planned work as completed.
 - **October 26, 2026 (profile navigation):** Added a link to my LinkedIn profile.
 
----
-
-*This is a learning portfolio project, not a production security assessment. No offensive testing against unauthorized systems is documented or endorsed.*
