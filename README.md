@@ -11,11 +11,11 @@
 
 ## Overview
 
-I am building and maintaining a virtual cybersecurity lab on a Windows 11 laptop using Oracle VirtualBox. The lab includes Windows 10, Windows 11, and Kali Linux virtual machines and supports controlled practice with operating systems, networking, troubleshooting, and cybersecurity fundamentals.
+This virtual cybersecurity lab runs on a Windows 11 laptop using Oracle VirtualBox. The lab includes Windows 10, Windows 11 and Kali Linux virtual machines and supports controlled practice with operating systems, networking, troubleshooting and cybersecurity fundamentals.
 
-The goal is to develop repeatable technical skills: configure a system, validate that it works, inspect network behavior, document the outcome, and troubleshoot problems without disrupting the primary Windows environment.
+The goal is to develop repeatable technical skills: configure a system, validate that it works, inspect network behavior, document the outcome and troubleshoot problems without disrupting the primary Windows environment.
 
-> **Scope:** This repository documents the virtualized coursework lab only. My separate Ubuntu WSL 2 baseline assessment, home Pi-hole infrastructure, OctoPi retrospective, and planned portable Raspberry Pi capstone are distinct projects.
+> **Scope:** This repository documents the virtualized coursework lab only. The Ubuntu WSL 2 baseline assessment, home Pi-hole infrastructure, OctoPi retrospective and planned portable Raspberry Pi capstone are distinct projects.
 
 ## Environment
 
@@ -29,7 +29,7 @@ The goal is to develop repeatable technical skills: configure a system, validate
 | Lab networking | VirtualBox host-only networking used for isolated lab connectivity |
 | Related coursework tools | Wireshark, PowerShell, Linux terminal, Python/Thonny |
 
-The tools in the last row are used across my coursework; usage varies by exercise.
+The tools in the last row are used across related coursework; usage varies by exercise.
 
 ## High-level lab layout
 
@@ -44,13 +44,13 @@ flowchart TB
     VB -.-> HN["Host-only network / guest adapters to validate"]
 ```
 
-See the [network validation worksheet](docs/lab-network-validation.md) for the pending adapter inventory, guest addressing checks, and connectivity-test evidence.
+See the [network validation worksheet](docs/lab-network-validation.md) for the pending adapter inventory, guest addressing checks and connectivity-test evidence.
 
 ## Work completed so far
 
 ### 1. Create and boot virtual machines
 
-- Installed and configured Windows 10, Windows 11, and Kali Linux virtual machines in Oracle VirtualBox.
+- Installed and configured Windows 10, Windows 11 and Kali Linux virtual machines in Oracle VirtualBox.
 - Booted and shut down the Windows 10 VM successfully after troubleshooting the setup.
 - Verified Kali Linux could boot after the Windows account and file-permission changes.
 - Adjusted allocated resources when the virtual machines were running slowly.
@@ -61,7 +61,7 @@ See the [network validation worksheet](docs/lab-network-validation.md) for the p
 - Examined guest IP configuration and submitted screenshots as coursework evidence.
 - Studied network addressing and traffic inspection in associated networking assignments.
 
-**Network validation pending:** I still need to record every guest's enabled adapters and test connectivity. Additional NAT or bridged adapters would change the isolation boundary.
+**Network validation pending:** The enabled-adapter inventory and connectivity tests remain to be documented for each guest. Additional NAT or bridged adapters would change the isolation boundary.
 
 ### 3. Troubleshoot permissions and access
 
@@ -73,11 +73,11 @@ These account and file-permission changes were made on the Windows host.
 
 ## Related learning activities
 
-My Clark College coursework has included Wireshark traffic capture and filters, TCP/IP and OSI model interpretation, introductory Linux shell use, and Python interpreter work. As I complete repeatable exercises specifically in this virtual environment, I will add commands, configurations, outputs, and short explanations here.
+Related Clark College coursework covers Wireshark traffic capture and filters, TCP/IP and OSI model interpretation, introductory Linux shell use and Python interpreter work. Planned lab documentation includes commands, configurations, outputs and explanations for each completed exercise.
 
 ## Evidence to add
 
-Screenshots and lab notes should be uploaded only after checking for private information, account identifiers, passwords, IP addresses that should remain private, personal filenames, and any coursework materials that are not mine to republish.
+Published evidence must exclude credentials and private identifiers. Coursework materials require permission for republication.
 
 Planned evidence (use the [network validation worksheet](docs/lab-network-validation.md) to capture actual results before claiming verification):
 
@@ -85,7 +85,7 @@ Planned evidence (use the [network validation worksheet](docs/lab-network-valida
 - [ ] Each VM successfully booted (with account details cropped)
 - [ ] VirtualBox host-only adapter configuration
 - [ ] Guest IP configuration and a documented connectivity test
-- [ ] A troubleshooting note with the symptom, change, and verification result
+- [ ] A troubleshooting note with the symptom, change and verification result
 - [x] A high-level diagram of the host and virtual machines
 
 ## Skills demonstrated so far
@@ -112,20 +112,20 @@ These skills come from guided coursework and hands-on troubleshooting. Each exer
 The following are separate project concepts and **are not yet represented as completed projects**:
 
 - **Portable Raspberry Pi cybersecurity lab:** planning and hardware inventory for a physical, segmented lab; implementation and validation are still pending.
-- **Console revival and physical-media inventory:** planned documentation of the existing modded Wii, PS4 setup/revival, original fat PS3 revival, accessories, game inventory, and troubleshooting. This will remain separate from the cybersecurity coursework lab.
+- **Console revival and physical-media inventory:** planned documentation of the existing modded Wii, PS4 setup/revival, original fat PS3 revival, accessories, game inventory and troubleshooting. This will remain separate from the cybersecurity coursework lab.
 
 ## Career-aligned security operations roadmap
 
-The [Security Operations Analyst Learning Roadmap](docs/security-operations-analyst-roadmap.md) maps the current networking and Security+ foundation to planned Windows event-log investigation, PowerShell, Microsoft Sentinel/KQL, Defender and identity investigations, phishing triage, incident-response runbooks, and supervised real-world experience. The roadmap distinguishes current study, planned lab work, and professional experience; planned work is not presented as completed.
+The [Security Operations Analyst Learning Roadmap](docs/security-operations-analyst-roadmap.md) maps the current networking and Security+ foundation to planned Windows event-log investigation, PowerShell, Microsoft Sentinel/KQL, Defender and identity investigations, phishing triage, incident-response runbooks and supervised real-world experience. The roadmap distinguishes current study, planned lab work and professional experience; planned work is not presented as completed.
 
 ## Professional profile
 
-Connect with me on [LinkedIn](https://www.linkedin.com/in/brianemersonpdx/) for my professional background, education, and career development.
+[Brian Emerson on LinkedIn](https://www.linkedin.com/in/brianemersonpdx/) — professional background, education and career development.
 
 ## Change log
 
-- **October 2026:** Created and configured the initial Windows 10, Windows 11, and Kali Linux virtualized lab, established host-only networking, and worked through initial boot, resource, and file-access troubleshooting.
+- **October 2026:** Created and configured the initial Windows 10, Windows 11 and Kali Linux virtualized lab, established host-only networking and worked through initial boot, resource and file-access troubleshooting.
 - **October 18, 2026 (documentation):** Added a high-level diagram and a validation worksheet; guest adapter inventory and connectivity evidence remain pending.
 - **October 26, 2026 (portfolio navigation):** Added cross-links to related existing projects and identified separate planned projects without presenting planned work as completed.
-- **October 26, 2026 (profile navigation):** Added a link to my LinkedIn profile.
+- **October 26, 2026 (profile navigation):** Added a LinkedIn profile link.
 
