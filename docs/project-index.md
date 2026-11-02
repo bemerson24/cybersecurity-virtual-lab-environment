@@ -1,20 +1,20 @@
 # Portfolio Project Index and Backlog
 
-**Last reviewed: October 30, 2026**
+**Last reviewed: November 2, 2026**
 
 A working index of published projects, open investigations and ideas worth keeping. This is my engineering journal and planning record. An indexed idea is not a completed project or a commitment to start it immediately.
 
 [Portfolio overview](../PORTFOLIO-OVERVIEW.md) · [SOC learning roadmap](security-operations-analyst-roadmap.md)
 
-## SOC-aligned progression and publication priorities
+## Current work and next steps
 
 **Current evidence:** Linux system baseline and log review, DNS filtering observations, documented DNS/VPN troubleshooting, and initial Windows/Kali VM setup. These are foundational exercises, not professional SOC investigations.
 
-**Next evidence gate:** Verify and record the VirtualBox guests' actual adapter settings and a reproducible connectivity test. Publish a short result only after the test is completed, with expected behavior, observed output, limitations and a sanitized screenshot if useful. This is a suggested milestone, not an immediate assignment.
+**Next lab milestone:** Verify and record the VirtualBox guests' actual adapter settings and a reproducible connectivity test. Publish a short result only after the test is completed, with expected behavior, observed output, limitations and a sanitized screenshot if useful. I will fit this around coursework.
 
 **Later learning:** Windows event-log investigations and PowerShell, followed by SIEM/KQL, detection and incident-response documentation. Build on the existing virtual-lab repository before creating another project.
 
-**Publishing rule:** Improve an existing project when new evidence warrants it; do not post planning-only updates for activity, duplicate coursework submissions or imply that household devices are a production SOC. LinkedIn announcements are separate and optional.
+**Project updates:** I add results to the relevant repository as tests are completed and link related investigations here.
 
 ## Published work and open follow-ups
 
@@ -26,8 +26,9 @@ A working index of published projects, open investigations and ideas worth keepi
 | P04 | [Smart-TV DNS investigation](https://github.com/bemerson24/raspberry-pi-pihole/blob/main/case-studies/smart-tv-dns-investigation-2026-10-15.md) | Published October 15 investigation and October 22–23 follow-up; attribution and measurement questions remain | Verify target device identity privately and collect matched per-client observations |
 | P05 | [Laptop DNS portability and VPN troubleshooting](https://github.com/bemerson24/raspberry-pi-pihole/blob/main/case-studies/laptop-dns-portability-vpn-2026-10-29.md) | October 29 case study published; VPN recovery recorded; campus DNS hypothesis open | Record configured resolver privately, then compare home/campus access and VPN states separately |
 | P06 | [OctoPi printer management](https://github.com/bemerson24/raspberry-pi-octopi) | Retrospective documentation of 2020–2024 work | Add original evidence if recovered; keep original work dates separate from documentation dates |
+| P07 | [Pi-hole HTTPS and VPN DNS troubleshooting](https://github.com/bemerson24/raspberry-pi-pihole/blob/main/case-studies/pihole-https-vpn-dns-2026-11-02.md) | November 2 case study published; HTTPS dashboard access restored and local DNS behavior compared with VPN on/off | Validate VPN/local DNS coexistence; capture campus tests during a recurrence |
 
-## Recent additions to preserve
+## Lab backlog
 
 | ID | Item | Status and intended home | Next evidence or action |
 |---|---|---|---|
@@ -36,7 +37,7 @@ A working index of published projects, open investigations and ideas worth keepi
 | B03 | Snort DNS detection extension | Discussed next step building on Pi-hole; no validated rule or test output published | Define an authorized lab scenario, sensor placement, benign test traffic and expected alerts; distinguish noisy DNS from evidence of tunneling |
 | B04 | Python security-log parser / Log-Parser-Automation | Proposed, not implemented | Start with sanitized or synthetic logs; document parsing, useful summaries, malformed inputs and sample output |
 | B05 | SOC incident casebook | Proposed collection of investigation timelines and decisions | Reuse the existing DNS cases as links; add a concise case template before creating duplicate reports |
-| B06 | Local/remote junior SOC job-requirements research | Research requested; no source-backed dataset published here | Record employer, title, source URL, posting/capture date, required/preferred skills, pay, arrangement, location, shift/on-call and benefits when stated; mark missing fields and closed postings |
+| B06 | Local/remote junior SOC job-requirements research | Planned research; no dataset published | Record employer, title, source URL, posting/capture date, required/preferred skills, pay, arrangement, location, shift/on-call and benefits when stated; mark missing fields and closed postings |
 | B07 | Laptop endpoint-hardening documentation | Related configuration work discussed; no dedicated report in these repositories | Verify current configuration, collect sanitized evidence and keep Windows host findings separate from WSL and VM findings |
 
 ### How job research informs the portfolio
@@ -61,18 +62,18 @@ The portable physical cybersecurity lab is a planned capstone direction. The hou
 These are idea records rather than completed cybersecurity work. Create separate project documentation when the work begins.
 
 - **Console revival and physical-media inventory:** existing modded Wii, PS4 setup/profile preparation and original fat PS3 revival. Inventory owned equipment and condition before purchases. A possible PS Vita remains a future watchlist item.
-- **NAS and media collection:** OpenMediaVault direction, backups and a physical-media catalog; preserve the shared comedy/movie-collection idea as part of inventory planning.
+- **NAS and media collection:** OpenMediaVault direction, backups and a physical-media catalog; movie-collection inventory planning.
 - **Home automation and cameras:** future Home Assistant, blinds and camera/security integration; evaluate network and access boundaries as each system is implemented.
 - **Steampunk laptop:** original 3D-printed design idea using Datamancers as an aesthetic reference. Concept only.
 - **3D-printer maintenance:** Bambu P1S squeak troubleshooting and other repairs can become maker troubleshooting notes when actual cause, action and verification are recorded.
 
-## Maintenance rules
+## Maintaining this index
 
 - Keep a stable ID when an idea becomes a lab or moves into another repository.
 - Update its status and link the actual artifact rather than copying the same write-up into multiple places.
 - Record observed results separately from working hypotheses and proposed tests.
 - Do not upload household identifiers, credentials, private account incidents or unapproved course materials.
-- Review evidence milestones monthly; capture ideas when they arise. LinkedIn updates are a separate editorial decision.
+- Review milestones monthly and record new ideas as they arise.
 - Certifications belong in the accomplishments record only after they are earned.
 
 ## Index change log
