@@ -13,6 +13,19 @@ Cybersecurity BAS student at Clark College developing foundational, hands-on ski
 
 I am a member of the **Clark College Cyber Club** while pursuing the Cybersecurity BAS at Clark College. The club focuses on cybersecurity awareness, technical skill development, collaboration, and hands-on learning. I will document specific activities and projects as I take part in them.
 
+## How the projects connect to security operations
+
+The projects are separate environments, but they build a common investigation workflow: **establish a baseline → observe system or network behavior → test a hypothesis → document findings and limitations**. This is a learning progression toward junior security operations work, not a claim that these systems form a deployed SOC or that I have performed production incident response.
+
+| Security-operations foundation | Current evidence | Boundary or next step |
+|---|---|---|
+| Endpoint and system fundamentals | [Ubuntu WSL 2 baseline](https://github.com/bemerson24/ubuntu-wsl2-security-baseline): permissions, processes, services and journal review | Linux-only guided assessment; Windows event investigation is future work |
+| Network visibility and investigation | [Pi-hole DNS case studies](https://github.com/bemerson24/raspberry-pi-pihole): client DNS observations and DNS/VPN troubleshooting | Preliminary attribution and unresolved hypotheses are documented |
+| Controlled testing environment | [VirtualBox lab](https://github.com/bemerson24/cybersecurity-virtual-lab-environment): Windows and Kali guests, initial network configuration | Per-guest adapters and connectivity evidence still need validation |
+| Infrastructure experience | [OctoPi retrospective](https://github.com/bemerson24/raspberry-pi-octopi): Raspberry Pi and printer management | Historical maker/operations project, not a security investigation |
+
+For a detailed inventory of completed work, open questions and possible capstone milestones, see the [project index](docs/project-index.md). The [security operations learning roadmap](docs/security-operations-analyst-roadmap.md) describes planned Windows logs, PowerShell, SIEM/KQL and incident-response practice without counting those skills as completed.
+
 ## Featured projects
 
 ### 1. [Cybersecurity Virtual Lab Environment](https://github.com/bemerson24/cybersecurity-virtual-lab-environment)
