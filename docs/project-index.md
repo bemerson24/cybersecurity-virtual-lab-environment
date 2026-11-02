@@ -6,6 +6,16 @@ A working index of published projects, open investigations and ideas worth keepi
 
 [Portfolio overview](../PORTFOLIO-OVERVIEW.md) · [SOC learning roadmap](security-operations-analyst-roadmap.md)
 
+## SOC-aligned progression and publication priorities
+
+**Current evidence:** Linux system baseline and log review, DNS filtering observations, documented DNS/VPN troubleshooting, and initial Windows/Kali VM setup. These are foundational exercises, not professional SOC investigations.
+
+**Next evidence gate:** Verify and record the VirtualBox guests' actual adapter settings and a reproducible connectivity test. Publish a short result only after the test is completed, with expected behavior, observed output, limitations and a sanitized screenshot if useful. This is a suggested milestone, not an immediate assignment.
+
+**Later learning:** Windows event-log investigations and PowerShell, followed by SIEM/KQL, detection and incident-response documentation. Build on the existing virtual-lab repository before creating another project.
+
+**Publishing rule:** Improve an existing project when new evidence warrants it; do not post planning-only updates for activity, duplicate coursework submissions or imply that household devices are a production SOC. LinkedIn announcements are separate and optional.
+
 ## Published work and open follow-ups
 
 | ID | Project or update | Current status | Next step |
