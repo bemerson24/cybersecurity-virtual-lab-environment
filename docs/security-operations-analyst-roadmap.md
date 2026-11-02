@@ -1,7 +1,7 @@
 # Security Operations Analyst Learning Roadmap
 
 **Status:** Planned learning roadmap — October 2026  
-**Career target:** Build toward security operations roles such as the Security Operations Analyst position advertised by Office Ally in Vancouver, Washington. That posting is a target-role reference, not a claim of current qualification or a guarantee of employment.
+**Career target:** Build toward security operations roles such as the Security Operations Analyst position advertised by Office Ally in Vancouver, Washington. I use that posting to identify skills I need to develop.
 
 ## Why this roadmap exists
 
@@ -22,7 +22,7 @@ This roadmap turns a real job description into a practical learning sequence. It
 | Compliance and audit trails | Transferable experience with operational documentation; security frameworks still to learn | Evidence checklist, incident register, and remediation tracker |
 | Production security operations | No production SOC experience claimed here | Seek supervised work-study, internship, IT/security role, or other legitimate operational exposure |
 
-These statuses describe the portfolio baseline as of October 2026. Update them only when the corresponding work has actually been completed and reviewed.
+These statuses describe the published portfolio baseline as of October 2026.
 
 ## Learning sequence
 
@@ -89,7 +89,7 @@ Project: **Endpoint and Identity Incident Case Study**
 
 ### Phase 5 — Incident response, runbooks, and operational readiness
 
-Project: **Audit-Ready Incident Response Pack**
+Project: **Incident Response Documentation Practice**
 - Triage checklist and severity rationale.
 - Evidence log and timeline template.
 - Escalation matrix and decision points.
@@ -103,7 +103,7 @@ Build a small portfolio index linking the best evidence from the virtual lab, Ub
 
 Look for relevant work-study opportunities, internships, IT support or systems roles with security responsibilities, and entry-level security work where duties and supervision are clearly defined.
 
-A home lab demonstrates practice; it does not substitute for years of professional SOC experience. Record actual job duties, tools used, scope, supervision, and outcomes truthfully. Do not claim production experience based on simulations.
+I plan to build on lab practice through supervised work and document the duties, tools and outcomes as that experience develops.
 
 ## Target-role comparison checklist
 
