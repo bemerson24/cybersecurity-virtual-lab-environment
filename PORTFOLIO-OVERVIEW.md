@@ -7,7 +7,7 @@ Cybersecurity BAS student at Clark College developing foundational, hands-on ski
 - **Professional profile:** [LinkedIn](https://www.linkedin.com/in/brianemersonpdx/)
 - **GitHub profile:** [bemerson24](https://github.com/bemerson24)
 
-**Project index:** [Published work, open investigations and project backlog](docs/project-index.md) — includes the October 29 DNS/VPN case study, recent lab ideas and capstone milestones.
+**Project index:** [Published work, open investigations and project backlog](docs/project-index.md) — case studies, open questions and planned lab work.
 
 ## Cybersecurity community and professional development
 
@@ -15,7 +15,7 @@ I am a member of the **Clark College Cyber Club** while pursuing the Cybersecuri
 
 ## How the projects connect to security operations
 
-The projects are separate environments, but they build a common investigation workflow: **establish a baseline → observe system or network behavior → test a hypothesis → document findings and limitations**. This is a learning progression toward junior security operations work, not a claim that these systems form a deployed SOC or that I have performed production incident response.
+The projects are separate environments, but they build a common investigation workflow: **establish a baseline → observe system or network behavior → test a hypothesis → document findings and limitations**. My goal is to build toward junior security operations work.
 
 | Security-operations foundation | Current evidence | Boundary or next step |
 |---|---|---|
@@ -39,7 +39,7 @@ For a detailed inventory of completed work, open questions and possible capstone
 **Focus:** Linux administration, permissions, systemd, log review, and DNS/HTTPS diagnostics.
 
 ### 3. [Raspberry Pi — Pi-hole Project](https://github.com/bemerson24/raspberry-pi-pihole)
-**Status: Ongoing.** A Raspberry Pi 400 DNS-filtering project with a preliminary smart-TV DNS investigation. The case study records observations and limitations without treating one test as proof that all network traffic was blocked.
+**Status: Ongoing.** A Raspberry Pi 400 DNS-filtering project with smart-TV traffic observations, laptop DNS/VPN troubleshooting and HTTPS certificate trust setup. The case studies document test results and remaining questions.
 
 **Focus:** DNS concepts, home-network troubleshooting, and evidence-based investigation.
 
@@ -56,7 +56,7 @@ At Columbia Ultimate, I worked from **February 2016 through April 2017**. I join
 
 I supported **CUBS (Columbia Ultimate Business System)**, the company's debt-collection and reporting software. My work included troubleshooting client-reported software problems, investigating and reproducing issues, working with database-related questions, helping clients configure applications, and escalating technical issues when needed.
 
-I also provided remote support for legacy mainframe workflows, including attempts to configure dot-matrix printers. Not every troubleshooting attempt produced a working result; the useful experience was investigating the failure, establishing what did and did not work, and escalating unresolved issues rather than claiming a fix that had not been achieved.
+I also provided remote support for legacy mainframe workflows, including attempts to configure dot-matrix printers. I documented what I tested and escalated unresolved issues.
 
 This role gave me direct commercial software-support experience and a clear progression from Tier 1 to Tier 2 within about six months.
 
@@ -66,7 +66,7 @@ At Clark Public Utilities, I progressed through **Customer Service Representativ
 
 My public-utility and municipal experience also included business systems, utility billing, revenue recovery, investigating exceptions, documenting procedures and findings, and improving operational processes.
 
-These experiences provide transferable strengths for technical operations—systematic troubleshooting, careful records, communication, process discipline, and increasing responsibility. They are not presented as prior professional cybersecurity or security-operations employment.
+That work developed my troubleshooting, recordkeeping, communication and process-improvement skills.
 
 ## Current learning priorities
 
@@ -76,12 +76,6 @@ These experiences provide transferable strengths for technical operations—syst
 - Add focused Windows logging, PowerShell, and security-operations exercises as they are completed.
 - Publish evidence, actual outcomes, and limitations for each exercise.
 
-## How to review this portfolio
+## Documentation approach
 
-Each project describes its scope, work performed, findings, and limitations. The virtual lab is still in progress; the Ubuntu assessment is a guided introductory exercise; the Pi-hole investigation is preliminary; and the OctoPi repository is retrospective documentation. These projects have separate scopes and should not be treated as one audited environment.
-
-My aim is to make it clear **what I configured, what I tested, what the evidence showed, and what remains unknown**. I distinguish coursework, guided exercises, independent practice, planned work, and professional experience. I do not present these projects as comprehensive security audits, production incident response, or professional cybersecurity employment.
-
----
-
-*Planned work is identified as planned; it is not presented as completed.*
+I record what I configured, what I tested, what happened and what still needs work. Each project identifies whether it is coursework, guided practice, an independent project or a retrospective account.
