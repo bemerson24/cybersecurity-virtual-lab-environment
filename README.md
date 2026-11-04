@@ -15,7 +15,7 @@ This virtual cybersecurity lab runs on a Windows 11 laptop using Oracle VirtualB
 
 The goal is to develop repeatable technical skills: configure a system, validate that it works, inspect network behavior, document the outcome and troubleshoot problems without disrupting the primary Windows environment.
 
-> **Scope:** This repository documents the virtualized coursework lab only. The Ubuntu WSL 2 baseline assessment, home Pi-hole infrastructure, OctoPi retrospective and planned portable Raspberry Pi capstone are distinct projects.
+> **Scope:** The core of this repository documents the virtualized coursework lab. A separate personal-endpoint packet-analysis case study is linked below as related networking practice, not as VirtualBox guest testing or an assessment of campus infrastructure. The Ubuntu WSL 2 baseline assessment, home Pi-hole infrastructure, OctoPi retrospective and planned portable Raspberry Pi capstone are distinct projects.
 
 ## Environment
 
@@ -73,6 +73,10 @@ These account and file-permission changes were made on the Windows host.
 
 Related Clark College coursework covers Wireshark traffic capture and filters, TCP/IP and OSI model interpretation, introductory Linux shell use and Python interpreter work. Planned lab documentation includes commands, configurations, outputs and explanations for each completed exercise.
 
+## Related packet-analysis case study
+
+[TCP/TLS Session Analysis — November 3, 2026](docs/tcp-tls-session-analysis-2026-11-03.md) — a controlled, personally generated HTTPS request captured on the Windows laptop's VPN interface, showing TCP connection establishment, TLS 1.3 negotiation and HTTP application-session headers. A separate Firefox service handshake demonstrated a hybrid post-quantum key exchange. This was **endpoint-level observation only**; it does not document or claim testing of campus infrastructure. Raw captures are not publicly shared.
+
 ## Evidence to add
 
 Published evidence must exclude credentials and private identifiers. Coursework materials require permission for republication.
@@ -121,6 +125,8 @@ The [Security Operations Analyst Learning Roadmap](docs/security-operations-anal
 [Brian Emerson on LinkedIn](https://www.linkedin.com/in/brianemersonpdx/) — professional background, education and career development.
 
 ## Change log
+
+- **November 3, 2026 (packet analysis):** Added a separate Wireshark case study covering verified TCP/TLS handshakes, per-connection key-exchange comparison, browser troubleshooting and limitations of campus Wi-Fi observations.
 
 - **October 2026:** Created and configured the initial Windows 10 and Kali Linux virtualized lab, established host-only networking and worked through initial boot, resource and file-access troubleshooting.
 - **October 18, 2026 (documentation):** Added a high-level diagram and a validation worksheet; guest adapter inventory and connectivity evidence remain pending.
