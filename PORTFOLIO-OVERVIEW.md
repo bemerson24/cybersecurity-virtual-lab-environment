@@ -20,7 +20,7 @@ The projects are separate environments, but they build a common investigation wo
 | Security-operations foundation | Current evidence | Boundary or next step |
 |---|---|---|
 | Endpoint and system fundamentals | [Ubuntu WSL 2 baseline](https://github.com/bemerson24/ubuntu-wsl2-security-baseline): permissions, processes, services and journal review | Linux-only guided assessment; Windows event investigation is future work |
-| Network visibility and investigation | [Pi-hole DNS case studies](https://github.com/bemerson24/raspberry-pi-pihole): client DNS observations and DNS/VPN troubleshooting | Preliminary attribution and unresolved hypotheses are documented |
+| Network visibility and investigation | [Pi-hole DNS case studies](https://github.com/bemerson24/raspberry-pi-pihole): DNS observations and VPN troubleshooting; [endpoint TCP/TLS capture](docs/tcp-tls-session-analysis-2026-11-03.md): verified TCP handshake and TLS 1.3 negotiations | Endpoint packet analysis is not a campus infrastructure assessment; Firefox without-VPN issue remains unresolved |
 | Controlled testing environment | [VirtualBox lab](https://github.com/bemerson24/cybersecurity-virtual-lab-environment): Windows and Kali guests, initial network configuration | Per-guest adapters and connectivity evidence still need validation |
 | Infrastructure experience | [OctoPi retrospective](https://github.com/bemerson24/raspberry-pi-octopi): Raspberry Pi and printer management | Historical maker/operations project, not a security investigation |
 
