@@ -105,7 +105,7 @@ These skills come from guided coursework and hands-on troubleshooting. Each exer
 
 ## Related portfolio projects
 
-- [Linux Security Baseline Assessment — Ubuntu WSL 2](https://github.com/bemerson24/ubuntu-wsl2-security-baseline) — separate, self-directed Linux diagnostics project.
+- [Linux Security Baseline Assessment — Ubuntu WSL 2](https://github.com/bemerson24/ubuntu-wsl2-security-baseline) — separate, guided introductory Linux diagnostics exercise.
 - [Raspberry Pi Pi-hole](https://github.com/bemerson24/raspberry-pi-pihole) — DNS filtering and a preliminary, documented smart-TV DNS investigation.
 - [Raspberry Pi 400 — OctoPi 3D Printer Management](https://github.com/bemerson24/raspberry-pi-octopi) — retrospective documentation of a 2020–2024 printer-management setup.
 
