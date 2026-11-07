@@ -1,7 +1,7 @@
 # Security Operations Analyst Learning Roadmap
 
-**Status:** Planned learning roadmap — October 2026  
-**Career target:** Build toward security operations roles such as the Security Operations Analyst position advertised by Office Ally in Vancouver, Washington. I use that posting to identify skills I need to develop.
+**Status:** Learning roadmap — reviewed November 6, 2026  
+**Career target:** Build toward security operations roles such as the Security Operations Analyst position reviewed in October 2026 from Office Ally in Vancouver, Washington. That historical posting helped identify skills to develop; its current availability is not asserted here.
 
 ## Why this roadmap exists
 
@@ -13,7 +13,7 @@ This roadmap turns a real job description into a practical learning sequence. It
 |---|---|---|
 | Networking and security fundamentals | Current focus: networking coursework and Security+ preparation | Clear explanations and repeatable network/log-analysis exercises |
 | Windows administration and event logs | Not yet started as a focused portfolio project | Sanitized event samples, investigation notes, and verification steps |
-| PowerShell | Not yet assessed in a security investigation workflow | Small, documented read-only collection or parsing script |
+| PowerShell | Networking commands documented in the November 3 endpoint study; dedicated collection/parsing script pending | Small, documented read-only collection or parsing script |
 | Microsoft Sentinel and KQL | Not yet started | KQL queries, sample-data investigation, and detection rationale |
 | Microsoft Defender / endpoint detection and response | Not yet started | Documented endpoint-alert investigation using a safe lab or approved sample data |
 | Identity security | Not yet started as a dedicated project | Sign-in investigation, MFA/privilege concepts, and an account-compromise runbook |
@@ -22,7 +22,7 @@ This roadmap turns a real job description into a practical learning sequence. It
 | Compliance and audit trails | Transferable experience with operational documentation; security frameworks still to learn | Evidence checklist, incident register, and remediation tracker |
 | Production security operations | No production SOC experience claimed here | Seek supervised work-study, internship, IT/security role, or other legitimate operational exposure |
 
-These statuses describe the published portfolio baseline as of October 2026.
+These statuses describe the published portfolio baseline as reviewed on November 6, 2026. The [November 3 endpoint TCP/TLS study](tcp-tls-session-analysis-2026-11-03.md) supplies a focused Wireshark exercise; virtual-lab network validation remains pending.
 
 ## Learning sequence
 
@@ -35,7 +35,7 @@ Focus:
 
 Evidence to publish:
 - Short, accurate notes explaining a network or security concept.
-- One Wireshark exercise with a stated question, filter, observed packets, and interpretation.
+- Published: [November 3 endpoint TCP/TLS exercise](tcp-tls-session-analysis-2026-11-03.md), with procedure, packet observations and limitations.
 - Lab network validation with actual adapter settings and test results.
 
 **Exit criteria:** Explain the relevant network path and security concept; reproduce the test; distinguish observed facts from assumptions.
@@ -118,7 +118,8 @@ Revisit this checklist when a new relevant posting appears. Do not assume every 
 
 ## Portfolio integrity rules
 
-- Publish only work actually completed.
+- Present work as completed only when supported by recorded results; label plans and worksheets separately.
+- Distinguish observed results, interpretations and unresolved hypotheses. Document corrections without inventing retrospective test results.
 - Include enough commands, queries, sample inputs, outputs, and reasoning for a reviewer to reproduce the result where appropriate.
 - Label guided coursework, independent lab practice, simulations, and professional experience distinctly.
 - Never publish credentials, tokens, personal data, confidential employer information, or unapproved coursework materials.
@@ -130,11 +131,11 @@ Revisit this checklist when a new relevant posting appears. Do not assume every 
 - [x] Identify a real local target-role posting to anchor the roadmap.
 - [x] Record networking fundamentals and Security+ as the current learning phase.
 - [ ] Complete and publish virtual lab network validation evidence.
-- [ ] Publish a focused Wireshark investigation.
+- [x] Publish a focused [Wireshark investigation](tcp-tls-session-analysis-2026-11-03.md) (personal endpoint, November 3).
 - [ ] Start a Windows Event Log investigation.
 - [ ] Learn KQL and build a sample-data investigation.
 - [ ] Document an endpoint/identity case study.
 - [ ] Publish an incident-response runbook pack.
 - [ ] Pursue supervised security-related experience.
 
-*Last updated: October 2026.*
+*Last updated: November 6, 2026. Documentation review only; no new lab tests claimed.*
