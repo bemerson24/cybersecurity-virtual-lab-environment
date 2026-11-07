@@ -7,7 +7,7 @@
 
 **Portfolio overview:** [View the portfolio overview](PORTFOLIO-OVERVIEW.md).
 
-**Project index:** [Published work, open investigations and project backlog](docs/project-index.md) — case studies, open questions and planned lab work.
+**Project index:** [Published projects and open investigations](docs/project-index.md) — case studies and technical status.
 
 ## Overview
 
@@ -15,7 +15,7 @@ This virtual cybersecurity lab runs on a Windows 11 laptop using Oracle VirtualB
 
 The workflow covers configuration, validation, network observation and documented troubleshooting while keeping guest changes separate from the primary Windows environment.
 
-> **Scope:** The core of this repository documents the virtualized coursework lab. A separate personal-endpoint packet-analysis case study is linked below as related networking practice, not as VirtualBox guest testing or an assessment of campus infrastructure. The Ubuntu WSL 2 baseline assessment, home Pi-hole infrastructure, OctoPi retrospective and planned portable Raspberry Pi capstone are distinct projects.
+> **Scope:** The core of this repository documents the virtualized coursework lab. A separate personal-endpoint packet-analysis case study is linked below as related networking practice, not as VirtualBox guest testing or an assessment of campus infrastructure. The Ubuntu WSL 2 baseline assessment, home Pi-hole infrastructure and OctoPi retrospective are distinct projects.
 
 ## Environment
 
@@ -79,9 +79,7 @@ Related Clark College coursework covers Wireshark traffic capture and filters, T
 
 ## Evidence to add
 
-Published evidence must exclude credentials and private identifiers. Coursework materials require permission for republication.
-
-Planned evidence (use the [network validation worksheet](docs/lab-network-validation.md) to capture actual results before claiming verification):
+Pending evidence is tracked in the [network validation worksheet](docs/lab-network-validation.md):
 
 - [ ] VirtualBox overview showing the two guest machines
 - [ ] Each VM successfully booted (with account details cropped)
@@ -109,13 +107,6 @@ Project context: guided coursework and hands-on troubleshooting. Validation stat
 - [Raspberry Pi Pi-hole](https://github.com/bemerson24/raspberry-pi-pihole) — DNS filtering and a preliminary, documented smart-TV DNS investigation.
 - [Raspberry Pi 400 — OctoPi 3D Printer Management](https://github.com/bemerson24/raspberry-pi-octopi) — retrospective documentation of a 2020–2024 printer-management setup.
 
-## Planned portfolio work
-
-The following are separate project concepts and **are not yet represented as completed projects**:
-
-- **Portable Raspberry Pi cybersecurity lab:** planning and hardware inventory for a physical, segmented lab; implementation and validation are still pending.
-- **Console revival and physical-media inventory:** planned documentation of the existing modded Wii, PS4 setup/revival, original fat PS3 revival, accessories, game inventory and troubleshooting. This will remain separate from the cybersecurity coursework lab.
-
 ## Security operations roadmap
 
 The [Security Operations Project Roadmap](docs/security-operations-analyst-roadmap.md) tracks planned Windows event-log analysis, PowerShell collection, SIEM/KQL investigations and incident-response documentation. Each milestone specifies the evidence required for completion.
@@ -130,6 +121,4 @@ The [Security Operations Project Roadmap](docs/security-operations-analyst-roadm
 
 - **October 2026:** Created and configured the initial Windows 10 and Kali Linux virtualized lab, established host-only networking and worked through initial boot, resource and file-access troubleshooting.
 - **October 18, 2026 (documentation):** Added a high-level diagram and a validation worksheet; guest adapter inventory and connectivity evidence remain pending.
-- **October 26, 2026 (portfolio navigation):** Added cross-links to related existing projects and identified separate planned projects without presenting planned work as completed.
-- **October 26, 2026 (profile navigation):** Added a LinkedIn profile link.
 
