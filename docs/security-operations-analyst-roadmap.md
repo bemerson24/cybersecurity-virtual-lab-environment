@@ -1,6 +1,6 @@
 # Security Operations Project Roadmap
 
-**Status:** Planned extensions and published milestones · Reviewed November 7, 2026
+**Status:** Published milestones and pending technical extensions
 
 This roadmap tracks technical deliverables for the portfolio. Published results are linked below; proposed projects remain pending until their procedures and outputs are documented.
 
@@ -25,16 +25,6 @@ These results concern personal endpoints and lab environments. They do not repre
 | Email and phishing analysis | Header/URL analysis and triage checklist | Safe sample handling, evidence references and clear disposition rationale |
 | Incident-response documentation | Triage checklist, evidence log, runbook and remediation tracker | Decision points, approval boundaries and recovery verification defined |
 
-## Completion rules
-
-- Mark a milestone complete only when its artifact and results are published.
-- Record configuration, procedure, expected behavior, observed output and limitations.
-- Explain the technical question and decision rationale. Scale verification to the claim and change complexity; automate routine checks where practical. Repeat or broaden tests when new changes, failures or unresolved evidence justify it.
-- Keep coursework, guided exercises, simulations and professional experience identifiable in their source documentation.
-- Label detections and response scenarios as lab work unless production validation is documented.
-- Preserve credentials, private identifiers and confidential material outside public repositories.
-- Correct interpretations when evidence changes; do not invent retrospective measurements.
-
 ## Status
 
 - [x] Publish the Linux baseline assessment.
@@ -47,4 +37,3 @@ These results concern personal endpoints and lab environments. They do not repre
 - [ ] Publish endpoint/identity and phishing case studies.
 - [ ] Publish an incident-response runbook.
 
-*November 7, 2026: Clarified proportional verification and decision rationale. Published milestones and pending work are unchanged.*
