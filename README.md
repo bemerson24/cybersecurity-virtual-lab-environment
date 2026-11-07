@@ -25,7 +25,7 @@ The workflow covers configuration, validation, network observation and documente
 | Hypervisor | Oracle VirtualBox |
 | Guest VM | Windows 10 |
 | Guest VM | Kali Linux |
-| Lab networking | VirtualBox host-only networking used for isolated lab connectivity |
+| Lab networking | Host-only network created; per-guest adapter inventory and connectivity validation pending |
 | Related coursework tools | Wireshark, PowerShell, Linux terminal, Python/Thonny |
 
 The tools in the last row are used across related coursework; usage varies by exercise.
