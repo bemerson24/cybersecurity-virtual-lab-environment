@@ -1,6 +1,6 @@
 # Portfolio Project Index and Backlog
 
-**Last reviewed: November 3, 2026**
+**Last reviewed: November 6, 2026**
 
 A working index of published projects, open investigations and ideas worth keeping. This is my engineering journal and planning record. An indexed idea is not a completed project or a commitment to start it immediately.
 
@@ -78,6 +78,8 @@ These are idea records rather than completed cybersecurity work. Create separate
 - Certifications belong in the accomplishments record only after they are earned.
 
 ## Index change log
+
+- **November 6, 2026:** Reviewed documentation consistency, clarified the Pi-hole VPN/local-name evidence boundary and synchronized the roadmap with the already-published Wireshark study. No new tests or resolved root causes claimed.
 
 - **November 3, 2026:** Linked the endpoint-only TCP/TLS Wireshark study (P08) with verified handshakes, scoped findings and a remaining Firefox troubleshooting question.
 
