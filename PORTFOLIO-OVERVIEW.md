@@ -79,3 +79,9 @@ That experience developed troubleshooting, recordkeeping, communication and proc
 ## Documentation approach
 
 Documentation records the configuration, test procedure, observed results and remaining questions. Each project identifies whether it is coursework, guided practice, an independent project or a retrospective account.
+
+Observations are kept separate from interpretations and proposed tests. A restored function is not automatically a proven root cause, and a published explanation is not evidence of independent mastery. Follow-up practice should include explaining the reasoning and reproducing the relevant test.
+
+AI assistance is identified in the case studies where documented. It can help organize evidence and review wording; it does not supply missing measurements or turn planned work into completed results.
+
+*Documentation consistency review: November 6, 2026. No new lab results are claimed by this review.*
