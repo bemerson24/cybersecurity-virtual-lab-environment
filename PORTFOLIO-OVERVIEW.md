@@ -7,11 +7,11 @@ Technical projects and investigations covering Linux, Windows, virtualization, n
 - **Professional profile:** [LinkedIn](https://www.linkedin.com/in/brianemersonpdx/)
 - **GitHub profile:** [bemerson24](https://github.com/bemerson24)
 
-**Project index:** [Published work, open investigations and project backlog](docs/project-index.md) — case studies, open questions and planned lab work.
+**Project index:** [Published projects and open investigations](docs/project-index.md) — case studies and technical status.
 
 ## Cybersecurity community and professional development
 
-**Clark College Cyber Club member** and current Cybersecurity BAS student. Specific club activities and project contributions will be documented as completed.
+**Clark College Cyber Club member** and current Cybersecurity BAS student.
 
 ## How the projects connect to security operations
 
@@ -24,7 +24,7 @@ The projects are separate environments, but they build a common investigation wo
 | Controlled testing environment | [VirtualBox lab](https://github.com/bemerson24/cybersecurity-virtual-lab-environment): Windows and Kali guests, initial network configuration | Per-guest adapters and connectivity evidence still need validation |
 | Infrastructure experience | [OctoPi retrospective](https://github.com/bemerson24/raspberry-pi-octopi): Raspberry Pi and printer management | Historical maker/operations project, not a security investigation |
 
-For a detailed inventory of completed work, open questions and possible capstone milestones, see the [project index](docs/project-index.md). The [security operations project roadmap](docs/security-operations-analyst-roadmap.md) describes planned Windows logs, PowerShell, SIEM/KQL and incident-response projects, with pending work clearly identified.
+For published results and open technical questions, see the [project index](docs/project-index.md). The [security operations project roadmap](docs/security-operations-analyst-roadmap.md) describes planned Windows logs, PowerShell, SIEM/KQL and incident-response projects, with pending work clearly identified.
 
 ## Featured projects
 
@@ -68,20 +68,6 @@ Public-utility and municipal responsibilities also included business systems, ut
 
 That experience developed troubleshooting, recordkeeping, communication and process-improvement skills.
 
-## Current project priorities
+## Evidence and scope
 
-- Validate and document the virtual machines' adapter settings and connectivity.
-- Extend system-log investigation and read-only PowerShell collection.
-- Publish reproducible procedures, results and remaining questions.
-
-## Documentation approach
-
-Documentation records the configuration, test procedure, observed results and remaining questions. Each project identifies whether it is coursework, guided practice, an independent project or a retrospective account.
-
-Observations are kept separate from interpretations and proposed tests. A restored function is not automatically a proven root cause. Each conclusion is limited to the recorded test conditions.
-
-Verification is matched to the claim and the complexity of the change. Routine checks can be automated; additional testing is used when a change, failure or unresolved question warrants it. Technical decisions and their rationale remain explicit.
-
-AI assistance is identified in the case studies where documented. It can help organize evidence and review wording; it does not supply missing measurements or turn planned work into completed results.
-
-*Documentation consistency review: November 7, 2026. No new lab results are claimed by this review.*
+Each project documents its environment, procedure, observed results and limitations. Coursework, guided exercises and retrospective accounts are identified in the relevant project documentation.
