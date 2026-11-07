@@ -78,8 +78,10 @@ That experience developed troubleshooting, recordkeeping, communication and proc
 
 Documentation records the configuration, test procedure, observed results and remaining questions. Each project identifies whether it is coursework, guided practice, an independent project or a retrospective account.
 
-Observations are kept separate from interpretations and proposed tests. A restored function is not automatically a proven root cause, each conclusion is limited to the recorded test conditions.
+Observations are kept separate from interpretations and proposed tests. A restored function is not automatically a proven root cause. Each conclusion is limited to the recorded test conditions.
+
+Verification is matched to the claim and the complexity of the change. Routine checks can be automated; additional testing is used when a change, failure or unresolved question warrants it. Technical decisions and their rationale remain explicit.
 
 AI assistance is identified in the case studies where documented. It can help organize evidence and review wording; it does not supply missing measurements or turn planned work into completed results.
 
-*Documentation consistency review: November 6, 2026. No new lab results are claimed by this review.*
+*Documentation consistency review: November 7, 2026. No new lab results are claimed by this review.*
