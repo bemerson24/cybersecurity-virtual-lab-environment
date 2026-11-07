@@ -4,15 +4,15 @@
 
 A working index of published projects, open investigations and ideas worth keeping. This is my engineering journal and planning record. An indexed idea is not a completed project or a commitment to start it immediately.
 
-[Portfolio overview](../PORTFOLIO-OVERVIEW.md) · [SOC learning roadmap](security-operations-analyst-roadmap.md)
+[Portfolio overview](../PORTFOLIO-OVERVIEW.md) · [security operations roadmap](security-operations-analyst-roadmap.md)
 
 ## Current work and next steps
 
-**Current evidence:** Linux system baseline and log review, DNS filtering observations, documented DNS/VPN troubleshooting, an endpoint-only TCP/TLS packet-analysis case study and initial Windows/Kali VM setup. These are foundational exercises, not professional SOC investigations.
+**Current evidence:** Linux system baseline and log review, DNS filtering observations, documented DNS/VPN troubleshooting, an endpoint-only TCP/TLS packet-analysis case study and initial Windows/Kali VM setup. The published work covers personal endpoints and lab environments.
 
-**Next lab milestone:** Verify and record the VirtualBox guests' actual adapter settings and a reproducible connectivity test. Publish a short result only after the test is completed, with expected behavior, observed output, limitations and a sanitized screenshot if useful. I will fit this around coursework.
+**Next lab milestone:** Verify and record the VirtualBox guests' actual adapter settings and a reproducible connectivity test. Publish a short result only after the test is completed, with expected behavior, observed output, limitations and a sanitized screenshot if useful.
 
-**Later learning:** Windows event-log investigations and PowerShell, followed by SIEM/KQL, detection and incident-response documentation. Build on the existing virtual-lab repository before creating another project.
+**Planned extensions:** Windows event-log investigations and PowerShell, followed by SIEM/KQL, detection and incident-response documentation. Build on the existing virtual-lab repository before creating another project.
 
 **Project updates:** I add results to the relevant repository as tests are completed and link related investigations here.
 
@@ -21,7 +21,7 @@ A working index of published projects, open investigations and ideas worth keepi
 | ID | Project or update | Current status | Next step |
 |---|---|---|---|
 | P01 | [VirtualBox cybersecurity lab](../README.md) | Windows 10 and Kali setup documented; validation evidence pending | Complete the [network validation worksheet](lab-network-validation.md), including enabled adapters and connectivity results |
-| P02 | [Ubuntu WSL 2 security baseline](https://github.com/bemerson24/ubuntu-wsl2-security-baseline) | Introductory assessment published with commands and five screenshots | Capture a repeatable baseline report; investigate unresolved warnings before claiming a cause |
+| P02 | [Ubuntu WSL 2 security baseline](https://github.com/bemerson24/ubuntu-wsl2-security-baseline) | Scoped assessment published with commands and five screenshots | Capture a repeatable baseline report; investigate unresolved warnings before claiming a cause |
 | P03 | [Pi-hole DNS filtering](https://github.com/bemerson24/raspberry-pi-pihole) | Deployed; ongoing documentation | Record versions and sanitized configuration/evidence |
 | P04 | [Smart-TV DNS investigation](https://github.com/bemerson24/raspberry-pi-pihole/blob/main/case-studies/smart-tv-dns-investigation-2026-10-15.md) | Published October 15 investigation and October 22–23 follow-up; attribution and measurement questions remain | Verify target device identity privately and collect matched per-client observations |
 | P05 | [Laptop DNS portability and VPN troubleshooting](https://github.com/bemerson24/raspberry-pi-pihole/blob/main/case-studies/laptop-dns-portability-vpn-2026-10-29.md) | October 29 case study published; VPN recovery recorded; campus DNS hypothesis open | Record configured resolver privately, then compare home/campus access and VPN states separately |
