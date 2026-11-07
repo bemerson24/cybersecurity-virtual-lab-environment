@@ -11,9 +11,9 @@
 
 ## Overview
 
-This virtual cybersecurity lab runs on a Windows 11 laptop using Oracle VirtualBox. The lab includes Windows 10 and Kali Linux virtual machines and supports controlled practice with operating systems, networking, troubleshooting and cybersecurity fundamentals.
+This virtual cybersecurity lab runs on a Windows 11 laptop using Oracle VirtualBox. The lab includes Windows 10 and Kali Linux virtual machines and supports operating-system configuration, network diagnostics and reproducible troubleshooting.
 
-The goal is to develop repeatable technical skills: configure a system, validate that it works, inspect network behavior, document the outcome and troubleshoot problems without disrupting the primary Windows environment.
+The workflow covers configuration, validation, network observation and documented troubleshooting while keeping guest changes separate from the primary Windows environment.
 
 > **Scope:** The core of this repository documents the virtualized coursework lab. A separate personal-endpoint packet-analysis case study is linked below as related networking practice, not as VirtualBox guest testing or an assessment of campus infrastructure. The Ubuntu WSL 2 baseline assessment, home Pi-hole infrastructure, OctoPi retrospective and planned portable Raspberry Pi capstone are distinct projects.
 
@@ -69,7 +69,7 @@ See the [network validation worksheet](docs/lab-network-validation.md) for the p
 
 These account and file-permission changes were made on the Windows host.
 
-## Related learning activities
+## Related technical work
 
 Related Clark College coursework covers Wireshark traffic capture and filters, TCP/IP and OSI model interpretation, introductory Linux shell use and Python interpreter work. Planned lab documentation includes commands, configurations, outputs and explanations for each completed exercise.
 
@@ -90,11 +90,11 @@ Planned evidence (use the [network validation worksheet](docs/lab-network-valida
 - [ ] A troubleshooting note with the symptom, change and verification result
 - [x] A high-level diagram of the host and virtual machines
 
-## Skills demonstrated so far
+## Technical coverage
 
 **Virtualization · Oracle VirtualBox · Windows 10 VM configuration · Kali Linux VM setup · Host-only networking · Basic network diagnostics · Technical troubleshooting · Documentation**
 
-These skills come from guided coursework and hands-on troubleshooting. Each exercise will include its test results and remaining questions.
+Project context: guided coursework and hands-on troubleshooting. Validation status is recorded alongside each result.
 
 ## Next improvements
 
@@ -105,7 +105,7 @@ These skills come from guided coursework and hands-on troubleshooting. Each exer
 
 ## Related portfolio projects
 
-- [Linux Security Baseline Assessment — Ubuntu WSL 2](https://github.com/bemerson24/ubuntu-wsl2-security-baseline) — separate, guided introductory Linux diagnostics exercise.
+- [Linux Security Baseline Assessment — Ubuntu WSL 2](https://github.com/bemerson24/ubuntu-wsl2-security-baseline) — separate Linux diagnostics assessment.
 - [Raspberry Pi Pi-hole](https://github.com/bemerson24/raspberry-pi-pihole) — DNS filtering and a preliminary, documented smart-TV DNS investigation.
 - [Raspberry Pi 400 — OctoPi 3D Printer Management](https://github.com/bemerson24/raspberry-pi-octopi) — retrospective documentation of a 2020–2024 printer-management setup.
 
@@ -116,9 +116,9 @@ The following are separate project concepts and **are not yet represented as com
 - **Portable Raspberry Pi cybersecurity lab:** planning and hardware inventory for a physical, segmented lab; implementation and validation are still pending.
 - **Console revival and physical-media inventory:** planned documentation of the existing modded Wii, PS4 setup/revival, original fat PS3 revival, accessories, game inventory and troubleshooting. This will remain separate from the cybersecurity coursework lab.
 
-## Career-aligned security operations roadmap
+## Security operations roadmap
 
-The [Security Operations Analyst Learning Roadmap](docs/security-operations-analyst-roadmap.md) maps the current networking and Security+ foundation to planned Windows event-log investigation, PowerShell, Microsoft Sentinel/KQL, Defender and identity investigations, phishing triage, incident-response runbooks and supervised real-world experience. The roadmap distinguishes current study, planned lab work and professional experience; planned work is not presented as completed.
+The [Security Operations Project Roadmap](docs/security-operations-analyst-roadmap.md) tracks planned Windows event-log analysis, PowerShell collection, SIEM/KQL investigations and incident-response documentation. Each milestone specifies the evidence required for completion.
 
 ## Professional profile
 
