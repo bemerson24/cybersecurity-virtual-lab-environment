@@ -1,6 +1,6 @@
-# Brian Emerson — Cybersecurity Learning Portfolio
+# Brian Emerson — Cybersecurity Portfolio
 
-Cybersecurity BAS student at Clark College developing foundational, hands-on skills in Linux, Windows, virtualization, networking, DNS and security troubleshooting. Professional experience spans commercial software client support, public utilities and municipal government, including operational systems, utility billing and revenue recovery, exception resolution, documentation and process improvement. The technical work follows the same approach: verify what happened, preserve useful evidence, communicate findings and improve the process.
+Technical projects and investigations covering Linux, Windows, virtualization, networking, DNS and security troubleshooting. Professional experience spans commercial software client support, public utilities and municipal government, including operational systems, utility billing and revenue recovery, exception resolution, documentation and process improvement. The technical work follows the same approach: verify what happened, preserve useful evidence, communicate findings and improve the process.
 
 **Career focus:** entry-level IT/security support, security operations and infrastructure-support roles where careful investigation, reliable operations and clear documentation matter.
 
@@ -15,16 +15,16 @@ Cybersecurity BAS student at Clark College developing foundational, hands-on ski
 
 ## How the projects connect to security operations
 
-The projects are separate environments, but they build a common investigation workflow: **establish a baseline → observe system or network behavior → test a hypothesis → document findings and limitations**. This progression supports preparation for junior security operations work.
+The projects are separate environments, but they build a common investigation workflow: **establish a baseline → observe system or network behavior → test a hypothesis → document findings and limitations**.
 
-| Security-operations foundation | Current evidence | Boundary or next step |
+| Technical area | Current evidence | Boundary or next step |
 |---|---|---|
-| Endpoint and system fundamentals | [Ubuntu WSL 2 baseline](https://github.com/bemerson24/ubuntu-wsl2-security-baseline): permissions, processes, services and journal review | Linux-only guided assessment; Windows event investigation is future work |
+| Endpoint and system fundamentals | [Ubuntu WSL 2 baseline](https://github.com/bemerson24/ubuntu-wsl2-security-baseline): permissions, processes, services and journal review | Linux-only assessment; Windows event investigation is future work |
 | Network visibility and investigation | [Pi-hole DNS case studies](https://github.com/bemerson24/raspberry-pi-pihole): DNS observations and VPN troubleshooting; [endpoint TCP/TLS capture](docs/tcp-tls-session-analysis-2026-11-03.md): verified TCP handshake and TLS 1.3 negotiations | Endpoint packet analysis is not a campus infrastructure assessment; Firefox without-VPN issue remains unresolved |
 | Controlled testing environment | [VirtualBox lab](https://github.com/bemerson24/cybersecurity-virtual-lab-environment): Windows and Kali guests, initial network configuration | Per-guest adapters and connectivity evidence still need validation |
 | Infrastructure experience | [OctoPi retrospective](https://github.com/bemerson24/raspberry-pi-octopi): Raspberry Pi and printer management | Historical maker/operations project, not a security investigation |
 
-For a detailed inventory of completed work, open questions and possible capstone milestones, see the [project index](docs/project-index.md). The [security operations learning roadmap](docs/security-operations-analyst-roadmap.md) describes planned Windows logs, PowerShell, SIEM/KQL and incident-response practice without counting those skills as completed.
+For a detailed inventory of completed work, open questions and possible capstone milestones, see the [project index](docs/project-index.md). The [security operations project roadmap](docs/security-operations-analyst-roadmap.md) describes planned Windows logs, PowerShell, SIEM/KQL and incident-response projects, with pending work clearly identified.
 
 ## Featured projects
 
@@ -34,7 +34,7 @@ For a detailed inventory of completed work, open questions and possible capstone
 **Focus:** virtualization, Windows/Linux environments, networking fundamentals and technical documentation.
 
 ### 2. [Linux Security Baseline Assessment — Ubuntu on WSL 2](https://github.com/bemerson24/ubuntu-wsl2-security-baseline)
-**Status: Introductory assessment documented.** A guided exercise covering account privileges, file permissions, processes, listening sockets, system logs, DNS resolution and HTTPS connectivity. The README includes screenshots and distinguishes observed results from unresolved warnings.
+**Status: Assessment documented.** A scoped review covering account privileges, file permissions, processes, listening sockets, system logs, DNS resolution and HTTPS connectivity. The README includes screenshots and distinguishes observed results from unresolved warnings.
 
 **Focus:** Linux administration, permissions, systemd, log review and DNS/HTTPS diagnostics.
 
@@ -68,19 +68,17 @@ Public-utility and municipal responsibilities also included business systems, ut
 
 That experience developed troubleshooting, recordkeeping, communication and process-improvement skills.
 
-## Current learning priorities
+## Current project priorities
 
-- Prepare for **CompTIA Security+** as the current certification priority.
-- Strengthen networking and Linux fundamentals, then build toward further networking certification study.
-- Complete and document repeatable virtual-lab network tests.
-- Add focused Windows logging, PowerShell and security-operations exercises as they are completed.
-- Publish evidence, actual outcomes and limitations for each exercise.
+- Validate and document the virtual machines' adapter settings and connectivity.
+- Extend system-log investigation and read-only PowerShell collection.
+- Publish reproducible procedures, results and remaining questions.
 
 ## Documentation approach
 
 Documentation records the configuration, test procedure, observed results and remaining questions. Each project identifies whether it is coursework, guided practice, an independent project or a retrospective account.
 
-Observations are kept separate from interpretations and proposed tests. A restored function is not automatically a proven root cause, and a published explanation is not evidence of independent mastery. Follow-up practice should include explaining the reasoning and reproducing the relevant test.
+Observations are kept separate from interpretations and proposed tests. A restored function is not automatically a proven root cause, each conclusion is limited to the recorded test conditions.
 
 AI assistance is identified in the case studies where documented. It can help organize evidence and review wording; it does not supply missing measurements or turn planned work into completed results.
 
