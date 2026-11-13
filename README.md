@@ -26,7 +26,7 @@ The workflow covers configuration, validation, network observation and documente
 | Guest VM | Windows 10 |
 | Guest VM | Kali Linux |
 | Lab networking | Host-only network created; per-guest adapter inventory and connectivity validation pending |
-| Related coursework tools | Wireshark, PowerShell, Linux terminal, Python/Thonny |
+| Related coursework tools | Wireshark, PowerShell, Linux terminal, Python (Visual Studio Code) |
 
 The tools in the last row are used across related coursework; usage varies by exercise.
 
@@ -116,6 +116,8 @@ The [Security Operations Project Roadmap](docs/security-operations-analyst-roadm
 [Brian Emerson on LinkedIn](https://www.linkedin.com/in/brianemersonpdx/) — professional background, education and career development.
 
 ## Change log
+
+- **November 12, 2026:** Switched from Thonny to Visual Studio Code (VS Code) for Python coursework. Investigated intermittent Windows 10 guest unresponsiveness. On the Windows host, `VBoxManage showvminfo "Windows 10" --machinereadable` first reported `VMState="paused"`. After resuming, the symptom returned while VirtualBox reported `VMState="running"`. The guest responded after Ctrl+Alt+Del. The cause of the recurrence remains open.
 
 - **November 3, 2026 (packet analysis):** Added a separate Wireshark case study covering verified TCP/TLS handshakes, per-connection key-exchange comparison, browser troubleshooting and limitations of campus Wi-Fi observations.
 
