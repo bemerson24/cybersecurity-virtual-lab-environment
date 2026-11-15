@@ -25,14 +25,14 @@ The workflow covers configuration, validation, network observation and documente
 | Hypervisor | Oracle VirtualBox |
 | Guest VM | Windows 10 |
 | Guest VM | Kali Linux |
-| Lab networking | November 15, 2026 GUI inventory: both VMs have Adapter 1 NAT and Adapter 2 Internal Network `soc-lab`; Adapters 3–4 disabled. Kali addressing/routes and both MAC-to-adapter mappings verified (`eth0` = Adapter 1/NAT; `eth1` = Adapter 2/`soc-lab`); Windows 10 addressing and guest-to-guest connectivity pending |
+| Lab networking | November 15, 2026 GUI inventory: both VMs have Adapter 1 NAT and Adapter 2 Internal Network `soc-lab`; Adapters 3–4 disabled. Kali addressing/routes and both MAC-to-adapter mappings verified (`eth0` = Adapter 1/NAT; `eth1` = Adapter 2/`soc-lab`); Windows 10 addressing observed (`Ethernet` NAT `10.0.2.15/24`; `Ethernet 2` internal APIPA `169.254.206.116/16`); internal static configuration and guest-to-guest connectivity pending |
 | Related coursework tools | Wireshark, PowerShell, Linux terminal, Python (Visual Studio Code) |
 
 The tools in the last row are used across related coursework; usage varies by exercise.
 
 ## High-level lab layout
 
-The diagram captures the **configured** VirtualBox network attachments verified in the November 15 GUI inventory, not a tested guest-to-guest link. Each VM has NAT and an internal adapter attached to `soc-lab`. Neither VM currently has an enabled host-only adapter. NAT could provide outside connectivity; Kali guest addressing, routes and interface-to-adapter MAC mapping are verified; Windows 10 addressing and actual guest-to-guest reachability remain to be tested.
+The diagram captures the **configured** VirtualBox network attachments verified in the November 15 GUI inventory, not a tested guest-to-guest link. Each VM has NAT and an internal adapter attached to `soc-lab`. Neither VM currently has an enabled host-only adapter. NAT could provide outside connectivity; Kali guest addressing, routes and interface-to-adapter MAC mapping are verified; Windows 10's internal adapter has APIPA `169.254.206.116/16` rather than the intended `172.20.20.0/24` lab address; actual guest-to-guest reachability remains to be tested.
 
 ```mermaid
 flowchart TB
@@ -60,10 +60,10 @@ See the [network validation worksheet](docs/lab-network-validation.md) for the v
 
 - Earlier work included a VirtualBox host-only network, but neither of the current guest configurations uses host-only networking as of the November 15 GUI inventory.
 - Verified both Windows 10 and Kali Linux have Adapter 1 **NAT**, Adapter 2 **Internal Network (`soc-lab`)**, and disabled Adapters 3–4.
-- Collected Kali's current interface addresses, routes and link-layer addresses on November 15: `eth0` has `10.0.2.15/24` with default gateway `10.0.2.2`; `eth1` has `172.20.20.10/24`. Compared Kali's interface MACs with current host-side `VBoxManage showvminfo` output: `eth0` matches Adapter 1 (NAT), and `eth1` matches Adapter 2 (`soc-lab`). Windows 10 addressing remains pending.
+- Collected Kali's current interface addresses, routes and link-layer addresses on November 15: `eth0` has `10.0.2.15/24` with default gateway `10.0.2.2`; `eth1` has `172.20.20.10/24`. Compared Kali's interface MACs with current host-side `VBoxManage showvminfo` output: `eth0` matches Adapter 1 (NAT), and `eth1` matches Adapter 2 (`soc-lab`). Windows 10's NAT and internal adapter addresses/routes have now been collected; its internal adapter has APIPA and requires a dedicated lab address before connectivity testing.
 - Studied network addressing and traffic inspection in associated networking assignments.
 
-**Network validation pending:** The VM adapter configuration is documented and Kali's addresses/routes have been observed. NAT means the lab should **not** be described as entirely isolated. Windows 10 addressing, guest-to-guest reachability, and effective isolation have not been validated.
+**Network validation pending:** The VM adapter configuration is documented and Kali's addresses/routes have been observed. NAT means the lab should **not** be described as entirely isolated. Windows 10's internal adapter has APIPA (not yet an address on `soc-lab`'s intended subnet). Guest-to-guest reachability and effective isolation have not been validated.
 
 ### 3. Troubleshoot permissions and access
 
@@ -89,7 +89,8 @@ Pending evidence is tracked in the [network validation worksheet](docs/lab-netwo
 - [ ] Each VM successfully booted (with account details cropped)
 - [x] Adapter configuration inspected for both VMs and documented in the worksheet (November 15)
 - [ ] Sanitized VirtualBox NAT / internal adapter screenshots uploaded
-- [ ] Guest IP configuration and a documented connectivity test
+- [x] Guest IP configuration inspected for both VMs; Windows 10 internal adapter currently has an APIPA address
+- [ ] Address Windows 10's internal interface within the planned lab subnet and document a connectivity test
 - [ ] A troubleshooting note with the symptom, change and verification result
 - [x] A high-level diagram of the host and virtual machines
 
@@ -122,7 +123,7 @@ The [Security Operations Project Roadmap](docs/security-operations-analyst-roadm
 
 ## Change log
 
-- **November 15, 2026 (network inventory):** Inspected all four VirtualBox adapter settings for both guests. Windows 10 and Kali each have Adapter 1 NAT and Adapter 2 Internal Network (`soc-lab`), with Adapters 3–4 disabled. Kali's `ip -br addr`, `ip route` and `ip -br link` outputs were collected: `eth0` `10.0.2.15/24`, default gateway `10.0.2.2`; `eth1` `172.20.20.10/24`. Current host-side `VBoxManage showvminfo` MAC output was compared with Kali's interface MACs: Adapter 1 matches `eth0`, and Adapter 2 matches `eth1`. Windows 10 guest addressing, sanitized screenshots and guest-to-guest connectivity remain pending.
+- **November 15, 2026 (network inventory):** Inspected all four VirtualBox adapter settings for both guests. Windows 10 and Kali each have Adapter 1 NAT and Adapter 2 Internal Network (`soc-lab`), with Adapters 3–4 disabled. Kali's `ip -br addr`, `ip route` and `ip -br link` outputs were collected: `eth0` `10.0.2.15/24`, default gateway `10.0.2.2`; `eth1` `172.20.20.10/24`. Current host-side `VBoxManage showvminfo` MAC output was compared with Kali's interface MACs: Adapter 1 matches `eth0`, and Adapter 2 matches `eth1`. Windows 10's `ipconfig /all` and `route print -4` show NAT `Ethernet` at `10.0.2.15/24` through `10.0.2.2`, while internal `Ethernet 2` has APIPA `169.254.206.116/16` and no internal lab subnet route. The MACs match the GUI inventory. The internal address needs correction before connectivity testing; sanitized screenshots and guest-to-guest tests remain pending.
 
 - **November 12, 2026:** Switched from Thonny to Visual Studio Code (VS Code) for Python coursework. Investigated intermittent Windows 10 guest unresponsiveness. On the Windows host, `VBoxManage showvminfo "Windows 10" --machinereadable` first reported `VMState="paused"`. After resuming, the symptom returned while VirtualBox reported `VMState="running"`. The guest responded after Ctrl+Alt+Del. The cause of the recurrence remains open.
 
