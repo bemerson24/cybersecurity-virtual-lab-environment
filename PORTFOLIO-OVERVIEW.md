@@ -21,7 +21,7 @@ The projects are separate environments, but they build a common investigation wo
 |---|---|---|
 | Endpoint and system fundamentals | [Ubuntu WSL 2 baseline](https://github.com/bemerson24/ubuntu-wsl2-security-baseline): permissions, processes, services and journal review | Linux-only assessment; Windows event investigation is future work |
 | Network visibility and investigation | [Pi-hole DNS case studies](https://github.com/bemerson24/raspberry-pi-pihole): DNS observations, VPN troubleshooting and [WSL2/Windows DNS path comparison](https://github.com/bemerson24/raspberry-pi-pihole/blob/main/case-studies/wsl2-bitdefender-pihole-dns-2026-11-15.md); [endpoint TCP/TLS capture](docs/tcp-tls-session-analysis-2026-11-03.md): verified TCP handshake and TLS 1.3 negotiations | Endpoint packet analysis is not a campus infrastructure assessment; Firefox without-VPN issue remains unresolved |
-| Controlled testing environment | [VirtualBox lab](https://github.com/bemerson24/cybersecurity-virtual-lab-environment): Windows and Kali guests; verified VirtualBox adapters use NAT and internal `soc-lab` | Kali addresses/routes observed; Windows 10 addressing, sanitized screenshots, interface correlation and guest-to-guest connectivity still need validation |
+| Controlled testing environment | [VirtualBox lab](https://github.com/bemerson24/cybersecurity-virtual-lab-environment): Windows and Kali guests; verified VirtualBox adapters use NAT and internal `soc-lab` | Kali addresses/routes observed; `eth1` matches Adapter 2 (`soc-lab`) by MAC, while the Adapter 1 MAC discrepancy needs current-config verification; Windows 10 addressing, sanitized screenshots and guest-to-guest connectivity still need validation |
 | Infrastructure experience | [OctoPi retrospective](https://github.com/bemerson24/raspberry-pi-octopi): Raspberry Pi and printer management | Historical maker/operations project, not a security investigation |
 
 For published results and open technical questions, see the [project index](docs/project-index.md). The [security operations project roadmap](docs/security-operations-analyst-roadmap.md) describes planned Windows logs, PowerShell, SIEM/KQL and incident-response projects, with pending work clearly identified.
@@ -29,7 +29,7 @@ For published results and open technical questions, see the [project index](docs
 ## Featured projects
 
 ### 1. [Cybersecurity Virtual Lab Environment](https://github.com/bemerson24/cybersecurity-virtual-lab-environment)
-**Status: In progress.** A VirtualBox lab with Windows 10 and Kali Linux guests. Current work covers VM setup, troubleshooting and host-only networking. The per-VM adapter inventory and documented connectivity validation are still pending.
+**Status: In progress.** A VirtualBox lab with Windows 10 and Kali Linux guests. Current work covers VM setup, troubleshooting and a verified adapter inventory showing NAT plus Internal Network (`soc-lab`) for each guest. Kali addressing/routes have been recorded; Windows 10 addressing, the Kali NAT MAC discrepancy and guest-to-guest connectivity validation remain pending.
 
 **Focus:** virtualization, Windows/Linux environments, networking fundamentals and technical documentation.
 
