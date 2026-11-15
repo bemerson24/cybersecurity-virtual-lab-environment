@@ -1,7 +1,7 @@
 # Virtual Lab — Network Validation Worksheet
 
 **Environment:** Windows 11 Pro host / Oracle VirtualBox / Windows 10 and Kali Linux guests  
-**Status (November 15, 2026):** VirtualBox GUI adapter inventory verified for both VMs. Kali Linux interface addresses, routes and MAC-to-adapter mapping are now verified: `eth0` matches Adapter 1 (NAT), and `eth1` matches Adapter 2 (Internal Network `soc-lab`). Windows 10 guest addressing and end-to-end connectivity remain **pending**.
+**Status (November 15, 2026):** VirtualBox GUI adapter inventory verified for both VMs. Kali Linux addresses, routes and MAC-to-adapter mapping verified. Windows 10 guest addresses, routes and adapter MAC correlation observed; its internal interface has an APIPA address rather than a `172.20.20.0/24` address. Guest-to-guest connectivity remains **untested**.
 
 ## Goal and scope
 
@@ -74,8 +74,17 @@ Routing, subnet and MAC evidence now agree. The current host-side `VBoxManage sh
 
 | Guest | Observed interfaces and addresses | Evidence | Status |
 | --- | --- | --- | --- |
-| Windows 10 | Not verified in this session | None added | Pending |
+| Windows 10 | `Ethernet` (NAT): `10.0.2.15/24`, gateway `10.0.2.2`; `Ethernet 2` (`soc-lab`): `169.254.206.116/16` (APIPA), no default gateway | `ipconfig /all`, `route print -4` screenshots, November 15 | Addressing/routes observed; both guest MACs correlate to VirtualBox adapter screenshots. Internal network address not yet in intended subnet |
 | Kali Linux | `eth0`: `10.0.2.15/24`; `eth1`: `172.20.20.10/24` | `ip -br addr`, `ip route`, `ip -br link`, and host-side `VBoxManage showvminfo` output, November 15 | Both interface MACs matched to their respective VirtualBox adapters; Adapter 1 / NAT = `eth0`, Adapter 2 / `soc-lab` = `eth1` |
+
+### Windows 10 — observed November 15
+
+From the running Windows 10 guest, the operator collected `ipconfig /all` and `route print -4` in Command Prompt.
+
+- `Ethernet`, matching VirtualBox Adapter 1 (NAT) by MAC: DHCP-enabled, `10.0.2.15/24`, default gateway `10.0.2.2`. The route table confirms the default route through this interface.
+- `Ethernet 2`, matching VirtualBox Adapter 2 (`soc-lab`) by MAC: DHCP-enabled, automatically configured IPv4 address `169.254.206.116/16` (APIPA), without an IPv4 default gateway. The route table shows on-link `169.254.0.0/16`, not `172.20.20.0/24`.
+- This suggests no usable DHCP-provided address was obtained for the internal interface during the observation. It does not establish the cause or prove the underlying internal link failed. Kali's intended internal subnet is `172.20.20.0/24`, so Windows 10 is not yet addressed on that subnet.
+- This is an **observation only**. No static address has been assigned and no connectivity test has been performed in this step.
 
 ## 3. Test only authorized internal-lab endpoints — pending
 
@@ -107,7 +116,7 @@ These are **planned commands**, not executed results. Failure could reflect IP c
 - [x] Configured NAT and internal-network attachments documented
 - [x] Earlier host-only-only description reconciled against current GUI configuration
 - [ ] Sanitized adapter screenshots uploaded (MAC addresses must be redacted)
-- [ ] Windows 10 guest addressing and routes recorded
+- [x] Windows 10 guest addressing and routes recorded; `Ethernet 2` APIPA noted as an unresolved configuration issue
 - [x] Kali `eth0` MAC matched to VirtualBox Adapter 1 (NAT) using current host-side `VBoxManage` output
 - [x] Kali `eth1` MAC matched to VirtualBox Adapter 2 (`soc-lab`) using current host-side `VBoxManage` output
 - [ ] Guest-to-guest connectivity tested and logged
@@ -115,4 +124,4 @@ These are **planned commands**, not executed results. Failure could reflect IP c
 
 ## Next action
 
-Next, collect the Windows 10 guest's current addressing and routing using the read-only commands in Section 2. Start Windows 10 only if it can be done safely given its earlier instability; do not change VM settings or snapshot chains. Once both guests' internal-network addresses are recorded, we can plan a narrowly scoped `soc-lab` connectivity test. No host virtualization features or security settings need to be changed.
+Next, after confirming the Windows 10 guest remains responsive, configure **only** the `Ethernet 2` internal lab adapter with an unused static IPv4 address in `172.20.20.0/24` (planned: `172.20.20.20`, mask `255.255.255.0`, **no gateway or DNS**). Preserve the NAT adapter's DHCP/DNS settings, VM snapshots and host security settings. Verify the resulting address and route before any guest-to-guest test. This configuration step is **planned, not yet performed**.
