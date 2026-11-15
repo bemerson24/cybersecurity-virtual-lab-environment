@@ -1,7 +1,7 @@
 # Virtual Lab — Network Validation Worksheet
 
 **Environment:** Windows 11 Pro host / Oracle VirtualBox / Windows 10 and Kali Linux guests  
-**Status (November 15, 2026):** VirtualBox GUI adapter inventory verified for both VMs. Kali Linux interface addresses and routes have now been observed. Windows 10 guest addressing, exact Kali MAC-to-adapter correlation, and end-to-end connectivity remain **pending**.
+**Status (November 15, 2026):** VirtualBox GUI adapter inventory verified for both VMs. Kali Linux interface addresses and routes have been observed. Kali `eth1` matches the previously recorded VirtualBox Adapter 2 (`soc-lab`) MAC; `eth0` does not match the previously recorded Adapter 1 MAC, so the NAT mapping needs a fresh read-only check against the current VirtualBox configuration. Windows 10 guest addressing and end-to-end connectivity remain **pending**.
 
 ## Goal and scope
 
@@ -70,12 +70,12 @@ The following output was collected from the running Kali VM:
 - `ip -br addr`: `eth0` UP with `10.0.2.15/24`; `eth1` UP with `172.20.20.10/24`; loopback `127.0.0.1/8`.
 - `ip route`: default route via `10.0.2.2` on `eth0`; connected route `10.0.2.0/24` on `eth0`; connected route `172.20.20.0/24` on `eth1`.
 
-These results are consistent with Adapter 1 NAT and Adapter 2 `soc-lab` respectively. Exact guest-interface-to-VirtualBox-adapter correlation will be checked by comparing interface MACs with the VirtualBox settings; MAC values will not be published.
+Routing and subnet information are consistent with the expected NAT and internal-network roles, but the MAC comparison exposed one discrepancy. Kali `eth1`'s observed MAC matches the Adapter 2 (`soc-lab`) MAC in the earlier VirtualBox screenshot. Kali `eth0`'s observed MAC does **not** match the Adapter 1 MAC in that screenshot. This may reflect a changed adapter MAC or an earlier screenshot/configuration difference; the current VirtualBox configuration must be checked before drawing a conclusion. MAC values are not published here.
 
 | Guest | Observed interfaces and addresses | Evidence | Status |
 | --- | --- | --- | --- |
 | Windows 10 | Not verified in this session | None added | Pending |
-| Kali Linux | `eth0`: `10.0.2.15/24`; `eth1`: `172.20.20.10/24` | `ip -br addr` and `ip route` screenshots, November 15 | Addresses and routes observed; exact MAC-to-adapter correlation pending |
+| Kali Linux | `eth0`: `10.0.2.15/24`; `eth1`: `172.20.20.10/24` | `ip -br addr`, `ip route`, and `ip -br link` screenshots, November 15 | `eth1` / Adapter 2 (`soc-lab`) MAC match confirmed; `eth0` / Adapter 1 mismatch against earlier screenshot requires current-config verification |
 
 ## 3. Test only authorized internal-lab endpoints — pending
 
@@ -108,10 +108,18 @@ These are **planned commands**, not executed results. Failure could reflect IP c
 - [x] Earlier host-only-only description reconciled against current GUI configuration
 - [ ] Sanitized adapter screenshots uploaded (MAC addresses must be redacted)
 - [ ] Windows 10 guest addressing and routes recorded
-- [ ] Kali interface MACs correlated with VirtualBox Adapter 1 and Adapter 2 (do not publish MACs)
+- [x] Kali `eth1` MAC matched to VirtualBox Adapter 2 (`soc-lab`) using the earlier settings screenshot
+- [ ] Recheck Kali Adapter 1 and Adapter 2 MACs against current host-side VirtualBox configuration (do not publish MACs)
 - [ ] Guest-to-guest connectivity tested and logged
 - [ ] Any security or isolation conclusions based on actual tests, not configuration alone
 
 ## Next action
 
-Next, run `ip -br link` in Kali and compare its interface MACs privately against the two MAC addresses shown in VirtualBox Adapter 1 and Adapter 2. Do not copy MAC addresses into GitHub. After that, inspect Windows 10 guest addressing only if it can be started safely; check its known instability before attempting simultaneous-guest tests. No VM settings, snapshot chains, host virtualization features or security settings need to be changed.
+On the Windows 11 host, run this read-only command in PowerShell to retrieve the current VirtualBox MAC settings for Kali:
+
+```powershell
+& "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" showvminfo "Kali" --machinereadable |
+    Select-String '^macaddress[12]'
+```
+
+Compare `macaddress1` and `macaddress2` privately with the `eth0` and `eth1` values from `ip -br link`. Do not publish the MAC addresses. This will resolve whether the earlier Adapter 1 screenshot is stale or whether another mapping issue exists. After that, inspect Windows 10 guest addressing only if it can be started safely; check its known instability before attempting simultaneous-guest tests. No VM settings, snapshot chains, host virtualization features or security settings need to be changed.
