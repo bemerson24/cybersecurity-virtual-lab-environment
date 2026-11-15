@@ -9,7 +9,7 @@ This roadmap tracks technical deliverables for the portfolio. Published results 
 - [Linux baseline assessment](https://github.com/bemerson24/ubuntu-wsl2-security-baseline): permissions, processes, listening sockets, services, logs and DNS/HTTPS checks.
 - [Pi-hole investigations](https://github.com/bemerson24/raspberry-pi-pihole): DNS observations, VPN comparisons and HTTPS dashboard recovery, with unresolved causes identified.
 - [Endpoint TCP/TLS analysis](tcp-tls-session-analysis-2026-11-03.md): published November 3; TCP handshake, per-connection TLS parameters and HTTP response observations.
-- [VirtualBox environment](../README.md): Windows 10 and Kali Linux guests on a Windows 11 host; all eight GUI adapter settings recorded November 15 (NAT plus `soc-lab` for each guest); Kali addresses/routes observed; `eth1` MAC matches Adapter 2 (`soc-lab`), while `eth0` does not match the earlier Adapter 1 screenshot and needs current-config verification; Windows 10 addressing and connectivity pending.
+- [VirtualBox environment](../README.md): Windows 10 and Kali Linux guests on a Windows 11 host; all eight GUI adapter settings recorded November 15 (NAT plus `soc-lab` for each guest); Kali addresses/routes and both MAC-to-adapter mappings verified (`eth0` = Adapter 1/NAT; `eth1` = Adapter 2/`soc-lab`); Windows 10 addressing and connectivity pending.
 
 These results concern personal endpoints and lab environments. They do not represent production SOC operations.
 
