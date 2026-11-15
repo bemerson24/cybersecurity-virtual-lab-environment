@@ -25,7 +25,7 @@ The workflow covers configuration, validation, network observation and documente
 | Hypervisor | Oracle VirtualBox |
 | Guest VM | Windows 10 |
 | Guest VM | Kali Linux |
-| Lab networking | November 15, 2026 GUI inventory: both VMs have Adapter 1 NAT and Adapter 2 Internal Network `soc-lab`; Adapters 3–4 disabled. Guest addressing and connectivity pending |
+| Lab networking | November 15, 2026 GUI inventory: both VMs have Adapter 1 NAT and Adapter 2 Internal Network `soc-lab`; Adapters 3–4 disabled. Kali addressing/routes observed; Windows 10 addressing and guest-to-guest connectivity pending |
 | Related coursework tools | Wireshark, PowerShell, Linux terminal, Python (Visual Studio Code) |
 
 The tools in the last row are used across related coursework; usage varies by exercise.
@@ -45,7 +45,7 @@ flowchart TB
     KALI -->|"Adapter 2"| SOC
 ```
 
-See the [network validation worksheet](docs/lab-network-validation.md) for the verified eight-adapter inventory, and pending guest address and connectivity results.
+See the [network validation worksheet](docs/lab-network-validation.md) for the verified eight-adapter inventory, Kali address/route observations, and pending Windows 10 and connectivity checks.
 
 ## Work completed so far
 
@@ -60,10 +60,10 @@ See the [network validation worksheet](docs/lab-network-validation.md) for the v
 
 - Earlier work included a VirtualBox host-only network, but neither of the current guest configurations uses host-only networking as of the November 15 GUI inventory.
 - Verified both Windows 10 and Kali Linux have Adapter 1 **NAT**, Adapter 2 **Internal Network (`soc-lab`)**, and disabled Adapters 3–4.
-- Examined guest IP configuration and submitted screenshots as coursework evidence in earlier exercises; current IP addressing needs a fresh check.
+- Collected Kali's current interface addresses and routing table on November 15: `eth0` has `10.0.2.15/24` with default gateway `10.0.2.2`; `eth1` has `172.20.20.10/24`. Exact MAC-to-VirtualBox-adapter correlation and Windows 10 addressing remain pending.
 - Studied network addressing and traffic inspection in associated networking assignments.
 
-**Network validation pending:** The VM adapter configuration is now documented. NAT means the lab should **not** be described as entirely isolated. Actual guest addresses, reachability, and effective isolation have not been validated.
+**Network validation pending:** The VM adapter configuration is documented and Kali's addresses/routes have been observed. NAT means the lab should **not** be described as entirely isolated. Windows 10 addressing, exact Kali MAC-to-adapter correlation, guest-to-guest reachability, and effective isolation have not been validated.
 
 ### 3. Troubleshoot permissions and access
 
@@ -122,7 +122,7 @@ The [Security Operations Project Roadmap](docs/security-operations-analyst-roadm
 
 ## Change log
 
-- **November 15, 2026 (network inventory):** Inspected all four VirtualBox adapter settings for both powered-off guests. Windows 10 and Kali each have Adapter 1 NAT and Adapter 2 Internal Network (`soc-lab`), with Adapters 3–4 disabled. This supersedes earlier assumptions that the guests used host-only networking. The GUI inventory is complete; sanitized screenshots, guest IP addresses and connectivity verification remain pending.
+- **November 15, 2026 (network inventory):** Inspected all four VirtualBox adapter settings for both guests. Windows 10 and Kali each have Adapter 1 NAT and Adapter 2 Internal Network (`soc-lab`), with Adapters 3–4 disabled. Kali's `ip -br addr` and `ip route` outputs were collected: `eth0` `10.0.2.15/24`, default gateway `10.0.2.2`; `eth1` `172.20.20.10/24`. Exact MAC-to-adapter correlation, Windows 10 guest addressing, sanitized screenshots and guest-to-guest connectivity remain pending.
 
 - **November 12, 2026:** Switched from Thonny to Visual Studio Code (VS Code) for Python coursework. Investigated intermittent Windows 10 guest unresponsiveness. On the Windows host, `VBoxManage showvminfo "Windows 10" --machinereadable` first reported `VMState="paused"`. After resuming, the symptom returned while VirtualBox reported `VMState="running"`. The guest responded after Ctrl+Alt+Del. The cause of the recurrence remains open.
 
