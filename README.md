@@ -25,24 +25,27 @@ The workflow covers configuration, validation, network observation and documente
 | Hypervisor | Oracle VirtualBox |
 | Guest VM | Windows 10 |
 | Guest VM | Kali Linux |
-| Lab networking | Host-only network created; per-guest adapter inventory and connectivity validation pending |
+| Lab networking | November 15, 2026 GUI inventory: both VMs have Adapter 1 NAT and Adapter 2 Internal Network `soc-lab`; Adapters 3–4 disabled. Guest addressing and connectivity pending |
 | Related coursework tools | Wireshark, PowerShell, Linux terminal, Python (Visual Studio Code) |
 
 The tools in the last row are used across related coursework; usage varies by exercise.
 
 ## High-level lab layout
 
-The diagram captures the **documented host and two guests**. A host-only network has been created for the lab, but the per-VM enabled-adapter inventory has not yet been published. The dotted line shows a configuration item to verify, **not** proof that every VM has only host-only connectivity.
+The diagram captures the **configured** VirtualBox network attachments verified in the November 15 GUI inventory, not a tested guest-to-guest link. Each VM has NAT and an internal adapter attached to `soc-lab`. Neither VM currently has an enabled host-only adapter. NAT could provide outside connectivity; guest addressing and actual reachability remain to be tested.
 
 ```mermaid
 flowchart TB
     HOST["HP EliteBook 840 G8 / Windows 11 Pro"] --> VB["Oracle VirtualBox"]
     VB --> W10["Windows 10 VM"]
     VB --> KALI["Kali Linux VM"]
-    VB -.-> HN["Host-only network / guest adapters to validate"]
+    W10 -->|"Adapter 1"| NAT1["NAT / Windows 10"]
+    KALI -->|"Adapter 1"| NAT2["NAT / Kali"]
+    W10 -->|"Adapter 2"| SOC["Internal Network: soc-lab"]
+    KALI -->|"Adapter 2"| SOC
 ```
 
-See the [network validation worksheet](docs/lab-network-validation.md) for the pending adapter inventory, guest addressing checks and connectivity-test evidence.
+See the [network validation worksheet](docs/lab-network-validation.md) for the verified eight-adapter inventory, and pending guest address and connectivity results.
 
 ## Work completed so far
 
@@ -55,11 +58,12 @@ See the [network validation worksheet](docs/lab-network-validation.md) for the p
 
 ### 2. Configure lab networking
 
-- Set up a VirtualBox host-only network for lab isolation.
-- Examined guest IP configuration and submitted screenshots as coursework evidence.
+- Earlier work included a VirtualBox host-only network, but neither of the current guest configurations uses host-only networking as of the November 15 GUI inventory.
+- Verified both Windows 10 and Kali Linux have Adapter 1 **NAT**, Adapter 2 **Internal Network (`soc-lab`)**, and disabled Adapters 3–4.
+- Examined guest IP configuration and submitted screenshots as coursework evidence in earlier exercises; current IP addressing needs a fresh check.
 - Studied network addressing and traffic inspection in associated networking assignments.
 
-**Network validation pending:** The enabled-adapter inventory and connectivity tests remain to be documented for each guest. Additional NAT or bridged adapters would change the isolation boundary.
+**Network validation pending:** The VM adapter configuration is now documented. NAT means the lab should **not** be described as entirely isolated. Actual guest addresses, reachability, and effective isolation have not been validated.
 
 ### 3. Troubleshoot permissions and access
 
@@ -83,21 +87,22 @@ Pending evidence is tracked in the [network validation worksheet](docs/lab-netwo
 
 - [ ] VirtualBox overview showing the two guest machines
 - [ ] Each VM successfully booted (with account details cropped)
-- [ ] VirtualBox host-only adapter configuration
+- [x] Adapter configuration inspected for both VMs and documented in the worksheet (November 15)
+- [ ] Sanitized VirtualBox NAT / internal adapter screenshots uploaded
 - [ ] Guest IP configuration and a documented connectivity test
 - [ ] A troubleshooting note with the symptom, change and verification result
 - [x] A high-level diagram of the host and virtual machines
 
 ## Technical coverage
 
-**Virtualization · Oracle VirtualBox · Windows 10 VM configuration · Kali Linux VM setup · Host-only networking · Basic network diagnostics · Technical troubleshooting · Documentation**
+**Virtualization · Oracle VirtualBox · Windows 10 VM configuration · Kali Linux VM setup · NAT and internal networking · Basic network diagnostics · Technical troubleshooting · Documentation**
 
 Project context: guided coursework and hands-on troubleshooting. Validation status is recorded alongside each result.
 
 ## Next improvements
 
-1. Record a sanitized virtual network diagram and adapter settings.
-2. Add a small reproducible connectivity test with expected and actual results.
+1. Add sanitized screenshots of the verified network settings; MAC addresses must be redacted.
+2. Verify current guest addressing, then perform a small reproducible internal-network connectivity test with expected and actual results.
 3. Document one Wireshark capture from the lab, explaining the filter and protocol observations.
 4. Keep a concise change log as the lab expands.
 
@@ -116,6 +121,8 @@ The [Security Operations Project Roadmap](docs/security-operations-analyst-roadm
 [Brian Emerson on LinkedIn](https://www.linkedin.com/in/brianemersonpdx/) — professional background, education and career development.
 
 ## Change log
+
+- **November 15, 2026 (network inventory):** Inspected all four VirtualBox adapter settings for both powered-off guests. Windows 10 and Kali each have Adapter 1 NAT and Adapter 2 Internal Network (`soc-lab`), with Adapters 3–4 disabled. This supersedes earlier assumptions that the guests used host-only networking. The GUI inventory is complete; sanitized screenshots, guest IP addresses and connectivity verification remain pending.
 
 - **November 12, 2026:** Switched from Thonny to Visual Studio Code (VS Code) for Python coursework. Investigated intermittent Windows 10 guest unresponsiveness. On the Windows host, `VBoxManage showvminfo "Windows 10" --machinereadable` first reported `VMState="paused"`. After resuming, the symptom returned while VirtualBox reported `VMState="running"`. The guest responded after Ctrl+Alt+Del. The cause of the recurrence remains open.
 
