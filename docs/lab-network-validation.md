@@ -1,7 +1,7 @@
 # Virtual Lab — Network Validation Worksheet
 
 **Environment:** Windows 11 Pro host / Oracle VirtualBox / Windows 10 and Kali Linux guests  
-**Status (November 15, 2026):** VirtualBox GUI adapter inventory verified for both powered-off VMs. Guest addressing and end-to-end connectivity remain **unverified**.
+**Status (November 15, 2026):** VirtualBox GUI adapter inventory verified for both VMs. Kali Linux interface addresses and routes have now been observed. Windows 10 guest addressing, exact Kali MAC-to-adapter correlation, and end-to-end connectivity remain **pending**.
 
 ## Goal and scope
 
@@ -41,7 +41,7 @@ flowchart TB
 
 The diagram reflects configured attachment modes only. NAT permits potential outside connectivity under normal operation; actual connectivity was not tested during this inventory. Internal-network membership does not establish successful guest-to-guest communication. The host is not shown as a participant in `soc-lab`.
 
-## 2. Collect current guest addressing — pending
+## 2. Collect current guest addressing — partially complete
 
 Because Windows 10 previously experienced intermittent responsiveness problems, do not rush to launch multiple VMs or change their network settings just to complete the worksheet. Preserve the existing snapshots and virtual disks.
 
@@ -63,10 +63,19 @@ ip route
 
 Record actual interface-to-adapter mapping and current addressing rather than copying historical IP addresses from earlier sessions. Do not publish usernames, MAC addresses or other unnecessary host identifiers.
 
-| Guest | Internal adapter address | Evidence | Status |
+### Kali Linux — observed November 15
+
+The following output was collected from the running Kali VM:
+
+- `ip -br addr`: `eth0` UP with `10.0.2.15/24`; `eth1` UP with `172.20.20.10/24`; loopback `127.0.0.1/8`.
+- `ip route`: default route via `10.0.2.2` on `eth0`; connected route `10.0.2.0/24` on `eth0`; connected route `172.20.20.0/24` on `eth1`.
+
+These results are consistent with Adapter 1 NAT and Adapter 2 `soc-lab` respectively. Exact guest-interface-to-VirtualBox-adapter correlation will be checked by comparing interface MACs with the VirtualBox settings; MAC values will not be published.
+
+| Guest | Observed interfaces and addresses | Evidence | Status |
 | --- | --- | --- | --- |
 | Windows 10 | Not verified in this session | None added | Pending |
-| Kali Linux | Not verified in this session | None added | Pending |
+| Kali Linux | `eth0`: `10.0.2.15/24`; `eth1`: `172.20.20.10/24` | `ip -br addr` and `ip route` screenshots, November 15 | Addresses and routes observed; exact MAC-to-adapter correlation pending |
 
 ## 3. Test only authorized internal-lab endpoints — pending
 
@@ -98,10 +107,11 @@ These are **planned commands**, not executed results. Failure could reflect IP c
 - [x] Configured NAT and internal-network attachments documented
 - [x] Earlier host-only-only description reconciled against current GUI configuration
 - [ ] Sanitized adapter screenshots uploaded (MAC addresses must be redacted)
-- [ ] Current internal guest addresses and interface mappings recorded
+- [ ] Windows 10 guest addressing and routes recorded
+- [ ] Kali interface MACs correlated with VirtualBox Adapter 1 and Adapter 2 (do not publish MACs)
 - [ ] Guest-to-guest connectivity tested and logged
 - [ ] Any security or isolation conclusions based on actual tests, not configuration alone
 
 ## Next action
 
-Complete a **single-guest, read-only network/address inventory** when the VM can run safely; check the known Windows 10 instability before attempting simultaneous-guest tests. No VM settings, snapshot chains, host virtualization features or security settings need to be changed for this inventory.
+Next, run `ip -br link` in Kali and compare its interface MACs privately against the two MAC addresses shown in VirtualBox Adapter 1 and Adapter 2. Do not copy MAC addresses into GitHub. After that, inspect Windows 10 guest addressing only if it can be started safely; check its known instability before attempting simultaneous-guest tests. No VM settings, snapshot chains, host virtualization features or security settings need to be changed.
