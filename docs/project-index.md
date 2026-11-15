@@ -16,7 +16,6 @@ Published projects, documented results and open technical questions.
 | P06 | [OctoPi printer management](https://github.com/bemerson24/raspberry-pi-octopi) | Retrospective documentation of 2020–2024 work | Original configuration exports, screenshots and logs are not included |
 | P07 | [Pi-hole HTTPS and VPN DNS troubleshooting](https://github.com/bemerson24/raspberry-pi-pihole/blob/main/case-studies/pihole-https-vpn-dns-2026-11-02.md) | November 2 case study published; HTTPS dashboard access restored and local DNS behavior compared with VPN on/off | Validate VPN/local DNS coexistence; capture campus tests during a recurrence |
 | P08 | [TCP/TLS Session Analysis — November 3, 2026](tcp-tls-session-analysis-2026-11-03.md) | November 3 endpoint capture published: complete TCP handshake, TLS 1.3 comparison and HTTP cookie-attribute observations; Firefox issue unresolved | Firefox connectivity cause remains unresolved; raw captures are not public |
-
 | P09 | [Windows 11 / WSL2 DNS vs. Bitdefender VPN — November 15, 2026](https://github.com/bemerson24/raspberry-pi-pihole/blob/main/case-studies/wsl2-bitdefender-pihole-dns-2026-11-15.md) | Published: VPN-off WSL probe recorded by Pi-hole; VPN-on probe not recorded; direct Pi-hole TCP DNS worked while standard lookup timed out | Packet-level path attribution and VPN mechanism remain unresolved |
 
 ## Technical roadmap
