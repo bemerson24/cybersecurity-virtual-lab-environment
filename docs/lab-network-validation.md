@@ -144,7 +144,9 @@ The log included:
 
 **Verified:** This Windows 10 VM session used VirtualBox's NEM fallback and reported snail execution mode. The log does not independently identify which Windows host component prevented VirtualBox from accessing VT-x or quantify the performance penalty.
 
-No VirtualBox configuration, snapshots, Windows host hypervisor settings, WSL2, VBS, Memory Integrity, BitLocker or other security protections were changed in response. The planned guest-to-guest ping remains **not performed**.
+**Follow-up observation:** While both Windows 10 and Kali were running, Windows 10 became unresponsive even to a Ctrl+Alt+Delete attempt. The operator then cleanly shut down Kali; VirtualBox Manager showed Kali **Powered Off** and Windows 10 **Running**. As soon as Kali stopped, Windows 10 responded and processed previously queued commands. This strongly associates the stall with simultaneous VM load, but does not isolate RAM pressure, scheduling, NEM overhead or another cause. Any queued ping that may have executed only after Kali shut down would **not** validate live guest-to-guest connectivity; no valid simultaneous-guest ping result has been captured.
+
+No VirtualBox configuration, snapshots, Windows host hypervisor settings, WSL2, VBS, Memory Integrity, BitLocker or other security protections were changed in response. The guest-to-guest connectivity check remains **unverified**.
 
 ## Next action
 
