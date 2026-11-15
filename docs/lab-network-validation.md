@@ -124,6 +124,28 @@ These are **planned commands**, not executed results. Failure could reflect IP c
 - [ ] Guest-to-guest connectivity tested and logged
 - [ ] Any security or isolation conclusions based on actual tests, not configuration alone
 
+## Performance observation — November 15, 2026
+
+With both guests running, the operator reported increased fan activity and potential Windows 10 sluggishness. The Windows 11 host Task Manager showed approximately 21% total CPU use and 78% memory use, with one VirtualBox process group using roughly 8.4 GB of memory and another roughly 1.9 GB. These host metrics alone do **not** diagnose the source of the performance issue.
+
+A subsequent read-only host command inspected the current Windows 10 VM log:
+
+```powershell
+& "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" showvminfo "Windows 10" --log 0 |
+    Select-String 'HMR3Init|NEMR3Init|Snail execution mode'
+```
+
+The log included:
+
+```text
+00:00:06.184584 HM: HMR3Init: Attempting fall back to NEM: VT-x is not available
+00:00:06.209107 NEM: NEMR3Init: Snail execution mode is active!
+```
+
+**Verified:** This Windows 10 VM session used VirtualBox's NEM fallback and reported snail execution mode. The log does not independently identify which Windows host component prevented VirtualBox from accessing VT-x or quantify the performance penalty.
+
+No VirtualBox configuration, snapshots, Windows host hypervisor settings, WSL2, VBS, Memory Integrity, BitLocker or other security protections were changed in response. The planned guest-to-guest ping remains **not performed**.
+
 ## Next action
 
-Next, when host resources and Windows 10 responsiveness permit, start Kali alongside Windows 10 and run a narrowly scoped ICMP reachability test from Windows 10 to Kali `172.20.20.10`. Record the actual result before considering a reverse test. If either VM becomes unstable, stop and preserve the environment. No host security changes, snapshot deletions or VirtualBox adapter changes are needed.
+Given the confirmed degraded execution mode and resource concerns, defer the simultaneous-guest connectivity test until both guests are responsive and the host load is acceptable. If the host is struggling, shut down guest operating systems cleanly. When ready, use only a short, controlled `ping -n 4 172.20.20.10` from Windows 10 while Kali is running; record the actual result before the reverse test. Never interpret configuration alone as proof of connectivity.
