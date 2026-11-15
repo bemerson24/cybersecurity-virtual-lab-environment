@@ -4,7 +4,6 @@ Technical projects and investigations covering Linux, Windows, virtualization, n
 
 **Career focus:** entry-level IT/security support, security operations and infrastructure-support roles where careful investigation, reliable operations and clear documentation matter.
 
-- **Professional profile:** [LinkedIn](https://www.linkedin.com/in/brianemersonpdx/)
 - **GitHub profile:** [bemerson24](https://github.com/bemerson24)
 
 **Project index:** [Published projects and open investigations](docs/project-index.md) — case studies and technical status.
