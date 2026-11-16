@@ -33,7 +33,7 @@ These results concern my personal endpoints and lab environments. They do not re
 - [x] Publish DNS/VPN and HTTPS troubleshooting case studies.
 - [x] Publish the November 3 endpoint Wireshark investigation.
 - [ ] Complete virtual-lab adapter and connectivity validation.
-- [ ] Publish a Windows event-log investigation (final milestone of the current audit plan: a controlled, benign security event with evidence-supported triage and disposition).
+- [ ] Publish a controlled Windows event-log investigation using benign activity, actual event evidence, competing explanations and a documented triage/disposition.
 - [ ] Publish a PowerShell collection or parsing script.
 - [ ] Publish a SIEM/KQL investigation.
 - [ ] Publish endpoint/identity and phishing case studies.
