@@ -2,7 +2,7 @@
 
 **Status:** Published milestones and pending technical extensions
 
-This roadmap tracks technical deliverables for the portfolio. Published results are linked below; proposed projects remain pending until their procedures and outputs are documented.
+This roadmap tracks longer-term technical deliverables. **My immediate priority is the [portfolio audit remediation checklist](portfolio-audit-remediation-2026-11-15.md)** across existing repositories. I will complete the documentation, evidence and privacy checks first, and then conclude that audit with one controlled security-event investigation. Other milestones below remain plans until their outputs have been documented and verified.
 
 ## Current evidence
 
@@ -33,7 +33,7 @@ These results concern my personal endpoints and lab environments. They do not re
 - [x] Publish DNS/VPN and HTTPS troubleshooting case studies.
 - [x] Publish the November 3 endpoint Wireshark investigation.
 - [ ] Complete virtual-lab adapter and connectivity validation.
-- [ ] Publish a Windows event-log investigation.
+- [ ] Publish a Windows event-log investigation (final milestone of the current audit plan: a controlled, benign security event with evidence-supported triage and disposition).
 - [ ] Publish a PowerShell collection or parsing script.
 - [ ] Publish a SIEM/KQL investigation.
 - [ ] Publish endpoint/identity and phishing case studies.
