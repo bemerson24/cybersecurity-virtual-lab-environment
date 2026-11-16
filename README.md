@@ -123,6 +123,8 @@ The [Security Operations Project Roadmap](docs/security-operations-analyst-roadm
 
 [Brian Emerson on LinkedIn](https://www.linkedin.com/in/brianemersonpdx/) — professional background, education and career development.
 
+- **November 15, 2026 (Windows hypervisor evidence):** The host `Win32_DeviceGuard` query returned `VirtualizationBasedSecurityStatus=2` (VBS running) and `SecurityServicesRunning={2,3,4}` (Memory Integrity/HVCI, System Guard Secure Launch, SMM Firmware Measurement). These observations are consistent with VirtualBox's continued NEM fallback under a Windows hypervisor. They do not independently establish which protection or subsystem causes the severe slowdown. No host protections or boot features were changed. See [network validation worksheet](docs/lab-network-validation.md).
+
 ## Change log
 
 - **November 15, 2026 (Windows 10 ACPI recovery):** Windows 10 again became unresponsive after a 2-vCPU restart, with Kali powered off and NEM snail execution mode still present. On the Windows 11 host, `VBoxManage controlvm "Windows 10" acpipowerbutton` requested a graceful guest power-button event. The operator reported that the VM then responded sufficiently to complete a normal shutdown. This is a recovery observation, not a repair of the underlying virtualization performance issue. No force-power-off or snapshot changes occurred.
