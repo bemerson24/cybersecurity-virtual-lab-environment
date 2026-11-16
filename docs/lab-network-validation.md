@@ -152,6 +152,8 @@ The log included:
 
 **Detailed idle-state memory snapshot (Task Manager → Performance → Memory):** With both VMs off, Windows 11 showed **32.0 GB DDR4 installed**, **31.7 GB usable**, **13.5 GB in use (43%)**, **18.2 GB available**, **16.8/33.7 GB committed**, **6.8 GB cached**, and **1.2 GB compressed**. Two of two SODIMM slots were used. These values confirm ample available RAM *after* VM shutdown and cannot retrospectively establish an out-of-memory condition while both guests were running. The earlier 78% measurement showed elevated utilization but not memory exhaustion.
 
+**VirtualBox resource allocation inspection (read-only; both VMs off):** `VBoxManage showvminfo ... --machinereadable` reported Windows 10 `memory=8192` (8 GB) and `cpus=4`; Kali `memory=4096` (4 GB) and `cpus=2`. Total configured VM guest RAM is **12 GB**, with **six vCPU allocations** across the two guests. Six vCPUs is not a measured host CPU utilization value or necessarily six dedicated physical cores. The configured guest RAM is consistent with a substantial increase in host memory usage when both VMs run, but it does not establish physical memory exhaustion or isolate the cause of NEM snail mode. Host physical/logical core counts have not yet been measured in this step.
+
 No VirtualBox configuration, snapshots, Windows host hypervisor settings, WSL2, VBS, Memory Integrity, BitLocker or other security protections were changed in response. The guest-to-guest connectivity check remains **unverified**.
 
 ## Next action
