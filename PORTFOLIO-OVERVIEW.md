@@ -9,6 +9,8 @@ I document hands-on projects and investigations involving Linux, Windows, virtua
 
 **Project index:** [Published projects and open investigations](docs/project-index.md) — case studies and technical status.
 
+**Current focus:** I am completing the [portfolio audit remediation checklist](docs/portfolio-audit-remediation-2026-11-15.md) across my four existing repositories before adding new projects. I will finish that work with a documented, controlled security-event investigation.
+
 ## Cybersecurity community and professional development
 
 I'm a Cybersecurity BAS student at Clark College and a member of its Cyber Club.
@@ -24,7 +26,7 @@ These projects use different environments, but I approach them with the same wor
 | Controlled testing environment | [VirtualBox lab](https://github.com/bemerson24/cybersecurity-virtual-lab-environment): Windows and Kali guests with NAT and internal `soc-lab`; [NEM/WHPX performance investigation](docs/virtualbox-nem-whpx-issue-report-2026-11-15.md) documents repeated stalls and a 244.381-second timing lag | Adapter configurations and guest addressing/routes verified; guest-to-guest connectivity and stability remain unresolved; full raw logs not shared |
 | Infrastructure experience | [OctoPi retrospective](https://github.com/bemerson24/raspberry-pi-octopi): Raspberry Pi and printer management | Historical maker/operations project, not a security investigation |
 
-For published results and open technical questions, see the [project index](docs/project-index.md). The [security operations project roadmap](docs/security-operations-analyst-roadmap.md) describes planned Windows logs, PowerShell, SIEM/KQL and incident-response projects, with pending work clearly identified.
+For verified results and unresolved questions, see the [project index](docs/project-index.md). My [audit remediation checklist](docs/portfolio-audit-remediation-2026-11-15.md) tracks current portfolio corrections; the [longer-term SOC roadmap](docs/security-operations-analyst-roadmap.md) separately identifies planned work that has not been completed.
 
 ## Featured projects
 
