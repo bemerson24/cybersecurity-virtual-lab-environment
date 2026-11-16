@@ -9,7 +9,7 @@
 
 **Project index:** [Published projects and open investigations](docs/project-index.md) — case studies and technical status.
 
-**Current priority:** [Complete the existing portfolio audit findings](docs/portfolio-audit-remediation-2026-11-15.md) before adding new projects. The final milestone is a controlled security-event investigation.
+**Current priority:** Validate the evidence, privacy and technical claims in existing projects before adding new work. The next major milestone is a controlled security-event investigation.
 
 ## Overview
 
@@ -106,7 +106,7 @@ Project context: guided coursework and hands-on troubleshooting. Validation stat
 
 ## Next improvements
 
-I am prioritizing the [portfolio audit remediation checklist](docs/portfolio-audit-remediation-2026-11-15.md) before expanding this lab. Outstanding network screenshots and guest-to-guest testing remain deferred pending privacy review and VM stability. I will not label untested connectivity or future packet analysis as completed.
+I am prioritizing evidence quality, privacy review and existing troubleshooting questions before expanding this lab. Outstanding network screenshots and guest-to-guest testing remain deferred pending privacy review and VM stability. I will not label untested connectivity or future packet analysis as completed.
 
 ## Related portfolio projects
 
