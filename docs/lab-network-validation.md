@@ -219,7 +219,23 @@ The `TM` time manager recorded **244.381120090 seconds (approximately 4 minutes 
 
 **External comparison (not assumed same root cause):** [VirtualBox upstream issue #837, opened August 28, 2026](https://github.com/VirtualBox/virtualbox/issues/837) describes a Windows 11 host / Windows 10 guest using NEM/WHPX and exhibiting a 114-second guest stall with the same `TM: Giving up catch-up attempt` log signature. The other reporter saw no comparable stalls after testing with direct native VT-x, but that change involved disabling Windows virtualization protections and is **not a proposed change for this machine**. Different VirtualBox builds, environments and validation periods limit comparisons. This report supports investigating NEM/WHPX timing behavior, not a confirmed diagnosis or workaround.
 
-Next diagnostic goal: read the existing log around guest heartbeat and shutdown transitions, using the host only. Keep both VMs off and preserve WSL2, VBS, BitLocker, snapshots and all security settings.
+**Step 36 — ACPI shutdown correlation (read-only):** The subsequent filtered log output showed the following event sequence from the same VM run:
+
+```text
+00:00:07.298409 Changing the VM state from 'CREATING' to 'CREATED'
+00:00:07.299755 Changing the VM state from 'CREATED' to 'POWERING_ON'
+00:00:07.300047 Changing the VM state from 'POWERING_ON' to 'RUNNING'
+00:09:53.449479 TM: Giving up catch-up attempt at a 244 381 120 090 ns lag; new total: 244 381 120 090 ns
+00:10:25.115019 ACPI: Entering S5 power state (power down)
+00:10:25.115120 Changing the VM state from 'RUNNING' to 'POWERING_OFF'
+00:10:25.122631 Changing the VM state from 'POWERING_OFF' to 'OFF'
+00:10:25.129598 Changing the VM state from 'OFF' to 'DESTROYING'
+00:10:25.328314 Changing the VM state from 'DESTROYING' to 'TERMINATED'
+```
+
+This confirms the large virtual time lag was logged **before** the guest entered ACPI S5 and transitioned normally through power-off to termination, consistent with the operator's report of a successful shutdown after an ACPI power-button request. The log does not independently prove the power-button signal restored guest responsiveness. No `Guest seems to be unresponsive` or `GuestHeartBeat` entries appeared in the filtered output; **absence from these matches does not demonstrate that Guest Additions or guest-heartbeat monitoring was operational or healthy**.
+
+Next diagnostic goal: inspect local log lines directly surrounding the time-manager catch-up event for correlating warnings or component activity, using the Windows 11 host only. Keep both VMs off and preserve WSL2, VBS, BitLocker, snapshots and security settings.
 
 ## Next action
 
