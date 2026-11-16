@@ -2,7 +2,7 @@
 
 **Purpose:** I am auditing **existing projects only**, without fabricating evidence or adding new portfolio projects. Publication of raw logs, PCAPs, client identities or private network information is not required to demonstrate a result. Where I cannot publish an original artifact, I distinguish the privately reviewed observation from an independently accessible public artifact.
 
-[Return to audit remediation tracker](portfolio-audit-remediation-2026-11-15.md) · [Portfolio project index](project-index.md)
+[Portfolio project index](project-index.md)
 
 | Repository / investigation | Public evidence already available | Evidence or verification still needed | Accuracy boundary |
 | --- | --- | --- | --- |
@@ -44,4 +44,4 @@
 
 ## Next evidence action
 
-The current VirtualBox cover was replaced with the reviewed, Git-SHA-matched PNG, completing the ten-image current-path visual inventory. Next, **recheck internal links, rendered readability and the remaining technical-evidence claims** in the [audit tracker](portfolio-audit-remediation-2026-11-15.md). Preserve the caveat that historic images remain in Git history; do not rewrite history without a separate, explicit decision.
+The current VirtualBox cover was replaced with the reviewed, Git-SHA-matched PNG, completing the ten-image current-path visual inventory. Remaining work includes **checking link targets, rendered readability and technical-evidence claims** against the published project documentation. Earlier image versions remain in Git history; no history rewrite was performed.
