@@ -9,7 +9,7 @@ I document hands-on projects and investigations involving Linux, Windows, virtua
 
 **Project index:** [Published projects and open investigations](docs/project-index.md) — case studies and technical status.
 
-**Current focus:** I am completing the [portfolio audit remediation checklist](docs/portfolio-audit-remediation-2026-11-15.md) across my four existing repositories before adding new projects. I will finish that work with a documented, controlled security-event investigation.
+**Current focus:** I am improving evidence quality, privacy and technical accuracy across my four existing repositories before adding new projects. My next planned major milestone is a documented, controlled security-event investigation.
 
 ## Cybersecurity community and professional development
 
@@ -26,7 +26,7 @@ These projects use different environments, but I approach them with the same wor
 | Controlled testing environment | [VirtualBox lab](https://github.com/bemerson24/cybersecurity-virtual-lab-environment): Windows and Kali guests with NAT and internal `soc-lab`; [NEM/WHPX performance investigation](docs/virtualbox-nem-whpx-issue-report-2026-11-15.md) documents repeated stalls and a 244.381-second timing lag | Adapter configurations and guest addressing/routes verified; guest-to-guest connectivity and stability remain unresolved; full raw logs not shared |
 | Infrastructure experience and availability | [Pi-hole monitoring extension](https://github.com/bemerson24/raspberry-pi-pihole/blob/main/case-studies/docker-uptime-kuma-beszel-monitoring-2026-11-15.md): Docker/Compose, Uptime Kuma availability checks, backup integrity and storage optimization; [OctoPi retrospective](https://github.com/bemerson24/raspberry-pi-octopi): historical Raspberry Pi administration | Uptime Kuma checks are availability monitoring, not security alerts; Beszel Agent now reports post-reboot Docker CPU/memory/network and host disk, thermal and Wi-Fi metrics after a verified cgroup memory repair; screenshots require privacy review before publication; all four Uptime Kuma monitors were Up in a November 16 observation |
 
-For verified results and unresolved questions, see the [project index](docs/project-index.md). My [audit remediation checklist](docs/portfolio-audit-remediation-2026-11-15.md) tracks current portfolio corrections; the [longer-term SOC roadmap](docs/security-operations-analyst-roadmap.md) separately identifies planned work that has not been completed.
+For verified results and unresolved questions, see the [project index](docs/project-index.md). The [longer-term SOC roadmap](docs/security-operations-analyst-roadmap.md) separately identifies planned work that has not been completed.
 
 ## Featured projects
 
