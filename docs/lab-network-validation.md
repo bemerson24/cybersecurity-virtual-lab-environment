@@ -192,7 +192,20 @@ Without elevated PowerShell, the host query `Get-CimInstance Win32_OptionalFeatu
 
 [Microsoft's Win32_OptionalFeature reference](https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/win32-optionalfeature) defines `InstallState=1` as enabled and `2` as disabled. The earlier VBS results show that Windows hypervisor-based protections are nevertheless running; the Hyper-V optional-feature state alone does **not** establish that the hypervisor is absent.
 
-The [Oracle VirtualBox 7.2 manual, "Using Hyper-V with Oracle VirtualBox"](https://docs.oracle.com/en/virtualization/virtualbox/7.2/user/AdvancedTopics.html) says Windows Hypervisor Platform must be enabled for the documented Hyper-V compatibility path, and warns of possible significant performance degradation. Its disabled state is a specific configuration discrepancy to investigate; **this does not prove that enabling it will fix performance**. No administrative feature changes, security changes, or VM restarts were made. Further diagnosis should use existing logs and other read-only checks first.
+The [Oracle VirtualBox 7.2 manual, "Using Hyper-V with Oracle VirtualBox"](https://docs.oracle.com/en/virtualization/virtualbox/7.2/user/AdvancedTopics.html) says Windows Hypervisor Platform must be enabled for the documented Hyper-V compatibility path, and warns of possible significant performance degradation. **Follow-up log inspection:** The next read-only `VBoxManage showvminfo "Windows 10" --log 0` filter showed:
+
+```text
+00:00:06.226968 HM: HMR3Init: Attempting fall back to NEM: VT-x is not available
+00:00:06.248922 NEM:  info: Found optional import WinHvPlatform.dll!WHvQueryGpaRangeDirtyBitmap.
+...
+00:00:06.249171 NEM: WHvCapabilityCodeHypervisorPresent is TRUE, so this might work...
+00:00:06.249181 NEM: WHvCapabilityCodeExtendedVmExits      = 0x0000000000007fff
+00:00:06.249271 NEM: WHvCapabilityCodeFeatures             = 0x00000000000002ff
+```
+
+The `Found optional import` lines are **informational discovery, not error messages**. A successful hypervisor-presence capability query and reported capability values show that VirtualBox could interact with some Windows hypervisor APIs **despite** `HypervisorPlatform=2` in the optional-feature inventory. This **weakens** the earlier inference that a disabled Windows Hypervisor Platform feature alone explains the freezes. The command output was limited to its *first 35 matches*, and does not show a complete NEM initialization outcome, partition-creation outcome, or freeze-specific error. **Do not treat enabling the optional feature as a validated remedy.** No host or VM settings were modified.
+
+Further diagnosis should use existing logs and other read-only checks first.
 
 ## Next action
 
