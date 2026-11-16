@@ -36,7 +36,7 @@
 
 ### 4. Privacy review of already-published images and future artifacts
 
-- [ ] Visually review the five WSL2 screenshots and four Pi-hole screenshots already published for account names, local identifiers, identifiable URLs, MAC addresses, IP addresses, tokens, sensitive paths and private information. **Three of four Pi-hole screenshots are inspected; five WSL2 screenshots plus the currently published Pi-hole dashboard remain. Also review the lab-cover graphic for presentation.**
+- [ ] Visually review the five WSL2 screenshots and four Pi-hole screenshots already published for account names, local identifiers, identifiable URLs, MAC addresses, IP addresses, tokens, sensitive paths and private information. **Eight of ten public images visually inspected (five WSL2, three Pi-hole). The published Pi-hole dashboard and lab-cover image remain uninspected. All five WSL2 images show the local username; privacy hardening has not been completed.**
 - [ ] Replace any sensitive screenshot with a redacted version; do not assume Markdown sanitization also sanitizes the underlying image.
 - [ ] Review the VirtualBox log before any upstream attachment. Do not upload unsanitized VM logs, packet captures or private keys.
 - [ ] Confirm no secrets are exposed in public documentation or screenshots. Existing text-only checks are preliminary; visual/image review is outstanding.
@@ -73,7 +73,7 @@
 
 - The initial audit found **four** public repositories and **16** Markdown documents. The internal Markdown links checked mapped to existing project files.
 - The initial text audit identified no obvious published plaintext passwords or private key bodies. **This is not a visual screenshot audit.**
-- At audit start there were **nine** public technical screenshots to review: five in the WSL2 baseline repository and four in the Pi-hole repository, plus the main lab's **one cover image**. Three Pi-hole screenshots (`02-top-clients.png`, `03-filtered-query-log.png`, `04-router-client.png`) were recovered from a local archive, matched **exactly** to the published Git blobs (SHA-1), and visually inspected: displayed client labels are anonymized and the router MAC is redacted; no obvious credential or personal identifier is visible in those three. **The local `01-dashboard.png` does not match the published blob**, so I cannot mark the public dashboard checked. Five WSL2 screenshots and the lab cover likewise remain unchecked.
+- At audit start there were **nine** public technical screenshots to review: five in the WSL2 baseline repository and four in the Pi-hole repository, plus the main lab's **one cover image**. Three Pi-hole screenshots (`02-top-clients.png`, `03-filtered-query-log.png`, `04-router-client.png`) were recovered from a local archive, matched **exactly** to the published Git blobs (SHA-1), and visually inspected: displayed client labels are anonymized and the router MAC is redacted; no obvious credential or personal identifier is visible in those three. **The local `01-dashboard.png` does not match the published blob**, so I cannot mark the public dashboard checked. All five WSL2 screenshots now exactly match the uploaded full repository ZIP's Git hashes, and each has been visually reviewed. All five visibly contain a local username; none contained EXIF metadata or a visible password/private key/token. The published Pi-hole dashboard and lab cover still require direct visual review; account-name redaction or an explicit retention decision is pending.
 - The VirtualBox guest-to-guest test, a sanitized full `VBox.log` attachment, and several Pi-hole corroborating captures remain pending.
 - The public VirtualBox issue report is saved locally in the lab repo, not posted upstream.
 
@@ -87,5 +87,6 @@
 | 2026-11-15 | Standardized documentation-assistance notes in three existing case studies | One TCP/TLS case study; two Pi-hole case studies | Verified |
 | 2026-11-15 | Inspected published Pi-hole evidence images 02, 03 and 04 | Git blob SHA-1 matched to recovered local screenshots; visual review of displayed content | Partial image audit: 3/10 public images (including cover) |
 | 2026-11-15 | Published [cross-project evidence coverage inventory](portfolio-evidence-inventory-2026-11-15.md) | Listed public files, original-observation limits, hash-matched screenshots and seven unchecked images | Inventory complete; evidence gaps and image review remain open |
+| 2026-11-15 | Inspected all five original WSL2 images against GitHub published blobs and accompanying README | User-provided repository ZIP; exact Git SHA-1 matches; direct visual and EXIF check | 8/10 images reviewed; local username appears in all WSL2 images; redaction decision/action pending |
 
 I will update this record only after verifying each meaningful correction. This tracker is a record of portfolio maintenance, not evidence that the underlying systems were tested again.
