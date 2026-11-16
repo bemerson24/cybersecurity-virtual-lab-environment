@@ -124,4 +124,4 @@ A controlled request can be traced from TCP establishment to TLS negotiation and
 2. [RFC 10024 — Post-Quantum Traditional Hybrid Key Agreement Mechanisms for TLS 1.3](https://www.rfc-editor.org/rfc/rfc10024.html)
 3. [Wireshark User's Guide](https://www.wireshark.org/docs/wsug_html/)
 
-**Documentation note:** I used AI assistance to organize my command outputs and Wireshark screenshots. The findings are limited to observations documented in that evidence.
+*Documentation note: I used writing assistance to organize this report from the commands, results and screenshots I reviewed during my investigation. I distinguish observed results from interpretations and unfinished tests; writing assistance is not evidence of a technical result.*
