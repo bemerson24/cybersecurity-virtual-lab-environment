@@ -109,7 +109,7 @@ HTTP cookies are an **application-layer** mechanism; describing them as literal 
 ## Limitations and handling
 
 - The original Firefox-without-VPN symptom was not root-caused. Restoring the VPN was a working configuration, not a demonstrated permanent fix.
-- Only the displayed packet details and user-provided command outputs were evaluated; no exhaustive review of all captured packets was performed.
+- I analyzed the displayed packet details and the command outputs collected during the session; I did not exhaustively review every packet in the captures.
 - The public website's TLS selection is not evidence about student Wi-Fi authentication, access-point security, client isolation or internal campus defenses.
 - Raw `.pcapng` files are retained privately and **not committed**. Public screenshots are omitted pending targeted cropping/redaction of local addresses, identifiers and any other sensitive metadata.
 - No authorization for active campus-network security testing is claimed or implied.
@@ -124,4 +124,4 @@ A controlled request can be traced from TCP establishment to TLS negotiation and
 2. [RFC 10024 — Post-Quantum Traditional Hybrid Key Agreement Mechanisms for TLS 1.3](https://www.rfc-editor.org/rfc/rfc10024.html)
 3. [Wireshark User's Guide](https://www.wireshark.org/docs/wsug_html/)
 
-**Documentation note:** This case study was organized with AI assistance from user-supplied command output and Wireshark screenshots. Findings are limited to observations visible in that evidence.
+**Documentation note:** I used AI assistance to organize my command outputs and Wireshark screenshots. The findings are limited to observations documented in that evidence.
