@@ -9,6 +9,8 @@
 
 **Project index:** [Published projects and open investigations](docs/project-index.md) — case studies and technical status.
 
+**Current priority:** [Complete the existing portfolio audit findings](docs/portfolio-audit-remediation-2026-11-15.md) before adding new projects. The final milestone is a controlled security-event investigation.
+
 ## Overview
 
 I built this virtual cybersecurity lab on a Windows 11 laptop using Oracle VirtualBox. It contains Windows 10 and Kali Linux guests that I use to practice operating-system configuration, networking, and reproducible troubleshooting. Guest stability is currently under investigation.
@@ -25,14 +27,14 @@ I document configuration changes, validation results, network observations, and 
 | Hypervisor | Oracle VirtualBox |
 | Guest VM | Windows 10 |
 | Guest VM | Kali Linux |
-| Lab networking | November 15, 2026 GUI inventory: both VMs have Adapter 1 NAT and Adapter 2 Internal Network `soc-lab`; Adapters 3–4 disabled. Kali addressing/routes and both MAC-to-adapter mappings verified (`eth0` = Adapter 1/NAT; `eth1` = Adapter 2/`soc-lab`); Windows 10 internal `Ethernet 2` assigned `172.20.20.20/24` (previously APIPA); post-change internal on-link route and NAT default route verified; guest-to-guest connectivity pending |
+| Lab networking | Both guests: Adapter 1 NAT, Adapter 2 Internal Network (`soc-lab`). Kali `172.20.20.10/24`; Windows 10 `172.20.20.20/24`. Interface assignment and host/guest routes verified; **guest-to-guest connectivity not yet tested**. See the [validation worksheet](docs/lab-network-validation.md) |
 | Related coursework tools | Wireshark, PowerShell, Linux terminal, Python (Visual Studio Code) |
 
 The tools in the last row are used across related coursework; usage varies by exercise.
 
 ## High-level lab layout
 
-The diagram captures the **configured** VirtualBox network attachments verified in the November 15 GUI inventory, not a tested guest-to-guest link. Each VM has NAT and an internal adapter attached to `soc-lab`. Neither VM currently has an enabled host-only adapter. NAT could provide outside connectivity; Kali guest addressing, routes and interface-to-adapter MAC mapping are verified; Windows 10's internal adapter has been configured as `172.20.20.20/24` and confirmed with `ipconfig`; post-change routing is verified; actual guest-to-guest reachability remains to be tested.
+The diagram shows the **verified adapter configuration**, not a validated guest-to-guest connection. Both guests have NAT and an internal interface on `soc-lab`; neither currently uses a host-only adapter. The [worksheet](docs/lab-network-validation.md) contains the MAC/interface checks, addresses, routes, and outstanding connectivity tests.
 
 ```mermaid
 flowchart TB
@@ -60,10 +62,10 @@ See the [network validation worksheet](docs/lab-network-validation.md) for the v
 
 - Earlier work included a VirtualBox host-only network, but neither of the current guest configurations uses host-only networking as of the November 15 GUI inventory.
 - Verified both Windows 10 and Kali Linux have Adapter 1 **NAT**, Adapter 2 **Internal Network (`soc-lab`)**, and disabled Adapters 3–4.
-- Collected Kali's current interface addresses, routes and link-layer addresses on November 15: `eth0` has `10.0.2.15/24` with default gateway `10.0.2.2`; `eth1` has `172.20.20.10/24`. Compared Kali's interface MACs with current host-side `VBoxManage showvminfo` output: `eth0` matches Adapter 1 (NAT), and `eth1` matches Adapter 2 (`soc-lab`). Windows 10's NAT and internal adapter addresses/routes were collected; the internal `Ethernet 2` adapter initially had APIPA, then was configured as `172.20.20.20/24` with no IPv4 gateway or DNS. Post-change `ipconfig` confirmed the address, and `route print -4` verified the on-link `172.20.20.0/24` route and unchanged NAT default route; guest connectivity has not yet been tested.
+- Verified the adapter-to-interface mappings and routes. Kali's `eth1` is `172.20.20.10/24`; Windows 10's `Ethernet 2` changed from APIPA to `172.20.20.20/24`. I verified the new on-link route and preserved NAT default route. [Full command-level evidence](docs/lab-network-validation.md).
 - Studied network addressing and traffic inspection in associated networking assignments.
 
-**Network validation pending:** The VM adapter configuration is documented and Kali's addresses/routes have been observed. NAT means the lab should **not** be described as entirely isolated. Windows 10's internal adapter now has `172.20.20.20/24`. Its updated route table has been verified; guest-to-guest reachability and effective isolation have not been validated.
+**Pending:** I have not yet demonstrated guest-to-guest reachability or effective isolation. NAT attachments mean the overall lab is not entirely isolated. Testing is deferred while the VM stability issue remains open.
 
 ### 3. Troubleshoot permissions and access
 
@@ -104,10 +106,7 @@ Project context: guided coursework and hands-on troubleshooting. Validation stat
 
 ## Next improvements
 
-1. Add sanitized screenshots of the verified network settings; MAC addresses must be redacted.
-2. Resolve or safely mitigate the guest stability problem before performing the pending internal-network connectivity test.
-3. Document one Wireshark capture from the lab, explaining the filter and protocol observations.
-4. Keep a concise change log as the lab expands.
+I am prioritizing the [portfolio audit remediation checklist](docs/portfolio-audit-remediation-2026-11-15.md) before expanding this lab. Outstanding network screenshots and guest-to-guest testing remain deferred pending privacy review and VM stability. I will not label untested connectivity or future packet analysis as completed.
 
 ## Related portfolio projects
 
