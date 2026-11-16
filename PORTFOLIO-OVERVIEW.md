@@ -31,7 +31,7 @@ For verified results and unresolved questions, see the [project index](docs/proj
 ## Featured projects
 
 ### 1. [Cybersecurity Virtual Lab Environment](https://github.com/bemerson24/cybersecurity-virtual-lab-environment)
-**Status: In progress.** I configured Windows 10 and Kali Linux guests with NAT plus Internal Network (`soc-lab`) for each guest. I verified the adapter inventory, Kali addressing and routes, and the Windows 10 internal address and route changes. Guest-to-guest connectivity is not yet validated because I am investigating recurring VM stalls. The [VirtualBox compatibility report](docs/virtualbox-nem-whpx-issue-report-2026-11-15.md) documents my evidence and limits; it has not yet been submitted upstream.
+**Status: In progress.** I configured Windows 10 and Kali Linux guests with NAT plus Internal Network (`soc-lab`) for each guest. I verified the adapter inventory, Kali addressing and routes, and the Windows 10 internal address and route changes. Guest-to-guest connectivity is not yet validated because I am investigating recurring VM stalls. The [VirtualBox compatibility report](docs/virtualbox-nem-whpx-issue-report-2026-11-15.md) documents my evidence and limits; I published [my November 16 contribution to VirtualBox issue #972](https://github.com/VirtualBox/virtualbox/issues/972#issuecomment-6924524139). The investigation is awaiting maintainer feedback; a complete sanitized VM log is not attached.
 
 **Focus:** virtualization, Windows/Linux environments, networking fundamentals and technical documentation.
 

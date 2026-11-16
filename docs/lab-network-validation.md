@@ -328,7 +328,7 @@ I ran the installed `VBoxManage.exe --version` from the Windows 11 host, without
 
 The installed Oracle VirtualBox version is **7.2.22**, **revision 175245**. This independently verifies the version assumed in the earlier investigation and completes the core software/hardware inventory for a reproducible NEM/WHPX performance report: Windows 11 Pro 26H2 build 26300.9974, Intel Core i7-1185G7 (4 physical/8 logical processors), active VBS/HVCI, Virtual Machine Platform enabled, Windows 10 VM 8 GiB and 2 vCPUs after a controlled reduction from 4, NEM partition successfully created, snail execution mode active, recurring single-guest freezes, and a recorded 244.381-second virtual-clock catch-up lag. **The specific defect remains unresolved.**
 
-The two VMs remain shut down. The next useful work is to prepare a concise, sanitized compatibility report for review before upstream submission, not to repeat performance experiments or disable host security features.
+At the end of this validation session, both VMs were shut down. **November 16 submission update:** I published [my November 16 contribution to VirtualBox issue #972](https://github.com/VirtualBox/virtualbox/issues/972#issuecomment-6924524139). The investigation is awaiting maintainer feedback; the complete VM log still requires privacy review before any attachment. This documentation update does not represent a new VM test or a change to host security features.
 
 ## Next action
 

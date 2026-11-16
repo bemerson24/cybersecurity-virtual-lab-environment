@@ -11,7 +11,7 @@ This roadmap tracks longer-term technical deliverables. **My immediate priority 
 - [Endpoint TCP/TLS analysis](tcp-tls-session-analysis-2026-11-03.md): published November 3; TCP handshake, per-connection TLS parameters and HTTP response observations.
 - [VirtualBox environment](../README.md): Windows 10 and Kali Linux guests on a Windows 11 host; all eight GUI adapter settings recorded November 15 (NAT plus `soc-lab` for each guest); Kali addresses/routes and both MAC-to-adapter mappings verified (`eth0` = Adapter 1/NAT; `eth1` = Adapter 2/`soc-lab`); Windows 10 NAT address observed and internal `Ethernet 2` changed from APIPA to `172.20.20.20/24`, confirmed by `ipconfig`; updated `172.20.20.0/24` on-link route and unchanged NAT default route verified; guest-to-guest testing pending.
 
-- [VirtualBox NEM/WHPX performance investigation](virtualbox-nem-whpx-issue-report-2026-11-15.md): documented version/build, log evidence and recovery observations, with root cause unresolved and no upstream comment submitted.
+- [VirtualBox NEM/WHPX performance investigation](virtualbox-nem-whpx-issue-report-2026-11-15.md): documented version/build, log evidence and recovery observations, with root cause unresolved; [my November 16 contribution to VirtualBox issue #972](https://github.com/VirtualBox/virtualbox/issues/972#issuecomment-6924524139) is published and awaiting maintainer feedback.
 
 These results concern my personal endpoints and lab environments. They do not represent production SOC operations.
 

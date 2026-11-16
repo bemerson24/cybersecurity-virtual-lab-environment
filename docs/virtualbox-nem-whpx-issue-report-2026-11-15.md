@@ -1,7 +1,9 @@
 # VirtualBox NEM/WHPX Windows 10 Guest Freeze — Approved Issue Report
 
-**Status:** Approved report text. **Not yet submitted upstream.**  
-**Intended destination:** [Existing VirtualBox issue #972](https://github.com/VirtualBox/virtualbox/issues/972) (avoid a duplicate issue).  
+**Status:** Report contribution **submitted November 16, 2026**. [View the published comment](https://github.com/VirtualBox/virtualbox/issues/972#issuecomment-6924524139). Awaiting maintainer feedback; root cause remains unresolved.
+
+**Upstream issue:** [Existing VirtualBox issue #972](https://github.com/VirtualBox/virtualbox/issues/972) (avoid a duplicate issue).
+
 **Evidence worksheet:** [Virtual lab network validation and performance investigation](lab-network-validation.md).
 
 ## Proposed issue/comment text
@@ -78,5 +80,5 @@ The time-manager lag resembles [VirtualBox issue #837](https://github.com/Virtua
 ## Submission notes
 
 - I prepared this report from my lab observations and saved it here for review before upstream submission.
-- **Upstream posting remains pending.** If submitted, comment on [VirtualBox/virtualbox#972](https://github.com/VirtualBox/virtualbox/issues/972) and link back to this evidence report.
+- I published [my November 16 contribution to VirtualBox issue #972](https://github.com/VirtualBox/virtualbox/issues/972#issuecomment-6924524139) at 09:54 PST. The comment includes selected log lines and explicitly states that a complete sanitized VM log is not attached. This page retains the supporting report; the linked comment is the authoritative record of the submitted wording.
 - The included log excerpt was selected to support technical observations. The full log and unsanitized screenshots are intentionally excluded.
