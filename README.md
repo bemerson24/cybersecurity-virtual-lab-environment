@@ -135,6 +135,8 @@ The [Security Operations Project Roadmap](docs/security-operations-analyst-roadm
 
 - **November 15, 2026 (BITS correlation assessed):** Full System Event ID 7040 messages identified both host events as changes to the Background Intelligent Transfer Service (BITS) startup setting: demand/Manual → Automatic at 16:48:38 PST, and Automatic → demand/Manual at 16:50:54 PST. The first occurs about one second after the estimated VirtualBox timer-lag timestamp, but neither event identifies the initiating process or shows that BITS caused the VM stall. NEM snail mode had already been recorded at VM startup. No Windows configuration was changed; the two guests remain off.
 
+- **November 15, 2026 (Windows Update correlation, BITS lead closed):** A read-only `Microsoft-Windows-WindowsUpdateClient/Operational` event query for the ±3-minute VM-lag window returned `NoMatchingEventsFound`. Combined with the two BITS start-type change events, there is no verified evidence linking BITS or Windows Update to the VM freeze. The BITS lead was closed as inconclusive. Focus remains on VirtualBox's NEM fallback and 244.381-second timing lag; no VM or Windows security settings were changed.
+
 ## Change log
 
 - **November 15, 2026 (host event correlation):** A read-only Windows 11 `System` event-log query found no displayed critical/error/warning events within ±3 minutes of the VM's estimated 16:48:37 PST time-manager lag. The initial query suppressed PowerShell errors, so this result remains provisional pending confirmation of System-log readability. No match does not rule out VirtualBox/NEM timing problems or events in other channels. No system or VM settings were changed.
