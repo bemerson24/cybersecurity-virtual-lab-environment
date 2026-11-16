@@ -1,6 +1,6 @@
 # Brian Emerson — Cybersecurity Portfolio
 
-Technical projects and investigations covering Linux, Windows, virtualization, networking, DNS and security troubleshooting. Professional experience spans commercial software client support, public utilities and municipal government, including operational systems, utility billing and revenue recovery, exception resolution, documentation and process improvement. The technical work follows the same approach: verify what happened, preserve useful evidence, communicate findings and improve the process.
+I document hands-on projects and investigations involving Linux, Windows, virtualization, networking, DNS, and security troubleshooting. My background includes commercial software support, public utilities, and municipal government, with work involving operational systems, account and billing workflows, exception resolution, and process improvement. Across those roles and my technical projects, I focus on verifying what happened, preserving evidence, and communicating what I can actually support.
 
 **Career focus:** entry-level IT/security support, security operations and infrastructure-support roles where careful investigation, reliable operations and clear documentation matter.
 
@@ -11,11 +11,11 @@ Technical projects and investigations covering Linux, Windows, virtualization, n
 
 ## Cybersecurity community and professional development
 
-**Clark College Cyber Club member** and current Cybersecurity BAS student.
+I'm a Cybersecurity BAS student at Clark College and a member of its Cyber Club.
 
 ## How the projects connect to security operations
 
-The projects are separate environments, but they build a common investigation workflow: **establish a baseline → observe system or network behavior → test a hypothesis → document findings and limitations**.
+These projects use different environments, but I approach them with the same workflow: **establish a baseline → observe system or network behavior → test a hypothesis → document findings and limitations**.
 
 | Technical area | Current evidence | Boundary or next step |
 |---|---|---|
@@ -54,20 +54,20 @@ For published results and open technical questions, see the [project index](docs
 
 **Columbia Ultimate · February 2016–April 2017**
 
-Advanced from **Associate Client Support Specialist (Tier 1)** to **Client Support Specialist (Tier 2)** in **August 2016**.
+I advanced from **Associate Client Support Specialist (Tier 1)** to **Client Support Specialist (Tier 2)** in **August 2016**.
 
-Supported **CUBS (Columbia Ultimate Business System)**, the company's debt-collection and reporting software. Responsibilities included troubleshooting reported software problems, reproducing issues, investigating database-related questions, assisting with application configuration and escalating unresolved issues.
+I supported **CUBS (Columbia Ultimate Business System)**, the company's debt-collection and reporting software. I troubleshot reported problems, reproduced issues, investigated database-related questions, assisted with application configuration, and escalated unresolved cases.
 
-Provided remote support for legacy mainframe workflows, including dot-matrix printer configuration attempts. Documented tests and escalated unresolved issues.
+I also provided remote support for legacy mainframe workflows, including attempts to configure dot-matrix printers. I documented the tests and escalated what I couldn't resolve.
 
 ### Public utilities and municipal operations
 
-Progressed through **Customer Service Representative (CSR)**, **CSR II** and **Senior CSR / Supervisor** roles at Clark Public Utilities. This progression reflects increasing responsibility in utility operations, customer/account workflows, problem resolution and team support.
+At Clark Public Utilities, I progressed through **Customer Service Representative (CSR)**, **CSR II**, and **Senior CSR / Supervisor** roles, taking on more responsibility for utility operations, customer/account workflows, problem resolution, and team support.
 
-Public-utility and municipal responsibilities also included business systems, utility billing, revenue recovery, investigating exceptions, documenting procedures and findings and improving operational processes.
+My public-utility and municipal work also involved business systems, utility billing, revenue recovery, investigating exceptions, documenting findings and procedures, and improving operational processes.
 
-That experience developed troubleshooting, recordkeeping, communication and process-improvement skills.
+Those roles strengthened my troubleshooting, recordkeeping, communication, and process-improvement skills.
 
 ## Evidence and scope
 
-Each project documents its environment, procedure, observed results and limitations. Coursework, guided exercises and retrospective accounts are identified in the relevant project documentation.
+I document the environment, procedures, observations, and limitations for each project. I also identify guided coursework and retrospective accounts where relevant.
