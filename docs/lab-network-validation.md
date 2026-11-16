@@ -165,6 +165,21 @@ This confirms that reducing the guest vCPUs from 4 to 2 **did not remove NEM fal
 
 The **only later VM configuration change** documented here was reducing Windows 10 from 4 to 2 vCPUs. No snapshots, network settings, Windows host hypervisor settings, WSL2, VBS, Memory Integrity, BitLocker or other host security protections were altered. The guest-to-guest connectivity check remains **unverified**.
 
+## Host virtualization-based security — read-only inspection (November 15, 2026)
+
+With both guests shut down, the operator ran:
+
+```powershell
+Get-CimInstance -ClassName Win32_DeviceGuard -Namespace root\Microsoft\Windows\DeviceGuard |
+    Select-Object VirtualizationBasedSecurityStatus, SecurityServicesRunning
+```
+
+**Recorded result:** `VirtualizationBasedSecurityStatus = 2`; `SecurityServicesRunning = {2, 3, 4}`.
+
+According to [Microsoft's Win32_DeviceGuard documentation](https://learn.microsoft.com/en-us/windows/security/hardware-security/enable-virtualization-based-protection-of-code-integrity), status `2` means VBS is running; the active service codes are **Memory Integrity/HVCI (2)**, **System Guard Secure Launch (3)**, and **SMM Firmware Measurement (4)**. Credential Guard (code 1) was not included in the returned list; this check does not independently assess every other Windows security component.
+
+Microsoft and Oracle document the risk of slower VirtualBox execution when Windows hypervisor-based functionality is active. These findings support a *Windows hypervisor / VirtualBox compatibility* explanation for the logged NEM fallback, but the exact feature or mechanism producing the severe stall was not independently isolated. **No security feature, boot setting, or optional Windows feature was modified.**
+
 ## Next action
 
 Given the continued NEM snail execution mode after reducing Windows 10 to 2 vCPUs, do not infer that the dual-VM freeze is resolved. Defer the simultaneous-guest connectivity test until there is a safe, controlled way to establish both guests are responsive. If the host is struggling, shut down guest operating systems cleanly. When ready, use only a short, controlled `ping -n 4 172.20.20.10` from Windows 10 while Kali is running; record the actual result before the reverse test. Never interpret configuration alone as proof of connectivity.
