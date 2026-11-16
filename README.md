@@ -131,6 +131,8 @@ The [Security Operations Project Roadmap](docs/security-operations-analyst-roadm
 
 ## Change log
 
+- **November 15, 2026 (timing-event context):** A 12-line-before/after VirtualBox log extract around the 244.38-second time-manager lag showed earlier WASAPI scheduling and disk-medium enumeration activity, an IPv6 MTU/RDNSS warning logged *after* the lag, then audio-cache events and normal ACPI shutdown. The selected log lines do not attribute the stall to audio, IPv6, or disk enumeration. Next read-only step is to retrieve the VM log's absolute start time for possible host Windows Event Log correlation.
+
 - **November 15, 2026 (VM shutdown event correlation):** A host-only VirtualBox log inspection confirmed a `TM` catch-up lag of ~244.38 seconds at `00:09:53`, followed by `ACPI: Entering S5 power state` at `00:10:25` and normal state transitions `RUNNING` → `POWERING_OFF` → `OFF` → `DESTROYING` → `TERMINATED`. This corroborates an orderly shutdown after the earlier ACPI power-button request without proving why the guest became responsive. No guest-heartbeat entries appeared in this filtered subset; this does not verify guest-heartbeat status. Continue read-only investigation of log context and keep guest VMs off.
 
 - **November 15, 2026 (Windows 10 ACPI recovery):** Windows 10 again became unresponsive after a 2-vCPU restart, with Kali powered off and NEM snail execution mode still present. On the Windows 11 host, `VBoxManage controlvm "Windows 10" acpipowerbutton` requested a graceful guest power-button event. The operator reported that the VM then responded sufficiently to complete a normal shutdown. This is a recovery observation, not a repair of the underlying virtualization performance issue. No force-power-off or snapshot changes occurred.
