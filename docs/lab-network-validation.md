@@ -79,12 +79,12 @@ Routing, subnet and MAC evidence now agree. The current host-side `VBoxManage sh
 
 ### Windows 10 — observed November 15
 
-From the running Windows 10 guest, the operator collected `ipconfig /all` and `route print -4` in Command Prompt.
+From the running Windows 10 guest, I collected `ipconfig /all` and `route print -4` in Command Prompt.
 
 - `Ethernet`, matching VirtualBox Adapter 1 (NAT) by MAC: DHCP-enabled, `10.0.2.15/24`, default gateway `10.0.2.2`. The route table confirms the default route through this interface.
 - `Ethernet 2`, matching VirtualBox Adapter 2 (`soc-lab`) by MAC: DHCP-enabled, automatically configured IPv4 address `169.254.206.116/16` (APIPA), without an IPv4 default gateway. The route table shows on-link `169.254.0.0/16`, not `172.20.20.0/24`.
 - This suggests no usable DHCP-provided address was obtained for the internal interface during the observation. It does not establish the cause or prove the underlying internal link failed. Kali's intended internal subnet is `172.20.20.0/24`, so Windows 10 is not yet addressed on that subnet.
-- **Follow-up configuration and verification, November 15:** In the Windows 10 guest, the operator set only `Ethernet 2` to `172.20.20.20`, subnet mask `255.255.255.0`, with blank IPv4 gateway and DNS. The subsequent `ipconfig` output showed `Ethernet` unchanged at `10.0.2.15/24` with gateway `10.0.2.2` and `Ethernet 2` now at `172.20.20.20/24`, with no default gateway displayed. This establishes the configured address, not successful communication with Kali. An updated `route print -4` output confirmed `172.20.20.0` mask `255.255.255.0` as On-link through interface `172.20.20.20`. The default route remained `0.0.0.0/0` via `10.0.2.2` using `10.0.2.15`. No guest-to-guest ping has yet been performed.
+- **Follow-up configuration and verification, November 15:** In the Windows 10 guest, I set only `Ethernet 2` to `172.20.20.20`, subnet mask `255.255.255.0`, with blank IPv4 gateway and DNS. The subsequent `ipconfig` output showed `Ethernet` unchanged at `10.0.2.15/24` with gateway `10.0.2.2` and `Ethernet 2` now at `172.20.20.20/24`, with no default gateway displayed. This establishes the configured address, not successful communication with Kali. An updated `route print -4` output confirmed `172.20.20.0` mask `255.255.255.0` as On-link through interface `172.20.20.20`. The default route remained `0.0.0.0/0` via `10.0.2.2` using `10.0.2.15`. No guest-to-guest ping has yet been performed.
 
 ## 3. Test only authorized internal-lab endpoints — pending
 
@@ -126,7 +126,7 @@ These are **planned commands**, not executed results. Failure could reflect IP c
 
 ## Performance observation — November 15, 2026
 
-With both guests running, the operator reported increased fan activity and potential Windows 10 sluggishness. The Windows 11 host Task Manager showed approximately 21% total CPU use and 78% memory use, with one VirtualBox process group using roughly 8.4 GB of memory and another roughly 1.9 GB. These host metrics alone do **not** diagnose the source of the performance issue.
+With both guests running, I observed increased fan activity and potential Windows 10 sluggishness. The Windows 11 host Task Manager showed approximately 21% total CPU use and 78% memory use, with one VirtualBox process group using roughly 8.4 GB of memory and another roughly 1.9 GB. These host metrics alone do **not** diagnose the source of the performance issue.
 
 A subsequent read-only host command inspected the current Windows 10 VM log:
 
@@ -144,9 +144,9 @@ The log included:
 
 **Verified:** This Windows 10 VM session used VirtualBox's NEM fallback and reported snail execution mode. The log does not independently identify which Windows host component prevented VirtualBox from accessing VT-x or quantify the performance penalty.
 
-**Follow-up observation:** While both Windows 10 and Kali were running, Windows 10 became unresponsive even to a Ctrl+Alt+Delete attempt. The operator then cleanly shut down Kali; VirtualBox Manager showed Kali **Powered Off** and Windows 10 **Running**. As soon as Kali stopped, Windows 10 responded and processed previously queued commands. This strongly associates the stall with simultaneous VM load, but does not isolate RAM pressure, scheduling, NEM overhead or another cause. Any queued ping that may have executed only after Kali shut down would **not** validate live guest-to-guest connectivity; no valid simultaneous-guest ping result has been captured.
+**Follow-up observation:** While both Windows 10 and Kali were running, Windows 10 became unresponsive even to a Ctrl+Alt+Delete attempt. I then cleanly shut down Kali; VirtualBox Manager showed Kali **Powered Off** and Windows 10 **Running**. As soon as Kali stopped, Windows 10 responded and processed previously queued commands. This strongly associates the stall with simultaneous VM load, but does not isolate RAM pressure, scheduling, NEM overhead or another cause. Any queued ping that may have executed only after Kali shut down would **not** validate live guest-to-guest connectivity; no valid simultaneous-guest ping result has been captured.
 
-**Recovery completion:** After Kali powered off, Windows 10 recovered responsiveness and subsequently completed a normal guest-initiated shutdown. The operator confirmed VirtualBox Manager showed **both VMs Powered Off**. This successful shutdown corroborates recovery after load was reduced; it does not demonstrate that the underlying NEM performance problem was repaired.
+**Recovery completion:** After Kali powered off, Windows 10 recovered responsiveness and subsequently completed a normal guest-initiated shutdown. I confirmed VirtualBox Manager showed **both VMs Powered Off**. This successful shutdown corroborates recovery after load was reduced; it does not demonstrate that the underlying NEM performance problem was repaired.
 
 **Host memory comparison after both VMs were powered off:** A subsequent Windows 11 Task Manager Processes screenshot showed **11% CPU** and **44% memory** usage; Firefox remained open, using approximately **2.8 GB**. This compares with the earlier **21% CPU / 78% memory** observation while both guests were running. Memory usage was **34 percentage points lower** with both guests off, supporting the presence of significant combined VM memory load. The observations were collected at different times with potentially different host activity; they are not a controlled benchmark and do not isolate the cause of the stall.
 
@@ -154,20 +154,20 @@ The log included:
 
 **VirtualBox resource allocation inspection (read-only; both VMs off):** `VBoxManage showvminfo ... --machinereadable` reported Windows 10 `memory=8192` (8 GB) and `cpus=4`; Kali `memory=4096` (4 GB) and `cpus=2`. Total configured VM guest RAM is **12 GB**, with **six vCPU allocations** across the two guests. Six vCPUs is not a measured host CPU utilization value or necessarily six dedicated physical cores. The configured guest RAM is consistent with a substantial increase in host memory usage when both VMs run, but it does not establish physical memory exhaustion or isolate the cause of NEM snail mode. Host physical/logical core counts have not yet been measured in this step.
 
-**Host processor topology (read-only, Windows 11 PowerShell):** `Get-CimInstance Win32_Processor | Select-Object Name, NumberOfCores, NumberOfLogicalProcessors` returned **Intel Core i7-1185G7**, **4 physical cores**, **8 logical processors**. The VMs have 4 (Windows 10) and 2 (Kali) vCPUs configured. These are schedulable virtual processors, not dedicated physical cores, and the allocation alone does not establish CPU exhaustion. Oracle VirtualBox 7.2's [processor settings guidance](https://docs.oracle.com/en/virtualization/virtualbox/7.2/user/working-with-vms.html) advises not configuring more guest vCPUs *per VM* than physical cores. A **controlled diagnostic** was planned to reduce the Windows 10 VM from 4 to 2 vCPUs, without changing the host's security settings. **Subsequent execution:** the operator started Windows 10 after applying the two-vCPU configuration, reported a fast boot, and confirmed `echo %NUMBER_OF_PROCESSORS%` returned `2` within the guest. Kali remained powered off. These observations verify the new guest CPU count and responsiveness for this brief single-VM check; they are not a timed benchmark or evidence that the prior two-VM freeze was solved. **Post-change NEM verification:** In the new Windows 10 session configured with 2 vCPUs, the host-side `VBoxManage showvminfo "Windows 10" --log 0` output again contained:
+**Host processor topology (read-only, Windows 11 PowerShell):** `Get-CimInstance Win32_Processor | Select-Object Name, NumberOfCores, NumberOfLogicalProcessors` returned **Intel Core i7-1185G7**, **4 physical cores**, **8 logical processors**. The VMs have 4 (Windows 10) and 2 (Kali) vCPUs configured. These are schedulable virtual processors, not dedicated physical cores, and the allocation alone does not establish CPU exhaustion. Oracle VirtualBox 7.2's [processor settings guidance](https://docs.oracle.com/en/virtualization/virtualbox/7.2/user/working-with-vms.html) advises not configuring more guest vCPUs *per VM* than physical cores. A **controlled diagnostic** was planned to reduce the Windows 10 VM from 4 to 2 vCPUs, without changing the host's security settings. **Subsequent execution:** I started Windows 10 after applying the two-vCPU configuration, reported a fast boot, and confirmed `echo %NUMBER_OF_PROCESSORS%` returned `2` within the guest. Kali remained powered off. These observations verify the new guest CPU count and responsiveness for this brief single-VM check; they are not a timed benchmark or evidence that the prior two-VM freeze was solved. **Post-change NEM verification:** In the new Windows 10 session configured with 2 vCPUs, the host-side `VBoxManage showvminfo "Windows 10" --log 0` output again contained:
 
 ```text
 00:00:06.226968 HM: HMR3Init: Attempting fall back to NEM: VT-x is not available
 00:00:06.251973 NEM: NEMR3Init: Snail execution mode is active!
 ```
 
-This confirms that reducing the guest vCPUs from 4 to 2 **did not remove NEM fallback or snail execution mode**. The operator initially reported a fast boot and a responsive command prompt, then subsequently reported that **Windows 10 became sluggish again with Kali still powered off**. Therefore the two-vCPU adjustment did not produce sustained single-VM responsiveness. **Recovery in this session:** With Windows 10 unresponsive and Kali powered off, the operator ran `VBoxManage controlvm "Windows 10" acpipowerbutton` from the Windows 11 host. The operator reported that the ACPI power-button request was followed by the guest becoming responsive enough to initiate a normal shutdown, which completed; Windows 10 is now closed. This is a successful recovery observation, **not** evidence that ACPI corrected the NEM fallback or underlying slowdown. The precise relationship between the ACPI signal and resumed responsiveness is not isolated. No forced power-off or snapshot operation was used. This result weakens the earlier interpretation that a second running guest is necessary to trigger the symptoms. The specific mechanism remains unresolved.
+This confirms that reducing the guest vCPUs from 4 to 2 **did not remove NEM fallback or snail execution mode**. I initially reported a fast boot and a responsive command prompt, then subsequently reported that **Windows 10 became sluggish again with Kali still powered off**. Therefore the two-vCPU adjustment did not produce sustained single-VM responsiveness. **Recovery in this session:** With Windows 10 unresponsive and Kali powered off, I ran `VBoxManage controlvm "Windows 10" acpipowerbutton` from the Windows 11 host. I observed that the ACPI power-button request was followed by the guest becoming responsive enough to initiate a normal shutdown, which completed; Windows 10 is now closed. This is a successful recovery observation, **not** evidence that ACPI corrected the NEM fallback or underlying slowdown. The precise relationship between the ACPI signal and resumed responsiveness is not isolated. No forced power-off or snapshot operation was used. This result weakens the earlier interpretation that a second running guest is necessary to trigger the symptoms. The specific mechanism remains unresolved.
 
 The **only later VM configuration change** documented here was reducing Windows 10 from 4 to 2 vCPUs. No snapshots, network settings, Windows host hypervisor settings, WSL2, VBS, Memory Integrity, BitLocker or other host security protections were altered. The guest-to-guest connectivity check remains **unverified**.
 
 ## Host virtualization-based security — read-only inspection (November 15, 2026)
 
-With both guests shut down, the operator ran:
+With both guests shut down, I ran:
 
 ```powershell
 Get-CimInstance -ClassName Win32_DeviceGuard -Namespace root\Microsoft\Windows\DeviceGuard |
@@ -233,7 +233,7 @@ The `TM` time manager recorded **244.381120090 seconds (approximately 4 minutes 
 00:10:25.328314 Changing the VM state from 'DESTROYING' to 'TERMINATED'
 ```
 
-This confirms the large virtual time lag was logged **before** the guest entered ACPI S5 and transitioned normally through power-off to termination, consistent with the operator's report of a successful shutdown after an ACPI power-button request. The log does not independently prove the power-button signal restored guest responsiveness. No `Guest seems to be unresponsive` or `GuestHeartBeat` entries appeared in the filtered output; **absence from these matches does not demonstrate that Guest Additions or guest-heartbeat monitoring was operational or healthy**.
+This confirms the large virtual time lag was logged **before** the guest entered ACPI S5 and transitioned normally through power-off to termination, consistent with my observation of a successful shutdown after an ACPI power-button request. The log does not independently prove the power-button signal restored guest responsiveness. No `Guest seems to be unresponsive` or `GuestHeartBeat` entries appeared in the filtered output; **absence from these matches does not demonstrate that Guest Additions or guest-heartbeat monitoring was operational or healthy**.
 
 **Step 37 — Local context surrounding the lag:** The `Select-String 'Giving up catch-up attempt' -Context 12,12` command returned nearby log records, not a continuous activity trace. The 12 preceding records included WASAPI audio-cache initialization and a warning at `00:01:17` (with unusual scheduling numbers), medium-enumeration completion at `00:01:30` and `00:06:51`; the lag followed at `00:09:53.449479`. Later records included an IPv6 MTU/RDNSS warning at `00:09:55.719661`, WASAPI cache lookups at `00:09:56` and `00:10:14`, and orderly USB/audio shutdown and ACPI S5 at `00:10:25`. **None of these warnings has a verified causal relationship with the 244.381-second lag**; notably, the IPv6 warning was logged after the time-manager event. Gaps between log records do not independently establish continuous guest unresponsiveness.
 
@@ -243,7 +243,7 @@ This confirms the large virtual time lag was logged **before** the guest entered
 00:00:05.958534 Log opened 2026-11-16T00:38:49.946606300Z
 ```
 
-Using that point as an anchor rather than assuming relative time zero equals log opening, the `00:09:53.449479` time-manager lag corresponds approximately to **2026-11-16 00:48:37.437551 UTC** (November 15, 2026, 16:48:37 PST). The `00:10:25.115019` ACPI S5 transition corresponds approximately to **00:49:09.103091 UTC** (16:49:09 PST). These are *estimated correlations*, not independently measured host freeze start/end times: the VM timestamps and elapsed-time logging under NEM may themselves have anomalies. **Step 39 — Host System event correlation (read-only):** The operator ran `Get-WinEvent -FilterHashtable` against the Windows 11 `System` log using `StartTime` and `EndTime` three minutes before and after the estimated lag, filtering critical/error/warning levels `@(1,2,3)` and limiting displayed results to 25. **No entries were returned.** This means the filtered command displayed no matches; it does **not** rule out VirtualBox or Windows hypervisor failures, informational host events, another event channel, or timing mismatch. Because the query used `-ErrorAction SilentlyContinue`, a query/access error was also suppressed. The next diagnostic must first verify read access to the `System` event log without suppressing errors.
+Using that point as an anchor rather than assuming relative time zero equals log opening, the `00:09:53.449479` time-manager lag corresponds approximately to **2026-11-16 00:48:37.437551 UTC** (November 15, 2026, 16:48:37 PST). The `00:10:25.115019` ACPI S5 transition corresponds approximately to **00:49:09.103091 UTC** (16:49:09 PST). These are *estimated correlations*, not independently measured host freeze start/end times: the VM timestamps and elapsed-time logging under NEM may themselves have anomalies. **Step 39 — Host System event correlation (read-only):** I ran `Get-WinEvent -FilterHashtable` against the Windows 11 `System` log using `StartTime` and `EndTime` three minutes before and after the estimated lag, filtering critical/error/warning levels `@(1,2,3)` and limiting displayed results to 25. **No entries were returned.** This means the filtered command displayed no matches; it does **not** rule out VirtualBox or Windows hypervisor failures, informational host events, another event channel, or timing mismatch. Because the query used `-ErrorAction SilentlyContinue`, a query/access error was also suppressed. The next diagnostic must first verify read access to the `System` event log without suppressing errors.
 
 Keep both VMs powered off and preserve WSL2, VBS, BitLocker, snapshots and security settings.
 
@@ -255,7 +255,7 @@ The Step 39 query searched only event severity levels **1, 2 and 3** (critical/e
 
 ## Step 41 — All-level Windows System event correlation
 
-After verifying the Windows 11 System event log was readable, the operator reran the ±3-minute host-event query centered on approximately **November 15, 2026 16:48:37 PST** without the earlier critical/error/warning level filter. Two events were returned:
+After verifying the Windows 11 System event log was readable, I reran the ±3-minute host-event query centered on approximately **November 15, 2026 16:48:37 PST** without the earlier critical/error/warning level filter. Two events were returned:
 
 | Host local timestamp (PST) | Provider | Event ID | Level |
 | --- | --- | ---: | --- |
@@ -279,7 +279,7 @@ The current lab state remains Windows 10 and Kali both powered off, Windows 10 c
 
 ## Step 43 — Windows Update event correlation and BITS lead closure
 
-The operator ran the read-only `Get-WinEvent` query against `Microsoft-Windows-WindowsUpdateClient/Operational` for the same estimated ±3-minute window (2026-11-15 16:45:37–16:51:37 PST). PowerShell returned `NoMatchingEventsFound`, indicating **no matching Windows Update operational events were returned** for this interval. The command used `-ErrorAction Stop` and surfaced the no-matching-events error rather than suppressing it. This does not prove no Windows Update activity occurred outside this channel or interval.
+I ran the read-only `Get-WinEvent` query against `Microsoft-Windows-WindowsUpdateClient/Operational` for the same estimated ±3-minute window (2026-11-15 16:45:37–16:51:37 PST). PowerShell returned `NoMatchingEventsFound`, indicating **no matching Windows Update operational events were returned** for this interval. The command used `-ErrorAction Stop` and surfaced the no-matching-events error rather than suppressing it. This does not prove no Windows Update activity occurred outside this channel or interval.
 
 **BITS lead closed as inconclusive:** The two host System 7040 informational events at 16:48:38 and 16:50:54 PST reflected BITS startup-type changes, but no transfer activity, initiating process, or causal link to VirtualBox's earlier NEM fallback or reported 244.381-second time-manager lag was verified. Continue the investigation with the **VirtualBox NEM execution path**, not the BITS/Windows Update hypothesis. Both VMs should remain off; do not disable WSL2, VBS, BitLocker, or other host protections.
 
@@ -316,7 +316,7 @@ This establishes **Windows 11 Pro, OS build family 26300**. [Microsoft's Windows
 
 ## Step 47 — Exact installed VirtualBox binary version
 
-The operator ran the installed `VBoxManage.exe --version` from the Windows 11 host, without elevation. Output:
+I ran the installed `VBoxManage.exe --version` from the Windows 11 host, without elevation. Output:
 
 ```text
 7.2.22r175245
@@ -324,7 +324,7 @@ The operator ran the installed `VBoxManage.exe --version` from the Windows 11 ho
 
 The installed Oracle VirtualBox version is **7.2.22**, **revision 175245**. This independently verifies the version assumed in the earlier investigation and completes the core software/hardware inventory for a reproducible NEM/WHPX performance report: Windows 11 Pro 26H2 build 26300.9974, Intel Core i7-1185G7 (4 physical/8 logical processors), active VBS/HVCI, Virtual Machine Platform enabled, Windows 10 VM 8 GiB and 2 vCPUs after a controlled reduction from 4, NEM partition successfully created, snail execution mode active, recurring single-guest freezes, and a recorded 244.381-second virtual-clock catch-up lag. **The specific defect remains unresolved.**
 
-The two VMs remain shut down. The next useful work is to prepare a concise, sanitized compatibility report for operator review, not to repeat performance experiments or disable host security features.
+The two VMs remain shut down. The next useful work is to prepare a concise, sanitized compatibility report for review before upstream submission, not to repeat performance experiments or disable host security features.
 
 ## Next action
 
