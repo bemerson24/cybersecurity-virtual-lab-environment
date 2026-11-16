@@ -2,7 +2,7 @@
 
 **Status:** Published milestones and pending technical extensions
 
-This roadmap tracks longer-term technical deliverables. **My immediate priority is the [portfolio audit remediation checklist](portfolio-audit-remediation-2026-11-15.md)** across existing repositories. I will complete the documentation, evidence and privacy checks first, and then conclude that audit with one controlled security-event investigation. Other milestones below remain plans until their outputs have been documented and verified.
+This roadmap tracks longer-term technical deliverables. My immediate priority is to verify evidence, privacy and technical claims across existing projects. Once those checks are complete, I plan one controlled security-event investigation. Other milestones below remain plans until their outputs have been documented and verified.
 
 ## Current evidence
 
