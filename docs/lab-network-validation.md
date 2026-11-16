@@ -277,6 +277,12 @@ Both events concern **Background Intelligent Transfer Service (BITS)** and show 
 
 The current lab state remains Windows 10 and Kali both powered off, Windows 10 configured with two vCPUs, existing snapshots and host security protections preserved. The primary unresolved problem is significant NEM/Windows hypervisor execution degradation, not demonstrated BITS failure. Optional read-only investigation could compare Windows Update and BITS operational logs around this period, but such a correlation would not by itself resolve the VirtualBox compatibility issue.
 
+## Step 43 — Windows Update event correlation and BITS lead closure
+
+The operator ran the read-only `Get-WinEvent` query against `Microsoft-Windows-WindowsUpdateClient/Operational` for the same estimated ±3-minute window (2026-11-15 16:45:37–16:51:37 PST). PowerShell returned `NoMatchingEventsFound`, indicating **no matching Windows Update operational events were returned** for this interval. The command used `-ErrorAction Stop` and surfaced the no-matching-events error rather than suppressing it. This does not prove no Windows Update activity occurred outside this channel or interval.
+
+**BITS lead closed as inconclusive:** The two host System 7040 informational events at 16:48:38 and 16:50:54 PST reflected BITS startup-type changes, but no transfer activity, initiating process, or causal link to VirtualBox's earlier NEM fallback or reported 244.381-second time-manager lag was verified. Continue the investigation with the **VirtualBox NEM execution path**, not the BITS/Windows Update hypothesis. Both VMs should remain off; do not disable WSL2, VBS, BitLocker, or other host protections.
+
 ## Next action
 
 Given the continued NEM snail execution mode after reducing Windows 10 to 2 vCPUs, do not infer that the dual-VM freeze is resolved. Defer the simultaneous-guest connectivity test until there is a safe, controlled way to establish both guests are responsive. If the host is struggling, shut down guest operating systems cleanly. When ready, use only a short, controlled `ping -n 4 172.20.20.10` from Windows 10 while Kali is running; record the actual result before the reverse test. Never interpret configuration alone as proof of connectivity.
