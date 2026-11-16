@@ -4,6 +4,8 @@
 
 **Goal:** Address every finding from the November 15 portfolio audit, finishing with a **controlled, documented security-event investigation** that demonstrates junior SOC analytical skills. Progress is marked complete only after the change or evidence has been verified.
 
+**Evidence audit:** [Inventory of published artifacts, privacy-review status and missing corroboration](portfolio-evidence-inventory-2026-11-15.md).
+
 ## Execution order and acceptance criteria
 
 ### 1. Professional voice, scope and status consistency
@@ -24,7 +26,7 @@
 
 ### 3. Evidence provenance and coverage
 
-- [ ] Inventory existing screenshots versus statements that currently rely on reviewed but unpublished command output or screenshots.
+- [x] Inventory existing screenshots versus statements that currently rely on reviewed but unpublished command output or screenshots. **See the [evidence coverage inventory](portfolio-evidence-inventory-2026-11-15.md); gaps remain open for remediation.**
 - [ ] Add only selected, sanitized artifacts when genuinely available; do not generate substitute screenshots or treat a transcribed observation as an archived file.
 - [ ] For VirtualBox, do not claim successful guest-to-guest connectivity; VM stability remains unresolved. Preserve the existing snapshots and disk chains.
 - [ ] For Pi-hole, preserve the distinction between blocked DNS requests, application telemetry hypotheses, and proof of network connections or compromise. Device-identity attribution from the October router test remains unverified.
@@ -84,5 +86,6 @@
 | 2026-11-15 | Verified first-person voice and consistent project-status framing | Four README files, central overview and main investigation documents inspected | Verified for specified files |
 | 2026-11-15 | Standardized documentation-assistance notes in three existing case studies | One TCP/TLS case study; two Pi-hole case studies | Verified |
 | 2026-11-15 | Inspected published Pi-hole evidence images 02, 03 and 04 | Git blob SHA-1 matched to recovered local screenshots; visual review of displayed content | Partial image audit: 3/10 public images (including cover) |
+| 2026-11-15 | Published [cross-project evidence coverage inventory](portfolio-evidence-inventory-2026-11-15.md) | Listed public files, original-observation limits, hash-matched screenshots and seven unchecked images | Inventory complete; evidence gaps and image review remain open |
 
 I will update this record only after verifying each meaningful correction. This tracker is a record of portfolio maintenance, not evidence that the underlying systems were tested again.
