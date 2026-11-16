@@ -125,6 +125,10 @@ The [Security Operations Project Roadmap](docs/security-operations-analyst-roadm
 
 ## Change log
 
+- **November 15, 2026 (host CPU topology):** Read-only `Win32_Processor` inspection confirmed an Intel Core i7-1185G7 with 4 physical cores and 8 logical processors. Current VM CPU allocations total six vCPUs (Windows 10: 4; Kali: 2), which are scheduled rather than permanently reserved physical cores. No CPU saturation or root cause was proven, and no CPU/host security settings have been changed. A controlled, reversible guest vCPU reduction may be evaluated separately from the confirmed NEM fallback.
+
+## Change log
+
 - **November 15, 2026 (VM resource allocation):** A read-only `VBoxManage showvminfo --machinereadable` check with both VMs powered off confirmed Windows 10 allocated 8192 MB RAM and 4 vCPUs, and Kali allocated 4096 MB RAM and 2 vCPUs (12 GB configured guest RAM combined). These are configuration values, not evidence that RAM exhausted or that vCPU assignments are physical cores. Host processor topology and the root cause of snail execution mode remain to be investigated; no allocation changes were applied.
 
 ## Change log
