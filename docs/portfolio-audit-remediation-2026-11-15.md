@@ -8,16 +8,16 @@
 
 ### 1. Professional voice, scope and status consistency
 
-- [ ] Use first person for my actions and findings; neutral language is appropriate for equipment, command output and technical facts. Remove third-person descriptions of my work such as "the operator" and "the user".
-- [ ] Confirm that each README and the portfolio overview describe the same current project status. Separate completed checks from pending tests and inferred explanations.
-- [ ] Make the status of the VirtualBox compatibility report explicit: saved in my repo, **not yet submitted to VirtualBox issue #972**.
+- [x] Use first person for my actions and findings; neutral language is appropriate for equipment, command output and technical facts. Remove third-person descriptions of my work such as "the operator" and "the user". **Verified on the four README files, portfolio overview and two main lab investigation documents; the additional case studies reviewed were also first-person.**
+- [x] Confirm that each README and the portfolio overview describe the same current project status. Separate completed checks from pending tests and inferred explanations. **Verified in the four entry READMEs and central overview.**
+- [x] Make the status of the VirtualBox compatibility report explicit: saved in my repo, **not yet submitted to VirtualBox issue #972**.
 
 **Done when:** All four README files and the central portfolio entry agree on key findings and unfinished work; a textual pass finds no third-person author references.
 
 ### 2. Navigation and readability
 
-- [ ] Give the main lab README a concise current-status summary and keep detailed diagnostics in the technical worksheet/history.
-- [ ] Maintain one linked portfolio project index and one audit tracker; eliminate unnecessary repeated project summaries.
+- [x] Give the main lab README a concise current-status summary and keep detailed diagnostics in the technical worksheet/history. **Revised and re-fetched main README.**
+- [x] Maintain one linked portfolio project index and one audit tracker; eliminate unnecessary repeated project summaries. **Central overview, project index and roadmap link to this tracker; lab README repeated network details reduced.**
 - [ ] Ensure all internal Markdown references resolve to existing files and distinguish an actual result from a roadmap item.
 
 **Done when:** Navigation links are verified and a reader can locate the evidence, result, unresolved question and next step from the repository entry page.
@@ -34,7 +34,7 @@
 
 ### 4. Privacy review of already-published images and future artifacts
 
-- [ ] Visually review the five WSL2 screenshots and four Pi-hole screenshots already published for account names, local identifiers, identifiable URLs, MAC addresses, IP addresses, tokens, sensitive paths and private information.
+- [ ] Visually review the five WSL2 screenshots and four Pi-hole screenshots already published for account names, local identifiers, identifiable URLs, MAC addresses, IP addresses, tokens, sensitive paths and private information. **Three of four Pi-hole screenshots are inspected; five WSL2 screenshots plus the currently published Pi-hole dashboard remain. Also review the lab-cover graphic for presentation.**
 - [ ] Replace any sensitive screenshot with a redacted version; do not assume Markdown sanitization also sanitizes the underlying image.
 - [ ] Review the VirtualBox log before any upstream attachment. Do not upload unsanitized VM logs, packet captures or private keys.
 - [ ] Confirm no secrets are exposed in public documentation or screenshots. Existing text-only checks are preliminary; visual/image review is outstanding.
@@ -43,7 +43,7 @@
 
 ### 5. Consistent AI-writing and documentation disclosure
 
-- [ ] Standardize existing writing-assistance notes to brief first-person descriptions without overstating independent validation.
+- [x] Standardize existing writing-assistance notes to brief first-person descriptions without overstating independent validation. **Verified identical revised notes in three existing case studies (one VirtualBox-lab repository, two Pi-hole).**
 - [ ] Ensure commands, results, technical claims and event timestamps come from actual observations; identify interpretations and unverified hypotheses.
 - [ ] Keep the public reports written in my voice. Documentation assistance is not a substitute for personal understanding or ability to reproduce the steps.
 
@@ -71,7 +71,7 @@
 
 - The initial audit found **four** public repositories and **16** Markdown documents. The internal Markdown links checked mapped to existing project files.
 - The initial text audit identified no obvious published plaintext passwords or private key bodies. **This is not a visual screenshot audit.**
-- At audit start there were **nine** existing public screenshots to review: five in the WSL2 baseline repository and four in the Pi-hole repository.
+- At audit start there were **nine** public technical screenshots to review: five in the WSL2 baseline repository and four in the Pi-hole repository, plus the main lab's **one cover image**. Three Pi-hole screenshots (`02-top-clients.png`, `03-filtered-query-log.png`, `04-router-client.png`) were recovered from a local archive, matched **exactly** to the published Git blobs (SHA-1), and visually inspected: displayed client labels are anonymized and the router MAC is redacted; no obvious credential or personal identifier is visible in those three. **The local `01-dashboard.png` does not match the published blob**, so I cannot mark the public dashboard checked. Five WSL2 screenshots and the lab cover likewise remain unchecked.
 - The VirtualBox guest-to-guest test, a sanitized full `VBox.log` attachment, and several Pi-hole corroborating captures remain pending.
 - The public VirtualBox issue report is saved locally in the lab repo, not posted upstream.
 
@@ -79,6 +79,10 @@
 
 | Date | Change | Evidence | Status |
 | --- | --- | --- | --- |
-| 2026-11-15 | Established fixed-scope audit remediation plan, with controlled security event last | This document and linked initial audit findings | Recorded; substantive tasks remain open |
+| 2026-11-15 | Established fixed-scope audit remediation plan, with controlled security event last | This document and linked initial audit findings | Recorded |
+| 2026-11-15 | Revised lab README, overview, project index and SOC roadmap for concise status and audit-first navigation | GitHub updates re-fetched and checked | Verified |
+| 2026-11-15 | Verified first-person voice and consistent project-status framing | Four README files, central overview and main investigation documents inspected | Verified for specified files |
+| 2026-11-15 | Standardized documentation-assistance notes in three existing case studies | One TCP/TLS case study; two Pi-hole case studies | Verified |
+| 2026-11-15 | Inspected published Pi-hole evidence images 02, 03 and 04 | Git blob SHA-1 matched to recovered local screenshots; visual review of displayed content | Partial image audit: 3/10 public images (including cover) |
 
 I will update this record only after verifying each meaningful correction. This tracker is a record of portfolio maintenance, not evidence that the underlying systems were tested again.
