@@ -262,7 +262,20 @@ After verifying the Windows 11 System event log was readable, the operator reran
 | 2026-11-15 16:48:38 | Service Control Manager | 7040 | Information |
 | 2026-11-15 16:50:54 | Service Control Manager | 7040 | Information |
 
-Event ID **7040** is associated with changes to a Windows service's start type. The first timestamp is approximately one second after the **estimated** VM log-time correlation at 16:48:37, but the host events **cannot be causally connected to the VM timer lag** on timestamp proximity alone. The services, old/new start types and any initiating process are not present in this abbreviated event table. The next read-only diagnostic will inspect the full `Message` of each event. No configuration changes were made; guests remain powered off.
+Event ID **7040** is associated with changes to a Windows service's start type. The first timestamp is approximately one second after the **estimated** VM log-time correlation at 16:48:37, but the host events **cannot be causally connected to the VM timer lag** on timestamp proximity alone. The services, old/new start types and any initiating process are not present in this abbreviated event table. The service names and old/new start types were subsequently checked in Step 42 below. No configuration changes were made; guests remain powered off.
+
+## Step 42 — Identify Service Control Manager 7040 events
+
+A read-only host query retrieved full System event messages for the two Event ID 7040 records:
+
+```text
+2026-11-15 16:48:38 PST: The start type of the Background Intelligent Transfer Service service was changed from demand start to auto start.
+2026-11-15 16:50:54 PST: The start type of the Background Intelligent Transfer Service service was changed from auto start to demand start.
+```
+
+Both events concern **Background Intelligent Transfer Service (BITS)** and show its start configuration changing **Manual → Automatic → Manual** within 2 minutes 16 seconds. BITS supports background file transfers used by Windows and applications, including some Windows Update tasks. These events **do not establish any specific transfer, process that initiated the changes, or causal relationship** with the Windows 10 guest stall. The first BITS event occurred about one second after the **estimated** VirtualBox time-manager lag timestamp, while `NEM: Snail execution mode is active!` had already been logged at startup. The available System event evidence provides **no specific host warning or error to explain the lag**.
+
+The current lab state remains Windows 10 and Kali both powered off, Windows 10 configured with two vCPUs, existing snapshots and host security protections preserved. The primary unresolved problem is significant NEM/Windows hypervisor execution degradation, not demonstrated BITS failure. Optional read-only investigation could compare Windows Update and BITS operational logs around this period, but such a correlation would not by itself resolve the VirtualBox compatibility issue.
 
 ## Next action
 
