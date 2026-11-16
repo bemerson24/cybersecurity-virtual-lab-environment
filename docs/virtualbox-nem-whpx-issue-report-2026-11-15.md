@@ -75,8 +75,8 @@ The time-manager lag resembles [VirtualBox issue #837](https://github.com/Virtua
 
 ---
 
-## Submission safety
+## Submission notes
 
-- This is the reviewed and approved issue text saved to the user's own lab repository.
+- I prepared this report from my lab observations and saved it here for review before upstream submission.
 - **Upstream posting remains pending.** If submitted, comment on [VirtualBox/virtualbox#972](https://github.com/VirtualBox/virtualbox/issues/972) and link back to this evidence report.
 - The included log excerpt was selected to support technical observations. The full log and unsanitized screenshots are intentionally excluded.
