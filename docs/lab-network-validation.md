@@ -207,6 +207,20 @@ The `Found optional import` lines are **informational discovery, not error messa
 
 Further diagnosis should use existing logs and other read-only checks first.
 
+## Windows 10 VM timing-stall evidence (November 15, 2026)
+
+A read-only host query searched the latest Windows 10 VM log for `Giving up catch-up|lag|heartbeat|WHvCreatePartition|WHvSetupPartition|NEMR3Init|VERR_` and returned the last 30 matches. The standout record was:
+
+```text
+00:09:53.449479 TM: Giving up catch-up attempt at a 244 381 120 090 ns lag; new total: 244 381 120 090 ns
+```
+
+The `TM` time manager recorded **244.381120090 seconds (approximately 4 minutes 4 seconds) of virtual-clock catch-up lag** roughly 9 minutes 53 seconds into the session. This is direct evidence of a major timing discrepancy, **not proof the Windows guest was continuously frozen for that exact duration or proof of which subsystem caused it**. At roughly `00:10:25` the matched output contained CPU register/state entries; those entries alone are not evidence of a guest crash. The displayed `/PDM/CritSects/...VERR_INTERRUPTED` and `...VERR_TIMEOUT` counters were zero. `vmmR3LogFlusher: Terminating (VERR_OBJECT_DESTROYED)` appeared at the end and is not sufficient evidence of a VM failure. These selected matches do not establish absence of other errors elsewhere in the log.
+
+**External comparison (not assumed same root cause):** [VirtualBox upstream issue #837, opened August 28, 2026](https://github.com/VirtualBox/virtualbox/issues/837) describes a Windows 11 host / Windows 10 guest using NEM/WHPX and exhibiting a 114-second guest stall with the same `TM: Giving up catch-up attempt` log signature. The other reporter saw no comparable stalls after testing with direct native VT-x, but that change involved disabling Windows virtualization protections and is **not a proposed change for this machine**. Different VirtualBox builds, environments and validation periods limit comparisons. This report supports investigating NEM/WHPX timing behavior, not a confirmed diagnosis or workaround.
+
+Next diagnostic goal: read the existing log around guest heartbeat and shutdown transitions, using the host only. Keep both VMs off and preserve WSL2, VBS, BitLocker, snapshots and all security settings.
+
 ## Next action
 
 Given the continued NEM snail execution mode after reducing Windows 10 to 2 vCPUs, do not infer that the dual-VM freeze is resolved. Defer the simultaneous-guest connectivity test until there is a safe, controlled way to establish both guests are responsive. If the host is struggling, shut down guest operating systems cleanly. When ready, use only a short, controlled `ping -n 4 172.20.20.10` from Windows 10 while Kali is running; record the actual result before the reverse test. Never interpret configuration alone as proof of connectivity.
