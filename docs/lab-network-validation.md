@@ -314,6 +314,18 @@ This establishes **Windows 11 Pro, OS build family 26300**. [Microsoft's Windows
 
 **Current release check:** [Oracle's downloads page](https://www.oracle.com/virtualization/technologies/vm/downloads/virtualbox-downloads.html) lists **7.2.22** as its latest release on the date checked, matching the VirtualBox version already observed on this lab host. Do not recommend upgrading to a version not released. Confirm the installed binary's exact revision with a read-only `VBoxManage --version` query when preparing a reproducible issue report. Neither external comparison establishes this machine's precise root cause or an approved workaround.
 
+## Step 47 — Exact installed VirtualBox binary version
+
+The operator ran the installed `VBoxManage.exe --version` from the Windows 11 host, without elevation. Output:
+
+```text
+7.2.22r175245
+```
+
+The installed Oracle VirtualBox version is **7.2.22**, **revision 175245**. This independently verifies the version assumed in the earlier investigation and completes the core software/hardware inventory for a reproducible NEM/WHPX performance report: Windows 11 Pro 26H2 build 26300.9974, Intel Core i7-1185G7 (4 physical/8 logical processors), active VBS/HVCI, Virtual Machine Platform enabled, Windows 10 VM 8 GiB and 2 vCPUs after a controlled reduction from 4, NEM partition successfully created, snail execution mode active, recurring single-guest freezes, and a recorded 244.381-second virtual-clock catch-up lag. **The specific defect remains unresolved.**
+
+The two VMs remain shut down. The next useful work is to prepare a concise, sanitized compatibility report for operator review, not to repeat performance experiments or disable host security features.
+
 ## Next action
 
 With both guests off and the timer-lag evidence captured, verify the exact VirtualBox binary revision with `VBoxManage --version` and maintain a sanitized, reproducible NEM/WHPX issue summary. Do not run a dual-VM connectivity test until guest stability is addressed. Preserve host WSL2, VBS/HVCI, BitLocker, existing snapshots and VM disk chains; no unverified host-security or guest hardware changes.
