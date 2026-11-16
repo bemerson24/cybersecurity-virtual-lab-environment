@@ -180,6 +180,20 @@ According to [Microsoft's Win32_DeviceGuard documentation](https://learn.microso
 
 Microsoft and Oracle document the risk of slower VirtualBox execution when Windows hypervisor-based functionality is active. These findings support a *Windows hypervisor / VirtualBox compatibility* explanation for the logged NEM fallback, but the exact feature or mechanism producing the severe stall was not independently isolated. **No security feature, boot setting, or optional Windows feature was modified.**
 
+## Windows optional-feature inventory (read-only; November 15, 2026)
+
+Without elevated PowerShell, the host query `Get-CimInstance Win32_OptionalFeature` filtered for `HypervisorPlatform`, `VirtualMachinePlatform`, and `Microsoft-Hyper-V-All`. Recorded values:
+
+| Windows optional feature | InstallState | Interpretation |
+| --- | ---: | --- |
+| `VirtualMachinePlatform` | `1` | Enabled |
+| `HypervisorPlatform` | `2` | Disabled |
+| `Microsoft-Hyper-V-All` | `2` | Disabled |
+
+[Microsoft's Win32_OptionalFeature reference](https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/win32-optionalfeature) defines `InstallState=1` as enabled and `2` as disabled. The earlier VBS results show that Windows hypervisor-based protections are nevertheless running; the Hyper-V optional-feature state alone does **not** establish that the hypervisor is absent.
+
+The [Oracle VirtualBox 7.2 manual, "Using Hyper-V with Oracle VirtualBox"](https://docs.oracle.com/en/virtualization/virtualbox/7.2/user/AdvancedTopics.html) says Windows Hypervisor Platform must be enabled for the documented Hyper-V compatibility path, and warns of possible significant performance degradation. Its disabled state is a specific configuration discrepancy to investigate; **this does not prove that enabling it will fix performance**. No administrative feature changes, security changes, or VM restarts were made. Further diagnosis should use existing logs and other read-only checks first.
+
 ## Next action
 
 Given the continued NEM snail execution mode after reducing Windows 10 to 2 vCPUs, do not infer that the dual-VM freeze is resolved. Defer the simultaneous-guest connectivity test until there is a safe, controlled way to establish both guests are responsive. If the host is struggling, shut down guest operating systems cleanly. When ready, use only a short, controlled `ping -n 4 172.20.20.10` from Windows 10 while Kali is running; record the actual result before the reverse test. Never interpret configuration alone as proof of connectivity.
