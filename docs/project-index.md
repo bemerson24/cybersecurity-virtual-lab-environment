@@ -2,7 +2,7 @@
 
 Published projects, documented results and open technical questions.
 
-[Portfolio overview](../PORTFOLIO-OVERVIEW.md) · [Audit remediation checklist](portfolio-audit-remediation-2026-11-15.md) · [Security operations roadmap](security-operations-analyst-roadmap.md)
+[Portfolio overview](../PORTFOLIO-OVERVIEW.md) · [Security operations roadmap](security-operations-analyst-roadmap.md)
 
 ## Projects and investigations
 
@@ -21,4 +21,4 @@ Published projects, documented results and open technical questions.
 
 ## Technical roadmap
 
-I will finish the [audit remediation checklist](portfolio-audit-remediation-2026-11-15.md) before broadening this portfolio. Its final milestone is a controlled, documented security-event investigation. The [Security Operations Project Roadmap](security-operations-analyst-roadmap.md) tracks longer-term deliverables, not claims of work already completed.
+I will close existing evidence, privacy and technical-accuracy gaps before broadening this portfolio. The next major milestone is a controlled, documented security-event investigation. The [Security Operations Project Roadmap](security-operations-analyst-roadmap.md) tracks longer-term deliverables, not claims of work already completed.
