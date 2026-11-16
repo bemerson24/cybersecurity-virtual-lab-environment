@@ -39,7 +39,7 @@
 - [x] Review **all ten current published image files** for visual readability and visible privacy issues. Four Pi-hole screenshots and five privacy-redacted WSL2 screenshots were inspected against current Git blob SHA-1 values; the WSL2 replacements were committed on November 16 (`3a909c31a17892e01b6e2036bbe1d23787791eac`). The earlier VirtualBox cover was inaccessible for exact visual inspection, so I replaced it with the previously reviewed PNG on November 16 and verified the current Git blob matches that image (`7dc57a886e3426a76486236d80158d17b5b84733`). Older versions remain in Git history.
 - [x] Replace the five WSL2 images containing the local user identifier with opaque-redacted versions at the **same public GitHub paths**, verifying each new image blob SHA-1. Commands and technical output preserved. **Older images are still reachable through Git history; this was not a history rewrite.**
 - [ ] Review the VirtualBox log before any upstream attachment. Do not upload unsanitized VM logs, packet captures or private keys.
-- [ ] Confirm no secrets are exposed across all public documentation/screenshots. **All ten current image paths** have been visually reviewed against exact Git blob matches and none showed obvious credentials in the inspected images; a broader final cross-repository text/document check and historical exposure caveat remain open.
+- [x] Complete a scoped current-file credential/privacy review. **November 16:** pattern scans and contextual review of all 19 tracked Markdown files found no obvious credentials, private-key bodies, recognized token strings, email addresses, raw MAC addresses or user-specific home paths. Public professional identity and diagnostic lab/WSL/resolver addresses remain intentionally documented. The earlier exact-blob review covered all ten current images. **This is not a guarantee of absence, a scan of Git history, or a review of issues, releases and other GitHub surfaces. Historical images remain recoverable.**
 
 **Done when:** Every published image is inspected and any findings are remediated; records accurately state what was and was not checked.
 
@@ -53,7 +53,7 @@
 
 ### 6. Cross-repository technical and presentation verification
 
-- [ ] Recheck the four repository entry pages, project index, roadmap, technical links, and known outstanding questions after corrections.
+- [x] Recheck the four repository entry pages, project index, roadmap, technical links, and known outstanding questions after corrections. **November 16:** desktop GitHub render spot checks covered the four READMEs, overview, index and roadmap; file-target links were checked in the prior pass. Repository metadata inconsistency remains explicitly open below.
 - [ ] Review screenshots for readability as well as privacy; verify essential diagrams, code samples and tables are legible in GitHub.
 - [ ] Confirm the project descriptions do not conflate a home network, a personal endpoint capture, class work, or production SOC operations.
 
@@ -68,6 +68,18 @@
 - [ ] Review and sanitize all evidence, publish the finished investigation, and link it from the portfolio overview, project index, and roadmap.
 
 **Done when:** A reproducible, bounded investigation exists with recorded security-event evidence, an evidence-supported disposition, and no unsupported incident claim.
+
+## Open presentation finding — repository metadata
+
+- [ ] Update the VirtualBox repository's **About description**. The rendered page still says `VirtualBox cybersecurity lab with Windows 10/11, Kali Linux, and isolated networking`, which does not match the documented guest inventory or the NAT boundary.
+- Proposed replacement: **VirtualBox cybersecurity lab with Windows 10 and Kali Linux guests, NAT plus internal networking, and documented troubleshooting.**
+- This is repository metadata, not README text. File-edit access cannot change it, and the review browser was signed out. No metadata change was made; the finding remains open.
+
+## November 16 current-file review boundaries
+
+The text review covered the 19 tracked Markdown files in the four repositories. Targeted patterns covered credential assignments, common token formats, private-key headers, emails, MAC addresses and user-specific home paths; matching security-related prose was reviewed in context. No obvious secret or unintended personal identifier was found. Hostname `home-dns`, public professional links and diagnostic addresses remain published context, not erased identifiers.
+
+Desktop rendering was spot-checked on the four repository entry pages, central overview, project index and roadmap. The lab topology, WSL command blocks/sample redacted image and the main tables were readable in the inspected views. The Pi-hole DNS diagram rendered too small horizontally; changing only `flowchart LR` to `flowchart TB` improved label readability, confirmed on the live page after publication. This was not an exhaustive mobile, accessibility or every-image-at-every-size check. Existing cropped-source-image limitations remain recorded in the evidence inventory.
 
 ## Starting baseline
 
@@ -104,5 +116,7 @@
 | 2026-11-16 | Reconciled VirtualBox submission status across eight portfolio documents and corrected an unrelated cover-status note in the WSL2 inventory row | Read the live [upstream comment](https://github.com/VirtualBox/virtualbox/issues/972#issuecomment-6924524139) by `bemerson24`, posted November 16 at 09:54 PST; independently downloaded the current cover and verified blob `df2eae99d8931af5fb06c5bc8ea82192cda31ccd`, 1,951,336 bytes, no PNG info metadata | Submission complete; awaiting maintainer feedback. Root cause unresolved, full log not attached. Cover review was already complete; no image replacement or lab changes repeated. All 55 relative file links in this repository resolve; cross-repository and rendered-layout checks remain open |
 
 | 2026-11-16 | Reviewed cross-repository navigation and current claim summaries; reconciled monitoring status and expanded evidence inventory | All 125 relative/cross-repository file and repository links resolve across 19 Markdown documents; all ten image references have files; code fences are paired. Compared the four READMEs, overview, index and roadmap against linked case-study status/limits | Moved completed monitoring checks out of P03 open work; corrected monitoring table date and historical pending wording; labeled P08 as a published write-up, not a published raw capture; added missing laptop-portability and monitoring inventory rows. Actual GitHub rendering, external-site availability and comprehensive historical secret review remain outside this pass |
+
+| 2026-11-16 | Completed scoped current-text privacy review and desktop rendering spot checks; improved DNS diagram | Reviewed 19 tracked Markdown files and live GitHub views for the four READMEs, overview, index and roadmap; Pi-hole diagram commit `6a8ba313e88564e7c98e802608ffae4bbcce0236` re-fetched exactly and inspected after rendering | No obvious current-text credential exposure found; vertical DNS diagram labels readable. VirtualBox About metadata remains open with replacement wording above; historical content and exhaustive display/accessibility testing excluded |
 
 I will update this record only after verifying each meaningful correction. This tracker is a record of portfolio maintenance, not evidence that the underlying systems were tested again.
