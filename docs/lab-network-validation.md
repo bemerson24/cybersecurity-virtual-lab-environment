@@ -237,7 +237,15 @@ This confirms the large virtual time lag was logged **before** the guest entered
 
 **Step 37 — Local context surrounding the lag:** The `Select-String 'Giving up catch-up attempt' -Context 12,12` command returned nearby log records, not a continuous activity trace. The 12 preceding records included WASAPI audio-cache initialization and a warning at `00:01:17` (with unusual scheduling numbers), medium-enumeration completion at `00:01:30` and `00:06:51`; the lag followed at `00:09:53.449479`. Later records included an IPv6 MTU/RDNSS warning at `00:09:55.719661`, WASAPI cache lookups at `00:09:56` and `00:10:14`, and orderly USB/audio shutdown and ACPI S5 at `00:10:25`. **None of these warnings has a verified causal relationship with the 244.381-second lag**; notably, the IPv6 warning was logged after the time-manager event. Gaps between log records do not independently establish continuous guest unresponsiveness.
 
-Next diagnostic goal: recover the log's absolute UTC opening time from the existing header, then evaluate whether host events can be time-correlated with the VM's relative timestamp. Use the Windows 11 host only. Keep both VMs off and preserve WSL2, VBS, BitLocker, snapshots and security settings.
+**Step 38 — Log wall-clock anchor and host-event correlation:** The latest host-side read-only query returned:
+
+```text
+00:00:05.958534 Log opened 2026-11-16T00:38:49.946606300Z
+```
+
+Using that point as an anchor rather than assuming relative time zero equals log opening, the `00:09:53.449479` time-manager lag corresponds approximately to **2026-11-16 00:48:37.437551 UTC** (November 15, 2026, 16:48:37 PST). The `00:10:25.115019` ACPI S5 transition corresponds approximately to **00:49:09.103091 UTC** (16:49:09 PST). These are *estimated correlations*, not independently measured host freeze start/end times: the VM timestamps and elapsed-time logging under NEM may themselves have anomalies. A narrow host System Event Log query around approximately 00:48:37 UTC is the next controlled, read-only diagnostic; it may or may not contain a relevant warning.
+
+Keep both VMs powered off and preserve WSL2, VBS, BitLocker, snapshots and security settings.
 
 ## Next action
 
