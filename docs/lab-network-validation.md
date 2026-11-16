@@ -308,7 +308,11 @@ Caption                  Version    BuildNumber
 Microsoft Windows 11 Pro 10.0.26300 26300
 ```
 
-This establishes **Windows 11 Pro, OS build family 26300**. [Microsoft's Windows 11 release information](https://learn.microsoft.com/en-us/windows/release-health/windows11-release-information) maps the 26300 family to **Windows 11 version 26H2** (GA beginning September 29, 2026). The CIM query alone does not show `UBR` or prove Insider enrollment. **Step 46 registry verification:** A subsequent read-only `Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion'` check returned `DisplayVersion=26H2`, `CurrentBuild=26300`, `UBR=9974`, and `BuildLabEx=26100.1.amd64fre.ge_release.240331-1435`. The installed Windows 11 Pro build is **26300.9974**; the older base build value in `BuildLabEx` is build-lineage metadata, not the current update revision. No OS settings changed.
+This establishes **Windows 11 Pro, OS build family 26300**. [Microsoft's Windows 11 release information](https://learn.microsoft.com/en-us/windows/release-health/windows11-release-information) maps the 26300 family to **Windows 11 version 26H2** (GA beginning September 29, 2026). The CIM query alone does not show `UBR` or prove Insider enrollment.
+
+## Step 46 — Exact Windows build revision
+
+A subsequent read-only `Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion'` check returned `DisplayVersion=26H2`, `CurrentBuild=26300`, `UBR=9974`, and `BuildLabEx=26100.1.amd64fre.ge_release.240331-1435`. The installed Windows 11 Pro build is **26300.9974**; the older base build value in `BuildLabEx` is build-lineage metadata, not the current update revision. No OS settings changed.
 
 **Relevant fresh upstream comparison (retrieved November 15, 2026):** [VirtualBox GitHub issue #972](https://github.com/VirtualBox/virtualbox/issues/972) was opened November 10, 2026 for recurring NEM/WHPX freezes on a Windows 11 25H2 host with Memory Integrity enabled. A separate commenter reports similar freezes specifically on **26H2**. This is a **user-reported**, not vendor-confirmed, comparison; their host architecture, guest versions, logs and configuration differ. Unlike a verified fix, issue #972 provides evidence the symptom category is being reported by other users while VBS remains enabled. Also compare [issue #837](https://github.com/VirtualBox/virtualbox/issues/837), which previously recorded a similar time-manager catch-up lag.
 
