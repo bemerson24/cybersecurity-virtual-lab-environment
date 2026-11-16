@@ -11,9 +11,9 @@
 
 ## Overview
 
-This virtual cybersecurity lab runs on a Windows 11 laptop using Oracle VirtualBox. The lab includes Windows 10 and Kali Linux virtual machines and supports operating-system configuration, network diagnostics and reproducible troubleshooting.
+I built this virtual cybersecurity lab on a Windows 11 laptop using Oracle VirtualBox. It contains Windows 10 and Kali Linux guests that I use to practice operating-system configuration, networking, and reproducible troubleshooting. Guest stability is currently under investigation.
 
-The workflow covers configuration, validation, network observation and documented troubleshooting while keeping guest changes separate from the primary Windows environment.
+I document configuration changes, validation results, network observations, and troubleshooting while keeping guest changes separate from the primary Windows environment.
 
 > **Scope:** The core of this repository documents the virtualized coursework lab. A separate personal-endpoint packet-analysis case study is linked below as related networking practice, not as VirtualBox guest testing or an assessment of campus infrastructure. The Ubuntu WSL 2 baseline assessment, home Pi-hole infrastructure and OctoPi retrospective are distinct projects.
 
