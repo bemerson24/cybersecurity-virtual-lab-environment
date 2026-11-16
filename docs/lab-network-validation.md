@@ -299,6 +299,17 @@ The same log also enumerates `WHvCapabilityCodeVmx*` and other hypervisor capabi
 
 VirtualBox explicitly cautions that full performance is unavailable in its selected execution mode. [Oracle's VirtualBox 7.2 troubleshooting guidance](https://docs.oracle.com/en/virtualization/virtualbox/7.2/user/Troubleshooting.html) warns about poor performance with Hyper-V-based host protections, but suggests disabling Windows features; that is **outside this lab's security-preservation constraints**, and **not an action taken or recommended here**. Keep VBS, HVCI/Memory Integrity, WSL2, BitLocker and existing snapshots unchanged. A better follow-up is to capture exact host OS build information for a reproducible upstream compatibility report or a supported software remediation assessment.
 
+## Step 45 — Host operating system build inventory
+
+A read-only, non-elevated `Get-CimInstance Win32_OperatingSystem | Select-Object Caption, Version, BuildNumber` returned:
+
+```text
+Caption                  Version    BuildNumber
+Microsoft Windows 11 Pro 10.0.26300 26300
+```
+
+This establishes **Windows 11 Pro, OS build family 26300**. [Microsoft's Windows 11 release information](https://learn.microsoft.com/en-us/windows/release-health/windows11-release-information) maps the 26300 family to **Windows 11 version 26H2** (GA beginning September 29, 2026). The CIM query does **not** show the update build revision (`UBR`) or prove Insider enrollment. Next step: read the host's current build revision from the local Windows version registry key before attempting comparisons with a specific VirtualBox release and Windows update. No settings changed.
+
 ## Next action
 
 Given the continued NEM snail execution mode after reducing Windows 10 to 2 vCPUs, do not infer that the dual-VM freeze is resolved. Defer the simultaneous-guest connectivity test until there is a safe, controlled way to establish both guests are responsive. If the host is struggling, shut down guest operating systems cleanly. When ready, use only a short, controlled `ping -n 4 172.20.20.10` from Windows 10 while Kali is running; record the actual result before the reverse test. Never interpret configuration alone as proof of connectivity.
