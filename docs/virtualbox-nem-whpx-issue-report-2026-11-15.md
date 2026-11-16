@@ -1,6 +1,6 @@
 # VirtualBox NEM/WHPX Windows 10 Guest Freeze — Approved Issue Report
 
-**Status:** Approved draft. **Not submitted upstream**; GitHub integration lacks permission to comment on `VirtualBox/virtualbox#972`.  
+**Status:** Approved report text. **Not yet submitted upstream.**  
 **Intended destination:** [Existing VirtualBox issue #972](https://github.com/VirtualBox/virtualbox/issues/972) (avoid a duplicate issue).  
 **Evidence worksheet:** [Virtual lab network validation and performance investigation](lab-network-validation.md).
 
@@ -78,5 +78,5 @@ The time-manager lag resembles [VirtualBox issue #837](https://github.com/Virtua
 ## Submission safety
 
 - This is the reviewed and approved issue text saved to the user's own lab repository.
-- **Do not claim an upstream issue comment was posted.** The connected GitHub app returned `403 Resource not accessible by integration` when trying to comment on [VirtualBox/virtualbox#972](https://github.com/VirtualBox/virtualbox/issues/972).
+- **Upstream posting remains pending.** If submitted, comment on [VirtualBox/virtualbox#972](https://github.com/VirtualBox/virtualbox/issues/972) and link back to this evidence report.
 - The included log excerpt was selected to support technical observations. The full log and unsanitized screenshots are intentionally excluded.
