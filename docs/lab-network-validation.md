@@ -247,6 +247,12 @@ Using that point as an anchor rather than assuming relative time zero equals log
 
 Keep both VMs powered off and preserve WSL2, VBS, BitLocker, snapshots and security settings.
 
+## Step 40 — Verify host System event-log read access
+
+A read-only, non-elevated PowerShell command queried the most recent Windows 11 `System` event using `Get-WinEvent -LogName System -MaxEvents 1 -ErrorAction Stop` and returned **Microsoft-Windows-HttpService, Event ID 113, Information, November 15, 2026 17:49:33 PST**. This confirms that the current Windows user can read the host `System` log; the Step 39 empty result was **not explained by a general lack of read access**.
+
+The Step 39 query searched only event severity levels **1, 2 and 3** (critical/error/warning) and found no displayed results within ±3 minutes of the estimated 16:48:37 PST timing event. It did not include Information-level events or other log channels. To avoid equating an empty severity-filtered result with a quiet host, the next read-only check will query all levels in the same narrow time window.
+
 ## Next action
 
 Given the continued NEM snail execution mode after reducing Windows 10 to 2 vCPUs, do not infer that the dual-VM freeze is resolved. Defer the simultaneous-guest connectivity test until there is a safe, controlled way to establish both guests are responsive. If the host is struggling, shut down guest operating systems cleanly. When ready, use only a short, controlled `ping -n 4 172.20.20.10` from Windows 10 while Kali is running; record the actual result before the reverse test. Never interpret configuration alone as proof of connectivity.
