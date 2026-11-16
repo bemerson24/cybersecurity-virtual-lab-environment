@@ -131,6 +131,8 @@ The [Security Operations Project Roadmap](docs/security-operations-analyst-roadm
 
 - **November 15, 2026 (System event-log access verified):** A normal-user `Get-WinEvent -LogName System -MaxEvents 1 -ErrorAction Stop` returned Microsoft-Windows-HttpService ID 113 (Information) at 17:49:33 PST, confirming the host System log is readable. The earlier ±3-minute query around the estimated 16:48:37 PST lag returned no displayed critical/error/warning events, but excluded Information-level events. Next read-only check will include all event levels in that window. No host or VM configuration changes were made.
 
+- **November 15, 2026 (all-level host-event search):** A read-only `System` event-log query for all severity levels within ±3 minutes of the estimated 16:48:37 PST VM lag yielded two Service Control Manager **7040 Information** events at 16:48:38 and 16:50:54 PST. Event 7040 indicates a service start-type change, but the abbreviated output does not identify the services or establish causation. Next action is to inspect their full event messages; see [troubleshooting worksheet](docs/lab-network-validation.md).
+
 ## Change log
 
 - **November 15, 2026 (host event correlation):** A read-only Windows 11 `System` event-log query found no displayed critical/error/warning events within ±3 minutes of the VM's estimated 16:48:37 PST time-manager lag. The initial query suppressed PowerShell errors, so this result remains provisional pending confirmation of System-log readability. No match does not rule out VirtualBox/NEM timing problems or events in other channels. No system or VM settings were changed.
