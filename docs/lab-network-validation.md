@@ -283,6 +283,22 @@ The operator ran the read-only `Get-WinEvent` query against `Microsoft-Windows-W
 
 **BITS lead closed as inconclusive:** The two host System 7040 informational events at 16:48:38 and 16:50:54 PST reflected BITS startup-type changes, but no transfer activity, initiating process, or causal link to VirtualBox's earlier NEM fallback or reported 244.381-second time-manager lag was verified. Continue the investigation with the **VirtualBox NEM execution path**, not the BITS/Windows Update hypothesis. Both VMs should remain off; do not disable WSL2, VBS, BitLocker, or other host protections.
 
+## Step 44 — NEM partition initialization outcome
+
+A host-only query of the last 45 `NEM:` / `HMR3Init` matches in the Windows 10 VM log confirmed:
+
+```text
+00:00:06.251874 NEM: Created partition 0000022d8fbd8f10. APIC emulation mode: VirtualBox
+00:00:06.251973 NEM: NEMR3Init: Snail execution mode is active!
+00:00:06.251973 NEM: Note! VirtualBox is not able to run at its full potential in this execution mode.
+00:00:06.256177 NEM: Successfully set up partition (device handle 0000000000000df5, partition ID 0x0)
+00:10:25.148302 NEM: Destroying partition 0000022d8fbd8f10 with its 2 VCpus...
+```
+
+The same log also enumerates `WHvCapabilityCodeVmx*` and other hypervisor capabilities. These lines **confirm a successful NEM/Windows hypervisor partition initialization for a two-vCPU guest**, not an initialization failure. The partition was subsequently destroyed during the previously verified orderly shutdown. They do **not** establish that every execution stage is healthy or identify what triggered the 244.381-second virtual timer lag and repeated guest responsiveness failures.
+
+VirtualBox explicitly cautions that full performance is unavailable in its selected execution mode. [Oracle's VirtualBox 7.2 troubleshooting guidance](https://docs.oracle.com/en/virtualization/virtualbox/7.2/user/Troubleshooting.html) warns about poor performance with Hyper-V-based host protections, but suggests disabling Windows features; that is **outside this lab's security-preservation constraints**, and **not an action taken or recommended here**. Keep VBS, HVCI/Memory Integrity, WSL2, BitLocker and existing snapshots unchanged. A better follow-up is to capture exact host OS build information for a reproducible upstream compatibility report or a supported software remediation assessment.
+
 ## Next action
 
 Given the continued NEM snail execution mode after reducing Windows 10 to 2 vCPUs, do not infer that the dual-VM freeze is resolved. Defer the simultaneous-guest connectivity test until there is a safe, controlled way to establish both guests are responsive. If the host is struggling, shut down guest operating systems cleanly. When ready, use only a short, controlled `ping -n 4 172.20.20.10` from Windows 10 while Kali is running; record the actual result before the reverse test. Never interpret configuration alone as proof of connectivity.
