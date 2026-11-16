@@ -235,7 +235,9 @@ The `TM` time manager recorded **244.381120090 seconds (approximately 4 minutes 
 
 This confirms the large virtual time lag was logged **before** the guest entered ACPI S5 and transitioned normally through power-off to termination, consistent with the operator's report of a successful shutdown after an ACPI power-button request. The log does not independently prove the power-button signal restored guest responsiveness. No `Guest seems to be unresponsive` or `GuestHeartBeat` entries appeared in the filtered output; **absence from these matches does not demonstrate that Guest Additions or guest-heartbeat monitoring was operational or healthy**.
 
-Next diagnostic goal: inspect local log lines directly surrounding the time-manager catch-up event for correlating warnings or component activity, using the Windows 11 host only. Keep both VMs off and preserve WSL2, VBS, BitLocker, snapshots and security settings.
+**Step 37 — Local context surrounding the lag:** The `Select-String 'Giving up catch-up attempt' -Context 12,12` command returned nearby log records, not a continuous activity trace. The 12 preceding records included WASAPI audio-cache initialization and a warning at `00:01:17` (with unusual scheduling numbers), medium-enumeration completion at `00:01:30` and `00:06:51`; the lag followed at `00:09:53.449479`. Later records included an IPv6 MTU/RDNSS warning at `00:09:55.719661`, WASAPI cache lookups at `00:09:56` and `00:10:14`, and orderly USB/audio shutdown and ACPI S5 at `00:10:25`. **None of these warnings has a verified causal relationship with the 244.381-second lag**; notably, the IPv6 warning was logged after the time-manager event. Gaps between log records do not independently establish continuous guest unresponsiveness.
+
+Next diagnostic goal: recover the log's absolute UTC opening time from the existing header, then evaluate whether host events can be time-correlated with the VM's relative timestamp. Use the Windows 11 host only. Keep both VMs off and preserve WSL2, VBS, BitLocker, snapshots and security settings.
 
 ## Next action
 
