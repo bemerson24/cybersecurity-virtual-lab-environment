@@ -150,6 +150,8 @@ The log included:
 
 **Host memory comparison after both VMs were powered off:** A subsequent Windows 11 Task Manager Processes screenshot showed **11% CPU** and **44% memory** usage; Firefox remained open, using approximately **2.8 GB**. This compares with the earlier **21% CPU / 78% memory** observation while both guests were running. Memory usage was **34 percentage points lower** with both guests off, supporting the presence of significant combined VM memory load. The observations were collected at different times with potentially different host activity; they are not a controlled benchmark and do not isolate the cause of the stall.
 
+**Detailed idle-state memory snapshot (Task Manager → Performance → Memory):** With both VMs off, Windows 11 showed **32.0 GB DDR4 installed**, **31.7 GB usable**, **13.5 GB in use (43%)**, **18.2 GB available**, **16.8/33.7 GB committed**, **6.8 GB cached**, and **1.2 GB compressed**. Two of two SODIMM slots were used. These values confirm ample available RAM *after* VM shutdown and cannot retrospectively establish an out-of-memory condition while both guests were running. The earlier 78% measurement showed elevated utilization but not memory exhaustion.
+
 No VirtualBox configuration, snapshots, Windows host hypervisor settings, WSL2, VBS, Memory Integrity, BitLocker or other security protections were changed in response. The guest-to-guest connectivity check remains **unverified**.
 
 ## Next action
