@@ -13,7 +13,7 @@
 
 ## Overview
 
-I built this virtual cybersecurity lab on a Windows 11 laptop using Oracle VirtualBox. It contains Windows 10 and Kali Linux guests that I use to practice operating-system configuration, networking, and reproducible troubleshooting. Guest stability is currently under investigation.
+I built this virtual cybersecurity lab on a Windows 11 laptop using Oracle VirtualBox. It contains Windows 10 and Kali Linux guests for operating-system configuration, networking, and reproducible troubleshooting. On November 19, 2026, I also reached the Windows 11 installer in a separate VirtualBox VM. Guest stability is currently under investigation.
 
 I document configuration changes, validation results, network observations, and troubleshooting while keeping guest changes separate from the primary Windows environment.
 
@@ -27,6 +27,7 @@ I document configuration changes, validation results, network observations, and 
 | Hypervisor | Oracle VirtualBox |
 | Guest VM | Windows 10 |
 | Guest VM | Kali Linux |
+| Guest VM (installation in progress, November 19) | Windows 11 — installation media boots successfully; setup started; installation completion and guest validation not yet confirmed |
 | Lab networking | Both guests: Adapter 1 NAT, Adapter 2 Internal Network (`soc-lab`). Kali `172.20.20.10/24`; Windows 10 `172.20.20.20/24`. Interface assignment and host/guest routes verified; **guest-to-guest connectivity not yet tested**. See the [validation worksheet](docs/lab-network-validation.md) |
 | Related coursework tools | Wireshark, PowerShell, Linux terminal, Python (Visual Studio Code) |
 
@@ -121,6 +122,18 @@ The [Security Operations Project Roadmap](docs/security-operations-analyst-roadm
 ## Professional profile
 
 [Brian Emerson on LinkedIn](https://www.linkedin.com/in/brianemersonpdx/) — professional background, education and career development.
+
+## Windows 11 guest installation — November 19, 2026
+
+**Status:** Installation started; desktop boot, installation completion, guest networking and post-install validation have **not yet been confirmed**.
+
+While starting a Windows 11 VM in Oracle VirtualBox, I initially encountered a black console and a UEFI boot message reporting **"No bootable option or device was found."** The console also displayed **"Press any key to boot from CD or DVD"**, indicating the bootable installation media was presented but the short keypress window had elapsed.
+
+**Resolution and verified result:** I restarted the VM and pressed **Spacebar** while the CD/DVD boot prompt was displayed. Windows 11 Setup launched, and installation began.
+
+**Lesson:** A boot failure message does not always indicate a damaged VM or missing ISO. Check the firmware console and boot prompt first; a missed interactive boot selection can produce a no-bootable-device message even when installation media is available.
+
+**Next checks (pending):** Complete setup, confirm a successful Windows 11 desktop boot and restart, inspect VM configuration and network adapter assignments, then record validation evidence. This Windows 11 guest is not yet part of the verified two-guest `soc-lab` network diagram. This result does not resolve the separate Windows 10 performance/NEM investigation.
 
 ## VirtualBox performance investigation
 
