@@ -2,18 +2,18 @@
 
 ![Cybersecurity Virtual Lab Environment portfolio cover](assets/virtual-lab-cover.png)
 
-**Project status:** In progress · **Started:** October 2026  
+**Project status:** Windows 11 / Kali CyberLab network verified November 19, 2026; historical Windows 10 investigation remains open · **Started:** October 2026  
 **Context:** Clark College Cybersecurity BAS coursework and related hands-on practice
 
 **Portfolio overview:** [View the portfolio overview](PORTFOLIO-OVERVIEW.md).
 
 **Project index:** [Published projects and open investigations](docs/project-index.md) — case studies and technical status.
 
-**Current priority:** Validate the evidence, privacy and technical claims in existing projects before adding new work. The next major milestone is a controlled security-event investigation.
+**Current priority:** Preserve and document the verified Windows 11 / Kali internal-network baseline, finish remaining isolation evidence, and prepare a controlled security-event investigation.
 
 ## Overview
 
-I built this virtual cybersecurity lab on a Windows 11 laptop using Oracle VirtualBox. It contains Windows 10 and Kali Linux guests for operating-system configuration, networking, and reproducible troubleshooting. On November 19, 2026, I also reached the Windows 11 installer in a separate VirtualBox VM. Guest stability is currently under investigation.
+I built this virtual cybersecurity lab on a Windows 11 laptop using Oracle VirtualBox. The earlier Windows 10 and Kali guests are retained as troubleshooting history. On November 19, 2026, I installed and booted a Windows 11 guest and verified bidirectional network communication with Kali on a separate internal CyberLab network. The prior Windows 10 performance investigation remains unresolved. [Read the verified Windows 11 / Kali lab report](docs/windows11-kali-cyberlab-validation-2026-11-19.md).
 
 I document configuration changes, validation results, network observations, and troubleshooting while keeping guest changes separate from the primary Windows environment.
 
@@ -27,15 +27,15 @@ I document configuration changes, validation results, network observations, and 
 | Hypervisor | Oracle VirtualBox |
 | Guest VM | Windows 10 |
 | Guest VM | Kali Linux |
-| Guest VM (installation in progress, November 19) | Windows 11 — installation media boots successfully; setup started; installation completion and guest validation not yet confirmed |
-| Lab networking | Both guests: Adapter 1 NAT, Adapter 2 Internal Network (`soc-lab`). Kali `172.20.20.10/24`; Windows 10 `172.20.20.20/24`. Interface assignment and host/guest routes verified; **guest-to-guest connectivity not yet tested**. See the [validation worksheet](docs/lab-network-validation.md) |
+| Guest VM (November 19 verified) | Windows 11 Enterprise Evaluation — desktop boot, Guest Additions display resize, NAT connectivity and bidirectional Kali connectivity verified |
+| Lab networking | **Current Windows 11 / Kali:** Internal Network `CyberLab`, Windows `192.168.77.10/24`, Kali `192.168.77.20/24`; bidirectional ping verified with NAT disabled and no default IPv4 route observed. [New validation report](docs/windows11-kali-cyberlab-validation-2026-11-19.md). **Historical Windows 10 / Kali:** `soc-lab`, `172.20.20.0/24`, connectivity untested in the earlier [worksheet](docs/lab-network-validation.md) |
 | Related coursework tools | Wireshark, PowerShell, Linux terminal, Python (Visual Studio Code) |
 
 The tools in the last row are used across related coursework; usage varies by exercise.
 
-## High-level lab layout
+## Historical Windows 10 lab layout (November 15)
 
-The diagram shows the **verified adapter configuration**, not a validated guest-to-guest connection. Both guests have NAT and an internal interface on `soc-lab`; neither currently uses a host-only adapter. The [worksheet](docs/lab-network-validation.md) contains the MAC/interface checks, addresses, routes, and outstanding connectivity tests.
+The following historical diagram shows the **earlier Windows 10 / Kali adapter configuration**, not the current Windows 11 / Kali CyberLab or a validated Windows 10 guest-to-guest connection. Both guests have NAT and an internal interface on `soc-lab`; neither currently uses a host-only adapter. The [worksheet](docs/lab-network-validation.md) contains the MAC/interface checks, addresses, routes, and outstanding connectivity tests.
 
 ```mermaid
 flowchart TB
@@ -125,7 +125,7 @@ The [Security Operations Project Roadmap](docs/security-operations-analyst-roadm
 
 ## Windows 11 guest installation — November 19, 2026
 
-**Status:** Installation started; desktop boot, installation completion, guest networking and post-install validation have **not yet been confirmed**.
+**Status update:** Installation completed; desktop boot, Guest Additions display resizing, NAT access and bidirectional internal Kali connectivity were subsequently verified. The paragraph below records the earlier installation-stage troubleshooting. [Full current validation](docs/windows11-kali-cyberlab-validation-2026-11-19.md).
 
 While starting a Windows 11 VM in Oracle VirtualBox, I initially encountered a black console and a UEFI boot message reporting **"No bootable option or device was found."** The console also displayed **"Press any key to boot from CD or DVD"**, indicating the bootable installation media was presented but the short keypress window had elapsed.
 
@@ -133,7 +133,7 @@ While starting a Windows 11 VM in Oracle VirtualBox, I initially encountered a b
 
 **Lesson:** A boot failure message does not always indicate a damaged VM or missing ISO. Check the firmware console and boot prompt first; a missed interactive boot selection can produce a no-bootable-device message even when installation media is available.
 
-**Next checks (pending):** Complete setup, confirm a successful Windows 11 desktop boot and restart, inspect VM configuration and network adapter assignments, then record validation evidence. This Windows 11 guest is not yet part of the verified two-guest `soc-lab` network diagram. This result does not resolve the separate Windows 10 performance/NEM investigation.
+**Subsequent outcome:** These Windows 11 setup and connectivity checks were completed. The Windows 11 guest joined the **new `CyberLab` network**, not the historical `soc-lab` network. This result does not resolve the separate Windows 10 performance/NEM investigation.
 
 ## VirtualBox performance investigation
 
@@ -142,3 +142,13 @@ While starting a Windows 11 VM in Oracle VirtualBox, I initially encountered a b
 - [Read the technical investigation and supporting evidence](docs/lab-network-validation.md)
 - [Read my approved VirtualBox NEM/WHPX compatibility report](docs/virtualbox-nem-whpx-issue-report-2026-11-15.md) — published as [my November 16 contribution to VirtualBox issue #972](https://github.com/VirtualBox/virtualbox/issues/972#issuecomment-6924524139); root cause remains unresolved
 - [Read the complete dated troubleshooting history](docs/virtualbox-investigation-history.md) — earlier checks and intermediate hypotheses are retained without cluttering this README
+
+## Windows 11 / Kali isolated network milestone — November 19, 2026
+
+- Windows 11 `192.168.77.10/24` and Kali `192.168.77.20/24` exchanged four successful ICMP echo replies in **both directions**, including after NAT was disabled.
+- The Windows inbound ICMPv4 rule is restricted to the Kali source and Windows lab destination addresses.
+- Kali's active NetworkManager profile was corrected after disabling NAT caused its internal NIC to appear as `eth0` rather than `eth1`.
+- Both guests showed **no IPv4 default route** in the tested state. IPv6 route-check outputs and broader isolation controls still require independent verification; full isolation is **not claimed**.
+- User reported saving final isolated-baseline snapshots of both VMs. Screenshots and command outputs remain subject to privacy review before publication.
+
+[Read the full dated configuration, troubleshooting and evidence record](docs/windows11-kali-cyberlab-validation-2026-11-19.md).
