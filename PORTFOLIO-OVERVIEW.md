@@ -11,6 +11,12 @@ I document hands-on projects and investigations involving Linux, Windows, virtua
 
 **Current focus:** I am improving evidence quality, privacy and technical accuracy across my four existing repositories before adding new projects. I have published a [read-only PowerShell event timeline collector](docs/powershell-event-timeline-collector.md) with a documented Windows 11 test matrix; the separate controlled security-event investigation remains a planned milestone.
 
+## Developing capstone direction — three-Pi cybersecurity lab
+
+**Status: Planning only; no three-Pi deployment claimed.** I have reserved three Raspberry Pi 5 boards for a future CBAS 499 capstone. My goal is to develop a realistic security environment that demonstrates junior SOC analyst and entry-level security engineering work: monitoring, investigation, vulnerability remediation, security controls, and defensible reporting. The architecture and software remain undecided and will be evaluated alongside future coursework and the instructor's requirements.
+
+[Read the capstone concept and career-relevance criteria](docs/three-pi-capstone-concept.md).
+
 ## Cybersecurity community and professional development
 
 I'm a Cybersecurity BAS student at Clark College and a member of its Cyber Club.
