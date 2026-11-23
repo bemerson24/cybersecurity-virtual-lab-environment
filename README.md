@@ -19,6 +19,12 @@ I document configuration changes, validation results, network observations, and 
 
 > **Scope:** The core of this repository documents the virtualized coursework lab. A separate personal-endpoint packet-analysis case study is linked below as related networking practice, not as VirtualBox guest testing or an assessment of campus infrastructure. The Ubuntu WSL 2 baseline assessment, home Pi-hole infrastructure and OctoPi retrospective are distinct projects.
 
+## Future capstone direction (separate project)
+
+I am also exploring a **three–Raspberry Pi 5 cybersecurity lab** for Clark College CBAS 499. The intent is to demonstrate real junior SOC analyst and entry-level security engineering responsibilities, not to predetermine device roles or claim a completed deployment. This VirtualBox repository continues to document its own verified work and troubleshooting; the capstone remains planning only.
+
+[Three-Pi capstone concept and decision criteria](docs/three-pi-capstone-concept.md)
+
 ## Environment
 
 | Component | Configuration / role |
