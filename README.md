@@ -11,6 +11,10 @@
 
 **Current priority:** Preserve and document the verified Windows 11 / Kali internal-network baseline, finish remaining isolation evidence, and prepare a controlled security-event investigation.
 
+## Current primary lab: Windows 11 + Kali (transition verified November 19, 2026)
+
+I moved away from the original Windows 10 VM as my primary Windows testing guest after recurring severe performance and responsiveness problems. The replacement Windows 11 Enterprise Evaluation guest is now paired with Kali Linux on the `CyberLab` internal network. Bidirectional ICMP connectivity was verified with NAT disabled; comprehensive isolation and IPv6 checks remain outstanding. This was a **change of primary guest**, not a proven repair of the historical Windows 10 issue or confirmation that its VM files were deleted. [Configuration, tests, and limitations](docs/windows11-kali-cyberlab-validation-2026-11-19.md).
+
 ## Overview
 
 I built this virtual cybersecurity lab on a Windows 11 laptop using Oracle VirtualBox. The earlier Windows 10 and Kali guests are retained as troubleshooting history. On November 19, 2026, I installed and booted a Windows 11 guest and verified bidirectional network communication with Kali on a separate internal CyberLab network. The prior Windows 10 performance investigation remains unresolved. [Read the verified Windows 11 / Kali lab report](docs/windows11-kali-cyberlab-validation-2026-11-19.md).
@@ -31,9 +35,9 @@ I am also exploring a **three–Raspberry Pi 5 cybersecurity lab** for Clark Col
 |---|---|
 | Host | HP EliteBook 840 G8 running Windows 11 Pro |
 | Hypervisor | Oracle VirtualBox |
-| Guest VM | Windows 10 |
-| Guest VM | Kali Linux |
-| Guest VM (November 19 verified) | Windows 11 Enterprise Evaluation — desktop boot, Guest Additions display resize, NAT connectivity and bidirectional Kali connectivity verified |
+| Historical guest VM (superseded as primary) | Windows 10 — retained in documentation for unresolved performance troubleshooting; disk deletion not verified |
+| Current guest VM | Kali Linux — paired with Windows 11 on `CyberLab` |
+| Current Windows guest VM (November 19 verified) | Windows 11 Enterprise Evaluation — desktop boot, Guest Additions display resize, NAT connectivity and bidirectional Kali connectivity verified |
 | Lab networking | **Current Windows 11 / Kali:** Internal Network `CyberLab`, Windows `192.168.77.10/24`, Kali `192.168.77.20/24`; bidirectional ping verified with NAT disabled and no default IPv4 route observed. [New validation report](docs/windows11-kali-cyberlab-validation-2026-11-19.md). **Historical Windows 10 / Kali:** `soc-lab`, `172.20.20.0/24`, connectivity untested in the earlier [worksheet](docs/lab-network-validation.md) |
 | Related coursework tools | Wireshark, PowerShell, Linux terminal, Python (Visual Studio Code) |
 
