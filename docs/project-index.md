@@ -20,6 +20,10 @@ Published projects, documented results and open technical questions.
 | P10 | [VirtualBox NEM/WHPX compatibility report — November 15, 2026](virtualbox-nem-whpx-issue-report-2026-11-15.md) | I documented Windows 11 26H2 / VirtualBox 7.2.22 host details, NEM snail mode, repeated Windows 10 guest stalls and 244.381-second time-manager lag; **report contribution submitted November 16** ([upstream comment](https://github.com/VirtualBox/virtualbox/issues/972#issuecomment-6924524139)) | Exact defect remains unknown; full log needs privacy review before sharing; [investigation history](virtualbox-investigation-history.md) retained |
 | P11 | [Read-only PowerShell event timeline collector — November 16, 2026](powershell-event-timeline-collector.md) | [Tested script](../scripts/Get-SafePowerShellTimeline.ps1) published; recovered 16 expected records on source host, handled zero-event window, rejected reversed window, propagated simulated access failure, and passed packaged-file execution test | Test across additional hosts; separate Windows event investigation remains private pending review |
 
+## Developing capstone concept (not a completed project)
+
+[Three-Pi Cybersecurity Lab — CBAS 499 planning scaffold](three-pi-capstone-concept.md): three unused Raspberry Pi 5 boards are reserved for a future lab intended to demonstrate SOC monitoring, triage, investigation, security engineering and reporting. Architecture, software, work scenarios, and instructor approval remain open. Existing projects are separate evidence, not parts of a completed capstone.
+
 ## Technical roadmap
 
 I am closing existing evidence, privacy and technical-accuracy gaps before broadening this portfolio. The PowerShell event timeline collector is published; the next major investigation milestone is a controlled, documented security-event exercise. A separate naturally occurring PowerShell event triage report remains private pending review. The [Security Operations Project Roadmap](security-operations-analyst-roadmap.md) tracks longer-term deliverables, not claims of work already completed.
