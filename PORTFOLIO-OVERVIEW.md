@@ -1,8 +1,8 @@
 # Cybersecurity & Infrastructure Portfolio
 
-I document hands-on projects and investigations involving Linux, Windows, virtualization, networking, DNS, and security troubleshooting. My background includes commercial software support, public utilities, and municipal government, with work involving operational systems, account and billing workflows, exception resolution, and process improvement. Across those roles and my technical projects, I focus on verifying what happened, preserving evidence, and communicating what I can actually support.
+I document hands-on projects and investigations involving Linux, Windows, virtualization, networking, DNS, and security troubleshooting. My background includes semiconductor manufacturing, commercial software support, public utilities, and municipal government, with work involving operational systems, account and billing workflows, exception resolution, and process improvement. I hold a B.S. in Biology and am pursuing a Bachelor of Applied Science in Cybersecurity, with anticipated completion in summer 2027. Across those roles and my technical projects, I focus on verifying what happened, preserving evidence, and communicating what I can actually support.
 
-**Career focus:** entry-level IT/security support, security operations and infrastructure-support roles where careful investigation, reliable operations and clear documentation matter.
+**Career focus:** IT and security support, security operations and infrastructure roles where careful investigation, reliable operations and clear documentation matter.
 
 - **GitHub profile:** [bemerson24](https://github.com/bemerson24)
 - **Professional profile:** [LinkedIn](https://www.linkedin.com/in/brianemersonpdx/)
@@ -61,7 +61,7 @@ For verified results and unresolved questions, see the [project index](docs/proj
 
 I advanced from **Associate Client Support Specialist (Tier 1)** to **Client Support Specialist (Tier 2)** in **August 2016**.
 
-I supported **CUBS (Columbia Ultimate Business System)**, the company's debt-collection and reporting software. I troubleshot reported problems, reproduced issues, investigated database-related questions, assisted with application configuration, and escalated unresolved cases.
+I supported enterprise debt-collection and reporting software. I troubleshot reported problems, reproduced issues, investigated database-related questions, assisted with application configuration, and escalated unresolved cases.
 
 I also provided remote support for legacy mainframe workflows, including attempts to configure dot-matrix printers. I documented the tests and escalated what I couldn't resolve.
 
