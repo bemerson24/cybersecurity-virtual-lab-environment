@@ -61,7 +61,7 @@ The earlier Windows 10 / Kali `soc-lab` configuration and its historical topolog
 - Verified the adapter-to-interface mappings and routes. Kali's `eth1` is `172.20.20.10/24`; Windows 10's `Ethernet 2` changed from APIPA to `172.20.20.20/24`. I verified the new on-link route and preserved NAT default route. [Full command-level evidence](docs/lab-network-validation.md).
 - Explored network addressing and traffic inspection in related laboratory exercises.
 
-**Historical Windows 10 / Kali status:** I have not demonstrated guest-to-guest reachability or effective isolation for this earlier configuration. NAT attachments mean the overall lab is not entirely isolated. Testing is deferred while the VM stability issue remains open.
+**Historical Windows 10 / Kali status:** I have not demonstrated guest-to-guest reachability or effective isolation for this earlier configuration. NAT attachments in that historical configuration mean it was not entirely isolated. Testing is deferred while the VM stability issue remains open.
 
 ### 3. Troubleshoot permissions and access
 
@@ -79,7 +79,7 @@ Related technical practice covers Wireshark traffic capture and filters, TCP/IP 
 
 [TCP/TLS Session Analysis — November 3, 2026](docs/tcp-tls-session-analysis-2026-11-03.md) — a controlled, personally generated HTTPS request captured on the Windows laptop's VPN interface, showing TCP connection establishment, TLS 1.3 negotiation and HTTP application-session headers. A separate Firefox service handshake demonstrated a hybrid post-quantum key exchange. This was **endpoint-level observation only**; it does not document or claim testing of campus infrastructure. Raw captures are not publicly shared.
 
-## Evidence to add
+## Historical Windows 10 evidence checklist
 
 Pending evidence is tracked in the [network validation worksheet](docs/lab-network-validation.md):
 
@@ -96,13 +96,13 @@ Pending evidence is tracked in the [network validation worksheet](docs/lab-netwo
 
 ## Technical coverage
 
-**Virtualization · Oracle VirtualBox · Windows 10 VM configuration · Kali Linux VM setup · NAT and internal networking · Basic network diagnostics · Technical troubleshooting · Documentation**
+**Virtualization · Oracle VirtualBox · Windows 11 and Windows 10 VM configuration · Kali Linux VM setup · NAT and internal networking · Basic network diagnostics · Technical troubleshooting · Documentation**
 
-Project context: guided laboratory exercises and hands-on troubleshooting. Validation status is recorded alongside each result.
+Project context: controlled laboratory investigations and hands-on troubleshooting. Validation status is recorded alongside each result.
 
 ## Next improvements
 
-I am prioritizing evidence quality, privacy review and existing troubleshooting questions before expanding this lab. Outstanding network screenshots and guest-to-guest testing remain deferred pending privacy review and VM stability. I will not label untested connectivity or future packet analysis as completed.
+I am prioritizing evidence quality, privacy review and existing troubleshooting questions before expanding this lab. Historical Windows 10 connectivity testing remains deferred; current CyberLab IPv6 and broader isolation checks and sanitized evidence remain outstanding. I will not label untested connectivity or future packet analysis as completed.
 
 ## Related portfolio projects
 
@@ -135,7 +135,7 @@ While starting a Windows 11 VM in Oracle VirtualBox, I initially encountered a b
 **Current status (November 15, 2026):** The Windows 10 guest has repeatedly become severely sluggish or unresponsive, including when Kali is powered off and after reducing Windows 10 from four to two vCPUs. On the Windows 11 Pro 26H2 host (build `26300.9974`), VirtualBox `7.2.22r175245` reports NEM fallback and snail execution mode. One affected VM session logged a **244.381-second virtual time-manager catch-up lag**. The specific defect is not established, and I have not changed WSL2, VBS, Memory Integrity or BitLocker as a performance workaround.
 
 - [Read the technical investigation and supporting evidence](docs/lab-network-validation.md)
-- [Read my approved VirtualBox NEM/WHPX compatibility report](docs/virtualbox-nem-whpx-issue-report-2026-11-15.md) — published as [my November 16 contribution to VirtualBox issue #972](https://github.com/VirtualBox/virtualbox/issues/972#issuecomment-6924524139); root cause remains unresolved
+- [Read my VirtualBox NEM/WHPX compatibility report](docs/virtualbox-nem-whpx-issue-report-2026-11-15.md) — published as [my November 16 contribution to VirtualBox issue #972](https://github.com/VirtualBox/virtualbox/issues/972#issuecomment-6924524139); root cause remains unresolved
 - [Read the complete dated troubleshooting history](docs/virtualbox-investigation-history.md) — earlier checks and intermediate hypotheses are retained without cluttering this README
 
 ## Windows 11 / Kali isolated network milestone — November 19, 2026
