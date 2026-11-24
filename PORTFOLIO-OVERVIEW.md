@@ -1,4 +1,4 @@
-# Brian Emerson — Cybersecurity Portfolio
+# Cybersecurity & Infrastructure Portfolio
 
 I document hands-on projects and investigations involving Linux, Windows, virtualization, networking, DNS, and security troubleshooting. My background includes commercial software support, public utilities, and municipal government, with work involving operational systems, account and billing workflows, exception resolution, and process improvement. Across those roles and my technical projects, I focus on verifying what happened, preserving evidence, and communicating what I can actually support.
 
@@ -9,17 +9,14 @@ I document hands-on projects and investigations involving Linux, Windows, virtua
 
 **Project index:** [Published projects and open investigations](docs/project-index.md) — case studies and technical status.
 
-**Current focus:** I am improving evidence quality, privacy and technical accuracy across my four existing repositories before adding new projects. I have published a [read-only PowerShell event timeline collector](docs/powershell-event-timeline-collector.md) with a documented Windows 11 test matrix; the separate controlled security-event investigation remains a planned milestone.
+**Current focus:** Evidence quality, privacy, technical accuracy and reproducible security investigations. I have published a [read-only PowerShell event timeline collector](docs/powershell-event-timeline-collector.md) with a documented Windows 11 test matrix; the separate controlled security-event investigation remains a planned milestone.
 
-## Developing capstone direction — three-Pi cybersecurity lab
+## Technical domains
 
-**Status: Planning only; no three-Pi deployment claimed.** I have reserved three Raspberry Pi 5 boards for a future CBAS 499 capstone. My goal is to develop a realistic security environment that demonstrates junior SOC analyst and entry-level security engineering work: monitoring, investigation, vulnerability remediation, security controls, and defensible reporting. The architecture and software remain undecided and will be evaluated alongside future coursework and the instructor's requirements.
-
-[Read the capstone concept and career-relevance criteria](docs/three-pi-capstone-concept.md).
-
-## Cybersecurity community and professional development
-
-I'm a Cybersecurity BAS student at Clark College and a member of its Cyber Club.
+- **Network security:** virtual networking, packet analysis and connectivity validation.
+- **System security:** Linux access controls, security baselines and system diagnostics.
+- **Infrastructure monitoring:** DNS security, availability checks and container metrics.
+- **Systems administration:** Linux, virtualization, Docker and Raspberry Pi deployments.
 
 ## How the projects connect to security operations
 
@@ -78,4 +75,4 @@ Those roles strengthened my troubleshooting, recordkeeping, communication, and p
 
 ## Evidence and scope
 
-I document the environment, procedures, observations, and limitations for each project. I also identify guided coursework and retrospective accounts where relevant.
+I document the environment, procedures, observations, and limitations for each project. Laboratory exercises, retrospective accounts and planned work are distinguished from verified operational findings and professional employment.
