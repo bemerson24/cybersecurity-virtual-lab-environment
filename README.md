@@ -37,22 +37,13 @@ I document configuration changes, validation results, network observations, and 
 
 Tool usage varies by documented investigation.
 
-## Historical Windows 10 lab layout (November 15)
+## Current CyberLab network architecture (November 19)
 
-The following historical diagram shows the **earlier Windows 10 / Kali adapter configuration**, not the current Windows 11 / Kali CyberLab or a validated Windows 10 guest-to-guest connection. Both guests have NAT and an internal interface on `soc-lab`; neither currently uses a host-only adapter. The [worksheet](docs/lab-network-validation.md) contains the MAC/interface checks, addresses, routes, and outstanding connectivity tests.
+![Windows 11 and Kali CyberLab topology, verified bidirectional IPv4 ICMP with NAT disabled](assets/windows11-kali-cyberlab-topology.svg)
 
-```mermaid
-flowchart TB
-    HOST["HP EliteBook 840 G8 / Windows 11 Pro"] --> VB["Oracle VirtualBox"]
-    VB --> W10["Windows 10 VM"]
-    VB --> KALI["Kali Linux VM"]
-    W10 -->|"Adapter 1"| NAT1["NAT / Windows 10"]
-    KALI -->|"Adapter 1"| NAT2["NAT / Kali"]
-    W10 -->|"Adapter 2"| SOC["Internal Network: soc-lab"]
-    KALI -->|"Adapter 2"| SOC
-```
+Both guests exchanged four successful ICMP replies in each direction with NAT disabled. Neither guest had an IPv4 default route in the tested state. IPv6 and broader containment checks remain outstanding. [Validation report](docs/windows11-kali-cyberlab-validation-2026-11-19.md).
 
-See the [network validation worksheet](docs/lab-network-validation.md) for the verified eight-adapter inventory, confirmed guest addressing/routes, and still-pending guest-to-guest connectivity tests.
+The earlier Windows 10 / Kali `soc-lab` configuration and its historical topology diagram are preserved in the [November 15 network validation worksheet](docs/lab-network-validation.md#configured-topology-not-a-connectivity-claim). Historical guest-to-guest connectivity remains untested.
 
 ## Work completed so far
 
@@ -63,14 +54,14 @@ See the [network validation worksheet](docs/lab-network-validation.md) for the v
 - Verified Kali Linux could boot after the Windows account and file-permission changes.
 - Adjusted allocated resources when the virtual machines were running slowly.
 
-### 2. Configure lab networking
+### 2. Configure historical Windows 10 / Kali networking
 
 - Earlier work included a VirtualBox host-only network, but neither of the current guest configurations uses host-only networking as of the November 15 GUI inventory.
 - Verified both Windows 10 and Kali Linux have Adapter 1 **NAT**, Adapter 2 **Internal Network (`soc-lab`)**, and disabled Adapters 3–4.
 - Verified the adapter-to-interface mappings and routes. Kali's `eth1` is `172.20.20.10/24`; Windows 10's `Ethernet 2` changed from APIPA to `172.20.20.20/24`. I verified the new on-link route and preserved NAT default route. [Full command-level evidence](docs/lab-network-validation.md).
 - Explored network addressing and traffic inspection in related laboratory exercises.
 
-**Pending:** I have not yet demonstrated guest-to-guest reachability or effective isolation. NAT attachments mean the overall lab is not entirely isolated. Testing is deferred while the VM stability issue remains open.
+**Historical Windows 10 / Kali status:** I have not demonstrated guest-to-guest reachability or effective isolation for this earlier configuration. NAT attachments mean the overall lab is not entirely isolated. Testing is deferred while the VM stability issue remains open.
 
 ### 3. Troubleshoot permissions and access
 
@@ -153,6 +144,6 @@ While starting a Windows 11 VM in Oracle VirtualBox, I initially encountered a b
 - The Windows inbound ICMPv4 rule is restricted to the Kali source and Windows lab destination addresses.
 - Kali's active NetworkManager profile was corrected after disabling NAT caused its internal NIC to appear as `eth0` rather than `eth1`.
 - Both guests showed **no IPv4 default route** in the tested state. IPv6 route-check outputs and broader isolation controls still require independent verification; full isolation is **not claimed**.
-- User reported saving final isolated-baseline snapshots of both VMs. Screenshots and command outputs remain subject to privacy review before publication.
+- I saved final isolated-baseline snapshots of both VMs (reported during setup). Screenshots and command outputs remain subject to privacy review before publication.
 
 [Read the full dated configuration, troubleshooting and evidence record](docs/windows11-kali-cyberlab-validation-2026-11-19.md).
