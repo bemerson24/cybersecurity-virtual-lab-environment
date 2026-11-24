@@ -3,7 +3,7 @@
 ![Cybersecurity Virtual Lab Environment portfolio cover](assets/virtual-lab-cover.png)
 
 **Project status:** Windows 11 / Kali CyberLab network verified November 19, 2026; historical Windows 10 investigation remains open · **Started:** October 2026  
-**Context:** Clark College Cybersecurity BAS coursework and related hands-on practice
+**Context:** Controlled cybersecurity laboratory and related hands-on technical investigations
 
 **Portfolio overview:** [View the portfolio overview](PORTFOLIO-OVERVIEW.md).
 
@@ -21,13 +21,7 @@ I built this virtual cybersecurity lab on a Windows 11 laptop using Oracle Virtu
 
 I document configuration changes, validation results, network observations, and troubleshooting while keeping guest changes separate from the primary Windows environment.
 
-> **Scope:** The core of this repository documents the virtualized coursework lab. A separate personal-endpoint packet-analysis case study is linked below as related networking practice, not as VirtualBox guest testing or an assessment of campus infrastructure. The Ubuntu WSL 2 baseline assessment, home Pi-hole infrastructure and OctoPi retrospective are distinct projects.
-
-## Future capstone direction (separate project)
-
-I am also exploring a **three–Raspberry Pi 5 cybersecurity lab** for Clark College CBAS 499. The intent is to demonstrate real junior SOC analyst and entry-level security engineering responsibilities, not to predetermine device roles or claim a completed deployment. This VirtualBox repository continues to document its own verified work and troubleshooting; the capstone remains planning only.
-
-[Three-Pi capstone concept and decision criteria](docs/three-pi-capstone-concept.md)
+> **Scope:** The core of this repository documents the virtualized cybersecurity lab. A separate personal-endpoint packet-analysis case study is linked below as related networking practice, not as VirtualBox guest testing or an assessment of campus infrastructure. The Ubuntu WSL 2 baseline assessment, home Pi-hole infrastructure and OctoPi retrospective are distinct projects.
 
 ## Environment
 
@@ -39,9 +33,9 @@ I am also exploring a **three–Raspberry Pi 5 cybersecurity lab** for Clark Col
 | Current guest VM | Kali Linux — paired with Windows 11 on `CyberLab` |
 | Current Windows guest VM (November 19 verified) | Windows 11 Enterprise Evaluation — desktop boot, Guest Additions display resize, NAT connectivity and bidirectional Kali connectivity verified |
 | Lab networking | **Current Windows 11 / Kali:** Internal Network `CyberLab`, Windows `192.168.77.10/24`, Kali `192.168.77.20/24`; bidirectional ping verified with NAT disabled and no default IPv4 route observed. [New validation report](docs/windows11-kali-cyberlab-validation-2026-11-19.md). **Historical Windows 10 / Kali:** `soc-lab`, `172.20.20.0/24`, connectivity untested in the earlier [worksheet](docs/lab-network-validation.md) |
-| Related coursework tools | Wireshark, PowerShell, Linux terminal, Python (Visual Studio Code) |
+| Related investigation tools | Wireshark, PowerShell, Linux terminal, Python (Visual Studio Code) |
 
-The tools in the last row are used across related coursework; usage varies by exercise.
+Tool usage varies by documented investigation.
 
 ## Historical Windows 10 lab layout (November 15)
 
@@ -74,7 +68,7 @@ See the [network validation worksheet](docs/lab-network-validation.md) for the v
 - Earlier work included a VirtualBox host-only network, but neither of the current guest configurations uses host-only networking as of the November 15 GUI inventory.
 - Verified both Windows 10 and Kali Linux have Adapter 1 **NAT**, Adapter 2 **Internal Network (`soc-lab`)**, and disabled Adapters 3–4.
 - Verified the adapter-to-interface mappings and routes. Kali's `eth1` is `172.20.20.10/24`; Windows 10's `Ethernet 2` changed from APIPA to `172.20.20.20/24`. I verified the new on-link route and preserved NAT default route. [Full command-level evidence](docs/lab-network-validation.md).
-- Studied network addressing and traffic inspection in associated networking assignments.
+- Explored network addressing and traffic inspection in related laboratory exercises.
 
 **Pending:** I have not yet demonstrated guest-to-guest reachability or effective isolation. NAT attachments mean the overall lab is not entirely isolated. Testing is deferred while the VM stability issue remains open.
 
@@ -88,7 +82,7 @@ These account and file-permission changes were made on the Windows host.
 
 ## Related technical work
 
-Related Clark College coursework covers Wireshark traffic capture and filters, TCP/IP and OSI model interpretation, introductory Linux shell use and Python interpreter work. Planned lab documentation includes commands, configurations, outputs and explanations for each completed exercise.
+Related technical practice covers Wireshark traffic capture and filters, TCP/IP and OSI model interpretation, Linux shell use and Python interpreter work. Documented investigations distinguish completed tests from planned work.
 
 ## Related packet-analysis case study
 
@@ -113,7 +107,7 @@ Pending evidence is tracked in the [network validation worksheet](docs/lab-netwo
 
 **Virtualization · Oracle VirtualBox · Windows 10 VM configuration · Kali Linux VM setup · NAT and internal networking · Basic network diagnostics · Technical troubleshooting · Documentation**
 
-Project context: guided coursework and hands-on troubleshooting. Validation status is recorded alongside each result.
+Project context: guided laboratory exercises and hands-on troubleshooting. Validation status is recorded alongside each result.
 
 ## Next improvements
 
