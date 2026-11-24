@@ -28,16 +28,7 @@ The screenshots display VirtualBox MAC addresses; these identifiers are intentio
 
 ### Configured topology, not a connectivity claim
 
-```mermaid
-flowchart TB
-    HOST["Windows 11 Pro host"] --> VB["VirtualBox"]
-    VB --> W10["Windows 10 VM"]
-    VB --> KALI["Kali Linux VM"]
-    W10 -->|"Adapter 1: NAT"| NAT1["VirtualBox NAT (Windows 10)"]
-    KALI -->|"Adapter 1: NAT"| NAT2["VirtualBox NAT (Kali)"]
-    W10 -->|"Adapter 2: Internal Network"| SOC["soc-lab"]
-    KALI -->|"Adapter 2: Internal Network"| SOC
-```
+![Historical Windows 10 and Kali configured topology, NAT enabled and internal connectivity untested](../assets/windows10-kali-historical-topology.svg)
 
 The diagram reflects configured attachment modes only. NAT permits potential outside connectivity under normal operation; actual connectivity was not tested during this inventory. Internal-network membership does not establish successful guest-to-guest communication. The host is not shown as a participant in `soc-lab`.
 
