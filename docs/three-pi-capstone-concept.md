@@ -1,18 +1,18 @@
-# Three-Pi Cybersecurity Lab — CBAS 499 Capstone Direction
+# Three-Pi Cybersecurity Lab — Design Concept
 
-**Status:** Concept and planning scaffold — not yet implemented or instructor-approved  
-**Planning horizon:** Winter–Spring 2027; CBAS 499 anticipated Summer 2027  
+**Status:** Concept — not yet implemented  
+**Planning horizon:** 2027; implementation schedule provisional  
 **Hardware reserved:** Three unused Raspberry Pi 5 boards, each with a 64 GB microSD card
 
 ## Purpose
 
 I want to develop a realistic cybersecurity lab that demonstrates work relevant to a junior Security Operations Center (SOC) analyst or entry-level security engineer. The goal is not simply to connect three Raspberry Pis or install a collection of tools. I want to design, operate, investigate, and document an environment that reflects practical security responsibilities.
 
-The exact system architecture, operating systems, software stack, node roles, and scenario are **not yet selected**. This document records a direction for future evaluation, not a finished capstone proposal or an assertion that the lab exists.
+The exact system architecture, operating systems, software stack, node roles, and scenario are **not yet selected**. This document records a direction for future evaluation, not a finished design proposal or an assertion that the lab exists.
 
 ## Work to model
 
-| Professional responsibility | Potential capstone evidence |
+| Professional responsibility | Potential technical evidence |
 |---|---|
 | Security monitoring | Defined log sources, event collection, and evidence that relevant events are visible |
 | SOC alert triage | A controlled alert, supporting telemetry, investigation timeline, alternative explanations, and disposition |
@@ -41,7 +41,7 @@ These are possible evaluation areas, not commitments to deliver all of them or c
 5. **Improve and retest:** Apply a targeted control or configuration change, verify its effect, and identify remaining risks.
 6. **Explain and demonstrate:** Produce a concise technical report and a repeatable walkthrough that can be used in coursework and job interviews.
 
-The sequence is provisional. Actual scope will follow CBAS 499 instructions and instructor approval.
+The sequence is provisional. Actual scope will follow validated requirements and available resources.
 
 ## Career relevance test
 
@@ -50,17 +50,14 @@ Before adding a major component, ask:
 1. Does it represent a responsibility an SOC analyst or security engineer actually performs?
 2. Can I independently explain, operate, troubleshoot, and reproduce it?
 3. What specific, privacy-safe evidence could establish that I did the work?
-4. Is it feasible on the hardware and within the course's time and grading requirements?
+4. Is it feasible on the hardware and within available time and resources?
 
-## Course-to-capstone development
+## Development approach
 
-- **Fall 2026:** Retain verified Linux, networking, virtualization, scripting, and troubleshooting evidence from existing projects.
-- **Winter 2027:** Explore applicable concepts in CBAS 364 (Big Data) and CBAS 365 (IoT); do not force class finals into a preconceived architecture.
-- **Spring 2027:** Reassess requirements and design options after CBAS 472 and CBAS 473.
-- **Summer 2027:** Verify the actual CBAS 499 syllabus, rubric, proposal process, scope and allowable pre-course work before treating a design as approved.
+Evaluate requirements and candidate designs before selecting node roles, software or implementation milestones. Existing verified projects remain independent evidence of technical practice.
 
 ## Relationship to the existing portfolio
 
-Existing [virtual lab](../README.md), [security-operations roadmap](security-operations-analyst-roadmap.md), [Ubuntu WSL 2 baseline](https://github.com/bemerson24/ubuntu-wsl2-security-baseline), and [Pi-hole project](https://github.com/bemerson24/raspberry-pi-pihole) provide separate, dated examples of technical practice. They are **not** components of a completed three-Pi deployment. The existing Raspberry Pi 400 home DNS/monitoring system is also separate from the reserved capstone hardware.
+Existing [virtual lab](../README.md), [security-operations roadmap](security-operations-analyst-roadmap.md), [Ubuntu WSL 2 baseline](https://github.com/bemerson24/ubuntu-wsl2-security-baseline), and [Pi-hole project](https://github.com/bemerson24/raspberry-pi-pihole) provide separate, dated examples of technical practice. They are **not** components of a completed three-Pi deployment. The existing Raspberry Pi 400 home DNS/monitoring system is also separate from the reserved lab hardware.
 
-**Next planning checkpoint:** Compare course requirements and real entry-level SOC/security engineering job responsibilities before assigning node roles or selecting software.
+**Next planning checkpoint:** Compare technical requirements and SOC/security engineering job responsibilities before assigning node roles or selecting software.
